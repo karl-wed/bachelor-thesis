@@ -21,5 +21,11 @@ software decay.
 
 \subsection{Software Decay and Technical Debt}
 The term software decay was scientifically and statistically coined by Eick et al.\ in their paper `Does Code Decay? Assessing the Evidence from Change Management Data'(2001)\footcite{eickDoesCodeDecay2001}. They opened their paper by stating that `software does not age or "wear out" in the conventional sense.' \footcite[1]{eickDoesCodeDecay2001}
-If nothing in the environment changes, the software could run forever. However, this is almost never the case as mainly two things change constantly: the hard- and software environments and the requirements of the software. In their paper they defined code decay `if it is more difficult to change than it should be'\footcite [3]{eickDoesCodeDecay2001}
-based on the three criteria: cost of change, time to change and quality of the changed software. 
+If nothing in the environment changes, the software could run forever. However, this is almost never the case as mainly two things change constantly: the hard- and software environments and the requirements of the software.
+This is in accordance with the first two laws of Program Evolution Dynamics formulated by Belady and Lehman in 1976.
+The first law states that `A system that is used undergoes continuing change until it is judged more cost effective to freeze and recreate it.'\footcite[228]{beladyModelLargeProgram1976}
+The second law builds upon this with stating that `The entropy of a system (its unstructuredness) increases with time, unless specific work is executed to maintain or reduce it.'\footcite[228]{beladyModelLargeProgram1976}
+Eick et al.\ found this to be true, as the data they processed proved `very strong evidence that code does decay.'\footcite[7]{eickDoesCodeDecay2001}
+They base this on the fact that `the span of changes increases over time'\footcite[7]{eickDoesCodeDecay2001} as well as `the increase in span is accompanied by (and may cause) a breakdown in the modularity of the code.'\footcite[7]{eickDoesCodeDecay2001}
+This increase of changes and therein resulting entropy result in code being `more difficult to change than it should be.'\footcite[3]{eickDoesCodeDecay2001}
+Eick et al.\ based this on the following three criteria: cost of change, time to change and quality of the changed software. 
