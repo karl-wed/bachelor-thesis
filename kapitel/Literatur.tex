@@ -34,13 +34,29 @@ Therefore, the combination of theoretical insights from Lehman and Belday and em
 
 The concept of software decay aligns closely with earlier theoretical discussions by David Parnas (1994). In his influential paper `Software Aging' Parnas describes software aging as a progressive deterioration of a program's internal quality primarily due to frequent, 
 inadequately documented modifications which he termed `Ignorant surgery'\footcite[280]{296790}, as well as the failure to continuously adapt the architecture to evolving needs which he called `Lack of movement'\footcite[280]{296790}.
-Without this proactive maintenance and refactoring effort, Parnas argues that software inevitably reaches a state where changes become more riskier, more costly and error-prone.\footcite[280-281]{296790}
+Without this proactive maintenance and refactoring effort, Parnas argues that software inevitably reaches a state where changes become more riskier, more costly and error-prone\footcite[280-281]{296790}.
 
 //TODO: Emperical studies like Banker or Bieman maybe?
 
-The term `Techical Debt' was first coined by Ward Cunningham in his paper `The WyCash Portfolio Management System'(1992)\footcite{cunninghamWyCashPortfolioManagement1992} This metaphor was used to describe the trade-off between a quickly implemented solution and a tought out process. 
+The term `Technical Debt' was first coined by Ward Cunningham in his paper `The WyCash Portfolio Management System'(1992)\footcite{cunninghamWyCashPortfolioManagement1992} This metaphor was used to describe the trade-off between a quickly implemented solution and a thought out process. 
 When ones uses the quick solution it `is like going into debt.'\footcite[2]{cunninghamWyCashPortfolioManagement1992} Cunningham argues that this debt accumulates interest if not repaid or rewritten. 
 If this does not happen Cunningham warns that `Entire engineering organizations can be brought to a stand-still under the debt load of an unconsolidated implementation'\footcite[2]{cunninghamWyCashPortfolioManagement1992}.\\
 
-This term was 
+This term was further built upon and refined by the industry through white papers like `Technical Debt' by Steve McConnell(2008)\footcite{mcconnellManagingTechnicalDebt2017} or the `Technical Debt Quadrant' by Martin Fowler (2009)\footcite{fowlerTechnicalDebtQuadrant2009}.
+McConnell differentiates between two types of technical debt: Unintentional and Intentional \footcite[3]{mcconnellManagingTechnicalDebt2017}. The first results from bad code, inexperience or unknowingly taking over a project with technical debt.
+The second type is taken on purpose `to optimize for the present rather than for the future.'\footcite[3]{mcconnellManagingTechnicalDebt2017} As the first is not planned, it is difficult to avoid it. The second type however can be managed and controlled.\\
+Additionally, McConnell differentiates between different types of intentional debt. According to him, debt can be taken on short-term or long-term. The short-term debt is taken on to meet a deadline or to deliver a feature. Therefore it is `taken on tactically or reactively'\footcite[3]{mcconnellManagingTechnicalDebt2017}.
+The long-term debt on the other hand is more strategic and is taken on to help the team in a bigger picture. The difference between those two is that short-term debt `should be paid of quickly, perhaps as the first part of the next release cycle'\footcite[4]{mcconnellManagingTechnicalDebt2017}, while 
+long-term debt is something companies can be carried for years.\\
+Martin Fowler on the other hand warned in taking on too much deliberate debt. He argues that `Even the best teams will have debt to deal with as a project goes on - even more reason not to overload it with crummy code.'\footcite{fowlerTechnicalDebtQuadrant2009}
+He created a quadrant between reckless and prudent and deliberate and inadvertent. The difference between reckless and prudent for Fowler is the way the debt is taken on. Reckless debt happens without the right evaluation of the consequences, risking difficulties in the future. Prudent on the other hand is taken on
+with the trade-offs in mind and the knowledge of the future costs. Fowler differentiates between deliberate and inadvertent is similar to McConnell's differentiation between intentional and unintentional debt.
+The combination of those four result in either quick solutions without considering the long-term impact (reckless and deliberate), flawed design or implementation, either carelessly or unknowingly (reckless and inadvertent), 
+purposefully taking on debt to gain a short-term advantage with plans of repayment (prudent and deliberate) or taking on debt due to lack of knowledge or experience (prudent and inadvertent).\\
 
+In their article `Technical Debt: From Metaphor to Theory and Practice' (2012) Kruchten et al.\ \footcite{kruchtenTechnicalDebtMetaphor2012} criticize the concept of technical to be `somewhat diluted lately' \footcite[18]{kruchtenTechnicalDebtMetaphor2012}, stating that every issue in software development was called some form of debt. 
+Therefore they set out do define `a theoretical foundation'\footcite[19]{kruchtenTechnicalDebtMetaphor2012} for technical debt.\\
+Kruchten et al.\ state that technical debt has become more than the initial coding shortcuts and rather encompasses all kinds of internal software quality comprises.\footcite[19]{kruchtenTechnicalDebtMetaphor2012}
+According to them this includes architectural debt, `documentation and testing'\footcite[20]{kruchtenTechnicalDebtMetaphor2012} as well as requirements and infrastructure debt.
+All these debt types allow engineers to better discuss the trade-offs with stakeholders and to make better decisions.\\
+Additionally, Kruchten et al. build upon the metaphor of Cunnigham 
