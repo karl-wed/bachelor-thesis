@@ -60,3 +60,23 @@ Kruchten et al.\ state that technical debt has become more than the initial codi
 According to them this includes architectural debt, `documentation and testing'\footcite[20]{kruchtenTechnicalDebtMetaphor2012} as well as requirements and infrastructure debt.
 All these debt types allow engineers to better discuss the trade-offs with stakeholders and to make better decisions.\\
 Additionally, Kruchten et al. build upon the metaphor of Cunnigham 
+\\TODO: More about Kruchten and Theory?
+
+There have been many studies providing empirical evidence to the theoretical concepts of technical debt. Two very influential ones are the study by Potdar and Shihab (2014) \footcite{potdarExploratoryStudySelfAdmitted2014} as well as the study by Li et al.\ 2015 \footcite{liSystematicMappingStudy2015}.\\
+To do this Potdar and Shihab analyzed four large open source projects to find self admitted technical debt as well as how likely it is that the debt will be removed. They found that `self-admitted technical debt exists in 2.4\% to 31\% of the files.'\footcite[1]{potdarExploratoryStudySelfAdmitted2014}
+Additionally, they found that `developers with higher experience tend to introduce most of the self-admitted technical debt and that time pressures and complexity of the code do not correlate with teh amount of the self-admitted technical debt.'\footcite[1]{potdarExploratoryStudySelfAdmitted2014}
+They also discovered, that `only between 26.3\% and 63.5\% of the self-admitted technical debt gets removed'\footcite[1]{potdarExploratoryStudySelfAdmitted2014}. This relatively low removal rate of self-admitted technical debt indicates a wider challenge:
+developers recognize the issues of their implementation, but defer remediation potentially leading to a major impact on long-term maintainability.\\
+Another approach to provide empirical evidence towards technical debt was taken by Li et al.\ . They conducted a systematic mapping study to `get a comprehensive understanding of the concept of "technical debt"'\footcite[194]{liSystematicMappingStudy2015}, as well as getting an overview of the current research in the field.
+Different questions where asked like what types of technical debt exists, how does technical debt affect software quality and what is the limit of the technical debt metaphor.\\
+They found that the `10 types of TD are requirements TD, architectural TD, design TD, code TD, test TD, build TD, documentation TD, infrastructure TD, versioning TD, and defect TD.'\footcite[215]{liSystematicMappingStudy2015}
+Additionally they found that `Most studies argue that TD negatively affects the maintainability [\ldots] while other QAs and sub-QAs are only mentioned in a handful of studies'\footcite[215]{liSystematicMappingStudy2015}.\\
+During their studies,  Li et al. observed that the inconsistent and arbitrary use of the term `debt' among researchers and practitioners can cause confusion and hinder effective management of technical debt.\footcite[211]{liSystematicMappingStudy2015} Additionally practitioners `tend to connect any software quality issue to debt, such as code smells debt, dependency debt and usability debt.'\footcite[212]{liSystematicMappingStudy2015}
+This indicates a inflationary use of the term, which one has to be aware of when speaking about technical debt.\\
+
+The implications these studies have on the software industry are significant. They show that software decay and technical debt are tangible and measurable in real world software projects.
+In their paper `Software complexity and maintenance costs' \footcite{dSoftwareComplexityMaintenance1993} (1993) Banker et al. empirically demonstrated that `software maintenance costs are significantly affected by the levels of existing software complexity.' \footcite[12]{dSoftwareComplexityMaintenance1993}
+This finding emphasizes the important of proactively managing the software quality and addressing debt early in the project lifecycle, to keep the complexity and therefore cost to a minimum.\\
+To address these effects, practitioners strongly recommend refactoring. Fowler argued in his book `Refactoring: Improving the Design of Existing Code' (2019)
+
+
