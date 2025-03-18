@@ -84,5 +84,56 @@ To prevent long-term issues, practitioners recommend to actively manage technica
 that integrate debt management into the software development process.\\
 
 \subsection{Mitigation Strategies in Commercial Environments}
+Technical debt and software decay have been recognized as significant challenges in the software industry. They can lead to 
+increased maintenance costs, reduced software quality and decreased developer productivity, overall leading to a more expensive and less competitive product.
+To address the challenges, practitioners and researchers have developed a variety of strategies to manage, prevent and mitigate technical debt.
+This section will provide an overview of the most common strategies, techniques and frameworks used in commercial environments to address technical debt.\\
+
+\subsubsection{High-Level Mitigation Strategies}
+To efficiently mitigate software decay and technical debt, proactive management strategies are essential. These strategies aim to prevent the accumulation of debt and decay
+by integrating debt management directly into everyday development process. These include Agile methodologies like Scrum or Extreme Programming but also technical practices
+like \ac{CI/CD}. These practices are designed to embed ongoing maintenance and quality assurance into routine workflows.\\
+Agile methods emphasize frequent iterations, close collaboration between developers and stakeholders as well as continuos refactoring to prevent the
+gradual degradation of the software quality.\\
+In a similar matter \ac{CI/CD} introduces rigorous automation, rapid feedback loops and early detection of defects to proactively control technical debt accumulation.
+These methodologies create a culture of continuous improvement and quality insurance, ensuring software maintainability and long-term project sustainability.\\
+\paragraph{Agile Methodologies}
+In their paper `Technical Debt Management in Agile Software Development: A Systematic Mapping Study' (2024)\footcite{leiteTechnicalDebtManagement2024} Leite et al.
+investigated how agile methods can be used to manage technical debt. They found that `\ldots Scrum and Extreme Programming are the most utilized methodologies 
+for managing technical debt.'\footcite[318]{leiteTechnicalDebtManagement2024} Therefore, this section will focus on these two methodologies and their impact on technical debt management.\\
+Scrum was first presented by Ken Schwaber in his paper `SCRUM Development Process' (1995)\footcite{schwaberSCRUMDevelopmentProcess1997}. 
+It has since become on of the most popular agile frameworks in the software industry. It manages the the technical debt explicitly through
+iterative cycles called sprints. After each sprint the team has to opportunity to reflect on their work, identify technical debt and discuss improvements in so called
+retrospectives. Leite et al. found that for identifying technical debt in Scrum the Sprint and Product Backlog are the most used artifacts.\footcite[315]{leiteTechnicalDebtManagement2024}
+Making the debt visible in the backlogs creates an overview of the debt and helps the team to prioritize it, depending on the impact on the project.\\
+\ac{XP} on the other hand was first presented by Kent Beck in his book `Extreme Programming Explained' (1999)\footcite{beckExtremeProgrammingExplained1999}.
+This framework introduces practices to increase software quality like pair programming, \ac{TDD} and \ac{CI} and refactoring.
+Pair programming has shown to prevent technical debt through collaboration of two developers. This way the code quality is increased and the knowledge is shared between the developers.
+Through \ac{CI} new code is integrated into the main code base consistently. This way the code is always up to date and the risk of integration issues is reduced. 
+Through \ac{TDD} and a higher test coverage is introduced, preventing unintentional technical debt.
+Refactoring, a key component of XP, has proven to increase productivity and code quality by Moser et al. in their paper 
+`A Case Study on the Impact of Refactoring on Quality and Productivity in an Agile Team' (2008)\footcite{moserCaseStudyImpact2008}.
+They found that `prevents an explosion of complexity' as well as `driving developers to simpler design and as a consequence less complex and coupled and easier to maintain code.'\footcite[262]{moserCaseStudyImpact2008}
+Due to all these benefits Beck argues that \ac{XP} is able to have a more consistent software quality throughout the development process, due to the strong focus on incremental improvements.\\
+Overall Agile methodologies, particularly Scrum and \ac{XP} have proven to be effective in managing technical debt systematically.
+Complementing these methods, \ac{CI/CD} further enhances technical debt control though automation and contionous quality assurance.\\
+
+\paragraph{Continuous Integration/Continuous Deployment}
+\ac{CI} was first introduced by Beck in his book about \ac{XP} and was later refined by Martin Fowler in his article `Continuous Integration'\footcite{ContinuousIntegration}.
+In this article Fowler describes \ac{CI} not only as the automated integration of the code into the main database but also the automated testing and building of the code.
+According to Fowler `Self-testing code is so important to Continuous Integration that it is a necessary prerequisite.'\footcite{ContinuousIntegration}.
+In addition to the successful test another prerequisite is `that they can correctly build the code'\footcite{ContinuousIntegration}.
+To further prevent accidental technical debt a quality analysis tool can be used.\\
+\ac{CD} first introduced by Humble and Farley in their book `Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation' (2010)\footcite{humbleContinuousDeliveryReliable2010}
+extends \ac{CI} by automating the entire software release pipeline. \ac{CD} ensures that the software is in a releasable state at any time.
+According to Humble and Farley having a functional \ac{CD} pipeline `creates a release process that is repeatable, reliable, and predictable'\footcite[17]{humbleContinuousDeliveryReliable2010}.
+However, this is not the only benefit. Next to team empowerment and deployment flexibility the authors state that \ac{CD} can reduce errors.
+Specially `those introduced into production by poor configuration management.'\footcite[18]{humbleContinuousDeliveryReliable2010}
+This includes information like `configuration files, scripts to create databases and their schemas, build scripts, test harnesses, even development environments and operating system configurations'\footcite[19]{humbleContinuousDeliveryReliable2010}.\\
+Combining these two techniques together creates an automatic process to catch integration issues early.
+
+
+
+
 
 
