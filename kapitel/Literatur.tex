@@ -75,7 +75,7 @@ During their studies,  Li et al. observed that the inconsistent and arbitrary us
 This indicates a inflationary use of the term, which one has to be aware of when speaking about technical debt.\\
 
 The implications these studies have on the software industry are significant. They show that software decay and technical debt are tangible and measurable in real world software projects.
-In their paper `Software complexity and maintenance costs' \footcite{dSoftwareComplexityMaintenance1993} (1993) Banker et al. empirically demonstrated that `software maintenance costs are significantly affected by the levels of existing software complexity.' \footcite[12]{dSoftwareComplexityMaintenance1993}
+In their paper `Software complexity and maintenance costs' \footcite{bankerSoftwareComplexityMaintenance1993} (1993) Banker et al. empirically demonstrated that `software maintenance costs are significantly affected by the levels of existing software complexity.' \footcite[12]{bankerSoftwareComplexityMaintenance1993}
 This finding emphasizes the important of proactively managing the software quality and addressing debt early in the project lifecycle, to keep the complexity and therefore cost to a minimum.\\
 To address these effects, practitioners strongly recommend refactoring. Fowler argued in his book `Refactoring: Improving the Design of Existing Code' (2019)
 that `Without refactoring, the internal design - the architecture - of software tend to decay.'\footcite[58]{fowlerRefactoringImprovingDesign2019}
@@ -90,48 +90,80 @@ To address the challenges, practitioners and researchers have developed a variet
 This section will provide an overview of the most common strategies, techniques and frameworks used in commercial environments to address technical debt.\\
 
 \subsubsection{High-Level Mitigation Strategies}
-To efficiently mitigate software decay and technical debt, proactive management strategies are essential. These strategies aim to prevent the accumulation of debt and decay
-by integrating debt management directly into everyday development process. These include Agile methodologies like Scrum or Extreme Programming but also technical practices
-like \ac{CI/CD}. These practices are designed to embed ongoing maintenance and quality assurance into routine workflows.\\
+To efficiently mitigate software decay and technical debt, proactive management strategies are essential. These strategies aim to prevent the accumulation of 
+debt and address software entropy and decay directly by integrating quality assurance directly into everyday development process.
+Such strategies include Agile methodologies like Scrum or \ac{XP} as well as technical practices
+such as \ac{CI/CD}. These practices are designed to embed ongoing maintenance and quality assurance into routine workflows, thus combating software entropy at its core.\\
 Agile methods emphasize frequent iterations, close collaboration between developers and stakeholders as well as continuos refactoring to prevent the
-gradual degradation of the software quality.\\
-In a similar matter \ac{CI/CD} introduces rigorous automation, rapid feedback loops and early detection of defects to proactively control technical debt accumulation.
-These methodologies create a culture of continuous improvement and quality insurance, ensuring software maintainability and long-term project sustainability.\\
+gradual degradation of the software quality and mitigation software decay.\\
+Similarly, \ac{CI/CD} introduces rigorous automation, rapid feedback loops and early detection of defects to proactively controlling both technical debt accumulation
+and broader software quality decay. Collectively, these methodologies create a culture of continuous improvement, adaptability and quality assurance, 
+ensuring software maintainability and long-term project sustainability.\\
 \paragraph{Agile Methodologies}
 In their paper `Technical Debt Management in Agile Software Development: A Systematic Mapping Study' (2024)\footcite{leiteTechnicalDebtManagement2024} Leite et al.
 investigated how agile methods can be used to manage technical debt. They found that `\ldots Scrum and Extreme Programming are the most utilized methodologies 
-for managing technical debt.'\footcite[318]{leiteTechnicalDebtManagement2024} Therefore, this section will focus on these two methodologies and their impact on technical debt management.\\
+for managing technical debt.'\footcite[318]{leiteTechnicalDebtManagement2024} While this study focuses explicitly on technical debt, both Scrum and \ac{XP}
+also inherently address the boarder issue of software decay by encouraging proactive quality management and continuous improvement practices.\\
 Scrum was first presented by Ken Schwaber in his paper `SCRUM Development Process' (1995)\footcite{schwaberSCRUMDevelopmentProcess1997}. 
-It has since become on of the most popular agile frameworks in the software industry. It manages the the technical debt explicitly through
-iterative cycles called sprints. After each sprint the team has to opportunity to reflect on their work, identify technical debt and discuss improvements in so called
+It has since become on of the most popular agile frameworks in the software industry. Scrum explicitly manages software quality and technical debt through iterative cycles called sprints.
+After each sprint, the team reflects on their work, identifies quality issues, technical debt and potential decay indicators and plans improvements in
 retrospectives. Leite et al. found that for identifying technical debt in Scrum the Sprint and Product Backlog are the most used artifacts.\footcite[315]{leiteTechnicalDebtManagement2024}
-Making the debt visible in the backlogs creates an overview of the debt and helps the team to prioritize it, depending on the impact on the project.\\
-\ac{XP} on the other hand was first presented by Kent Beck in his book `Extreme Programming Explained' (1999)\footcite{beckExtremeProgrammingExplained1999}.
-This framework introduces practices to increase software quality like pair programming, \ac{TDD} and \ac{CI} and refactoring.
-Pair programming has shown to prevent technical debt through collaboration of two developers. This way the code quality is increased and the knowledge is shared between the developers.
-Through \ac{CI} new code is integrated into the main code base consistently. This way the code is always up to date and the risk of integration issues is reduced. 
-Through \ac{TDD} and a higher test coverage is introduced, preventing unintentional technical debt.
-Refactoring, a key component of XP, has proven to increase productivity and code quality by Moser et al. in their paper 
-`A Case Study on the Impact of Refactoring on Quality and Productivity in an Agile Team' (2008)\footcite{moserCaseStudyImpact2008}.
-They found that `prevents an explosion of complexity' as well as `driving developers to simpler design and as a consequence less complex and coupled and easier to maintain code.'\footcite[262]{moserCaseStudyImpact2008}
-Due to all these benefits Beck argues that \ac{XP} is able to have a more consistent software quality throughout the development process, due to the strong focus on incremental improvements.\\
-Overall Agile methodologies, particularly Scrum and \ac{XP} have proven to be effective in managing technical debt systematically.
-Complementing these methods, \ac{CI/CD} further enhances technical debt control though automation and contionous quality assurance.\\
+By explicitly managing these items with their workflow, teams effectively reduce both debt and software entropy, improving overall software maintainability.\\
+
+\ac{XP}, first introduced by Kent Beck in his influential book `Extreme Programming Explained' (1999)\footcite{beckExtremeProgrammingExplained1999},
+explictly integrates practices to enhance software quality and prevent software decay directly.
+\ac{XP} practices such as pair programming, \ac{TDD} and \ac{CI} and continuos refactoring help maintain high software quality, thus preventing both debt accumulation
+and broader software entropy.
+Pair programming prevents decay by ensuring higher-quality code through collaborative review and knowledge sharing between developers.
+Continuous Integration ensures regular, frequent code integration, significantly reducing integration complexity and associated decay risks.
+\ac{TDD} ensures robust test coverage, catching defects early and preventing quality erosion.
+Refactoring, a cornerstone XP practice, has proven its effectiveness empirically; for example, Moser et al.
+demonstrated in their case study(2008)\footcite{moserCaseStudyImpact2008} that refactoring explicitly `prevents an explosion of complexity'\footcite[262]{moserCaseStudyImpact2008}
+and promotes simpler, easier-to-maintain designs.
+They found it drove developers toward simpler designs, reducing complexity, coupling, and long-term maintenance issues—directly counteracting software decay.\footcite[262]{moserCaseStudyImpact2008}
+Beck argues that \ac{XP}'s incremental, continuos quality practices consistently maintain software quality and adaptability throughout development, directly addressing both debt and broader software decay.\\
+Overall Agile methodologies, particularly Scrum and \ac{XP}, systematically manage technical debt and proactively prevent software decay by fostering continuous improvement, structured quality management and adaptability.
+Complementing these Agile practices, the adoption of automated \ac{CI/CD} pipelines further enhances the proactive management of both technical debt
+and broader software decay through rigorous quality control and systematic automation.\\
 
 \paragraph{Continuous Integration/Continuous Deployment}
-\ac{CI} was first introduced by Beck in his book about \ac{XP} and was later refined by Martin Fowler in his article `Continuous Integration'\footcite{ContinuousIntegration}.
-In this article Fowler describes \ac{CI} not only as the automated integration of the code into the main database but also the automated testing and building of the code.
-According to Fowler `Self-testing code is so important to Continuous Integration that it is a necessary prerequisite.'\footcite{ContinuousIntegration}.
-In addition to the successful test another prerequisite is `that they can correctly build the code'\footcite{ContinuousIntegration}.
-To further prevent accidental technical debt a quality analysis tool can be used.\\
-\ac{CD} first introduced by Humble and Farley in their book `Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation' (2010)\footcite{humbleContinuousDeliveryReliable2010}
-extends \ac{CI} by automating the entire software release pipeline. \ac{CD} ensures that the software is in a releasable state at any time.
-According to Humble and Farley having a functional \ac{CD} pipeline `creates a release process that is repeatable, reliable, and predictable'\footcite[17]{humbleContinuousDeliveryReliable2010}.
-However, this is not the only benefit. Next to team empowerment and deployment flexibility the authors state that \ac{CD} can reduce errors.
-Specially `those introduced into production by poor configuration management.'\footcite[18]{humbleContinuousDeliveryReliable2010}
-This includes information like `configuration files, scripts to create databases and their schemas, build scripts, test harnesses, even development environments and operating system configurations'\footcite[19]{humbleContinuousDeliveryReliable2010}.\\
-Combining these two techniques together creates an automatic process to catch integration issues early.
+\ac{CI} was first introduced by Beck in the context of \ac{XP} and later refined by Martin Fowler in his influential article `Continuous Integration'\footcite{ContinuousIntegration}.
+Fowler describes \ac{CI} as not only the frequent, automated integration of code into the main repository but also the systematic automation of building and testing process.
+According to Fowler, `Self-testing code is so important to Continuous Integration that it is a necessary prerequisite.'\footcite{ContinuousIntegration}.
+Furthermore, another critical prerequisite is `that they can correctly build the code,'\footcite{ContinuousIntegration} thus guaranteeing that code changes consistently
+integrate without issues.\\
 
+To further prevent technical debt and broader software decay, a quality analysis tools (e.g. static code analyzers such as SonarQube or DeepSource) are frequently integrated into
+\ac{CI} pipelines. These tools often provide a metric to evaluate technical debt which is calculated based on the effort in minutes to fix the found maintainability issues.\footcite{UnderstandingMeasuresMetrics}
+In their paper `Technical Debt Measurement during Software Development using Sonarqube: Literature Review and a Case Study' (2021)\footcite{murilloTechnicalDebtMeasurement2021}
+Murillo et al. found that SonarQube is a useful tool for early debt detection. The estimated remediation effort metric allows for a good debt management prioritization.\footcite[5]{murilloTechnicalDebtMeasurement2021}
+However during their research they noticed if they changed SonarQubes default rules by just 26 rules, the technical debt effort would increase from
+1 hours and 50 minutes to 11 hours.\footcite[4]{murilloTechnicalDebtMeasurement2021} This and the fact that SonarQube can only detect code related debt and not for example
+infrastructure or requirements debt, makes these tools useful but not a complete solution.\\
+
+\ac{CD}, introduced by Jez Humble and David Farley in their foundational book `Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation' (2010)\footcite{humbleContinuousDeliveryReliable2010}
+extends \ac{CI} by automating the entire software release pipeline. \ac{CD} ensures that the software is always in a releasable state.
+According to Humble and Farley implementing a functional \ac{CD} pipeline `creates a release process that is repeatable, reliable, and predictable'\footcite[17]{humbleContinuousDeliveryReliable2010}.
+Beyond predictability, additional significant benefits include team empowerment, deployment flexibility and substantial error reduction.
+Specially, \ac{CD} effectively reduces errors, particularly those introduced by poor configuration management, including problematic areas such as
+`configuration files, scripts to create databases and their schemas, build scripts, test harnesses, even development environments and operating system configurations'\footcite[19]{humbleContinuousDeliveryReliable2010}.\\
+
+Empirical evidence from academic studies clearly demonstrates the effectiveness of \ac{CI/CD} in reducing both technical debt and software decay.
+For instance, 
+TODO: Find emperical evidence for CI/CD\\
+\subsubsection{Specific Techniques and Tool-Supported Practices}
+In addition to high-level strategies, there are a variety of specific techniques and tool-supported practices which can be used to managed technical debt 
+and prevent software decay. These practices are often integrated into the development process to provide targeted, effective quality assurance and debt management.\\
+\paragraph{Refactoring}
+As mentioned earlier, refactoring is a key practice to prevent the code base from decaying. However, not only the complexity can be reduced by refactoring.
+In their study `An Empirical Study of Refactoring Challenges and Benefits at Microsoft' (2014)\footcite{kimEmpiricalStudyRefactoringChallenges2014} Kim et al.
+investigated benefits and challenges of refactoring at Microsoft, due to the fact that other studies showed very different results when it comes to the benefits of refactoring.
+
+
+
+\subsubsection{Formal Debt Management and Tracking Techniques}
+\subsubsection{Organizational and Cultural Factors}
+\subsubsection{Conclusion}
 
 
 
