@@ -1,7 +1,7 @@
 \section{Literature Review}
 \subsection{Problems of Software Engineering}
 Software has become an integral part of our daily lives. Certain expectations exist regarding the quality of software in terms of reliability, security and efficiency. These expectations come with challenges for the software developers across all industries.
-For decades, software engineers have tried to develop methods and guides to overcome these issues. However, in 1986 Frederick Brooks published his paper `No Silver Bullet' \footcite{brooksNoSilverBullet1987} 
+For decades, software engineers have tried to develop methods and guides to overcome these issues. However, in 1986 Frederick Brooks published his paper `No Silver Bullet'
 in which he argues that: `\ldots building software will always be hard. There is inherently no silver bullet.' \footcite[3]{brooksNoSilverBullet1987}. He based this statement on the fact that there two types of difficulties in software development: the essential and the accidental.
 The essential difficulties he names are complexity, conformity, changeability and invisibility.\\
 With complexity, Brooks wants to describe the inherit intricacy of software systems: `Software entities are more complex for their size than perhaps any other human construct, because no two parts are alike'.\footcite[3]{brooksNoSilverBullet1987}
@@ -16,73 +16,74 @@ According to Brooks, these issues are in `the very nature of software' \footcite
 In contrast, the accidental difficulties arise from limitations of current languages, tools and methodologies. According to Brooks, this involves issues such as inefficient programming environments, suboptimal development processes and integration challenges which can be overcome as the industry improves its practices and technologies.\footcite[5-6]{brooksNoSilverBullet1987}
 For example, the adaptation of agile methodologies, integrated development environments and continuous integration have helped to overcome some of these accidental difficulties.\\
 
-The persistent nature of these challenges presented by Brooks have since been substantiated by further empirical research. For instance, Lehman and Ramil (2003)\footcite{lehmanSoftwareEvolutionBackground2003} discussed in their paper that software systems that are left unchecked will experience a decline in quality over time.
-This phenomenon is encapsulated in Lehman's laws of software evolution, which he formulated in multiple papers. In their paper `Software evolution - Background, theory, practice' Lehman and Ramil present empirical observations that support the notion that software quality tends to deteriorate over time - a phenomenon often described als
-software decay. 
+The persistent nature of these challenges presented by Brooks have since been substantiated by further empirical research. For instance, Lehman and Ramil (2003) discussed in their paper `Software evolution—Background, theory, practice' that software systems which are left unchecked will experience a decline in quality over time.\footcite[34]{lehmanSoftwareEvolutionBackground2003}
+This phenomenon is encapsulated in Lehman's laws of software evolution, which he formulated in multiple papers.  Lehman and Ramil present empirical observations supporting the notion that software quality tends to deteriorate over time\footcite[42]{lehmanSoftwareEvolutionBackground2003} - a phenomenon often described as
+software decay.
 
 \subsection{Software Decay and Technical Debt}
-The term software decay was empirically studied and statistically validated by Eick et al.\ in their influential paper `Does Code Decay? Assessing the Evidence from Change Management Data'(2001)\footcite{eickDoesCodeDecay2001}. They begin by stating that `software does not age or "wear out" in the conventional sense.' \footcite[1]{eickDoesCodeDecay2001}
-If nothing in the environment changes, the software could run forever. However, this is almost never the case as mainly two things change constantly: the hard- and software environments and the requirements of the software.\\
+The term software decay was empirically studied and statistically validated by Eick et al.\ in their influential paper `Does Code Decay? Assessing the Evidence from Change Management Data'(2001). They begin by stating that `software does not age or "wear out" in the conventional sense.' \footcite[1]{eickDoesCodeDecay2001}
+If nothing in the environment changes, the software could run forever. However, this is almost never the case as there is a constant change in several areas. This is predominantly with respect to the two areas of the hard- and software environments and the requirements of the software.\\
 
 This is in accordance with the first two laws of Program Evolution Dynamics formulated by Belady and Lehman (1976).
 The first law states: `A system that is used undergoes continuing change until it is judged more cost effective to freeze and recreate it.'\footcite[228]{beladyModelLargeProgram1976}
-Building on this, their second law suggests: `The entropy of a system (its unstructuredness) increases with time, unless specific work is executed to maintain or reduce it.'\footcite[228]{beladyModelLargeProgram1976}\\
+Building on this, their second law declares: `The entropy of a system (its unstructuredness) increases with time, unless specific work is executed to maintain or reduce it.'\footcite[228]{beladyModelLargeProgram1976}\\
 
-Eick et al.\ analysis provides empirical validation for these theoretical laws, offering `very strong evidence that code does decay.'\footcite[7]{eickDoesCodeDecay2001}
-They base this conclusion on their findings that `the span of changes increases over time'\footcite[7]{eickDoesCodeDecay2001} meaning that modifications to the software tend to affect increasingly larger parts of the system as the software evolves. This growth in the span of changes indicates - and potentially leads to -
-a breakdown in the software's modularity. Consequently the software becomes `more difficult to change than it should be,'\footcite[3]{eickDoesCodeDecay2001} measured specifically by three criteria: cost of change, time to implement change and the resulting quality of the software.
+The analysis of Eick et al.\ provide empirical validation for these theoretical laws, offering `very strong evidence that code does decay.'\footcite[7]{eickDoesCodeDecay2001}
+This conclusion is based on their findings that `the span of changes increases over time'\footcite[7]{eickDoesCodeDecay2001} meaning that modifications to the software tend to affect increasingly larger parts of the system as the software evolves. This growth in the span of changes indicates and potentially leads to
+a breakdown in the software's modularity. Consequently the software becomes `more difficult to change than it should be,'\footcite[3]{eickDoesCodeDecay2001} measured specifically by three criteria: cost of change, time to implement change and the resulting quality of the software.\footcite[3]{eickDoesCodeDecay2001}
 Therefore, the combination of theoretical insights from Lehman and Belday and empirical data from Eick et al. paints a clear picture: software decay is an inevitable consequence of ongoing evolution unless consciously and proactively managed through structured efforts such as continuous refactoring and architectural vigilance.\\
 
-The concept of software decay aligns closely with earlier theoretical discussions by David Parnas (1994). In his influential paper `Software Aging' Parnas describes software aging as a progressive deterioration of a program's internal quality primarily due to frequent, 
+The concept of software decay aligns closely with earlier theoretical discussions by David Parnas (1994). In his influential paper `Software Aging', Parnas describes software aging as a progressive deterioration of a program's internal quality primarily due to frequent, 
 inadequately documented modifications which he termed `Ignorant surgery'\footcite[280]{296790}, as well as the failure to continuously adapt the architecture to evolving needs which he called `Lack of movement'\footcite[280]{296790}.
-Without this proactive maintenance and refactoring effort, Parnas argues that software inevitably reaches a state where changes become more riskier, more costly and error-prone\footcite[280-281]{296790}.
+Without this proactive maintenance and refactoring effort, Parnas argues that software inevitably reaches a state where changes become more risky, costly and error-prone\footcite[280-281]{296790}.
 
 //TODO: Emperical studies like Banker or Bieman maybe?
 
-The term `Technical Debt' was first coined by Ward Cunningham in his paper `The WyCash Portfolio Management System' (1992)\footcite{cunninghamWyCashPortfolioManagement1992} This metaphor was used to describe the trade-off between a quickly implemented solution and a thought out process. 
-When ones uses the quick solution it `is like going into debt.'\footcite[2]{cunninghamWyCashPortfolioManagement1992} Cunningham argues that this debt accumulates interest if not repaid or rewritten. 
-If this does not happen Cunningham warns that `Entire engineering organizations can be brought to a stand-still under the debt load of an unconsolidated implementation'\footcite[2]{cunninghamWyCashPortfolioManagement1992}.\\
+The term `Technical Debt' was first coined by Ward Cunningham in his paper `The WyCash Portfolio Management System' (1992). This metaphor was used to describe the trade-off between a quickly implemented solution and a thought-out process. 
+Use of using the quick solution `is like going into debt.'\footcite[2]{cunninghamWyCashPortfolioManagement1992} Cunningham argues that this debt accumulates interest if not repaid or rewritten. 
+If this does not happen, Cunningham warns that `Entire engineering organizations can be brought to a stand-still under the debt load of an unconsolidated implementation'\footcite[2]{cunninghamWyCashPortfolioManagement1992}.\\
 
-This term was further built upon and refined by the industry through white papers like `Technical Debt' by Steve McConnell (2008)\footcite{mcconnellManagingTechnicalDebt2017} or the `Technical Debt Quadrant' by Martin Fowler (2009)\footcite{fowlerTechnicalDebtQuadrant2009}.
+This term was further built upon and refined by the industry through white papers like `Technical Debt' by Steve McConnell (2008) or the `Technical Debt Quadrant' by Martin Fowler (2009).
 McConnell differentiates between two types of technical debt: Unintentional and Intentional \footcite[3]{mcconnellManagingTechnicalDebt2017}. The first results from bad code, inexperience or unknowingly taking over a project with technical debt.
-The second type is taken on purpose `to optimize for the present rather than for the future.'\footcite[3]{mcconnellManagingTechnicalDebt2017} As the first is not planned, it is difficult to avoid it. The second type however can be managed and controlled.\\
-Additionally, McConnell differentiates between different types of intentional debt. According to him, debt can be taken on short-term or long-term. The short-term debt is taken on to meet a deadline or to deliver a feature. Therefore it is `taken on tactically or reactively'\footcite[3]{mcconnellManagingTechnicalDebt2017}.
-The long-term debt on the other hand is more strategic and is taken on to help the team in a bigger picture. The difference between those two is that short-term debt `should be paid of quickly, perhaps as the first part of the next release cycle'\footcite[4]{mcconnellManagingTechnicalDebt2017}, while 
-long-term debt is something companies can be carried for years.\\
-Martin Fowler on the other hand warned in taking on too much deliberate debt. He argues that `Even the best teams will have debt to deal with as a project goes on - even more reason not to overload it with crummy code.'\footcite{fowlerTechnicalDebtQuadrant2009}
-He created a quadrant between reckless and prudent and deliberate and inadvertent. The difference between reckless and prudent for Fowler is the way the debt is taken on. Reckless debt happens without the right evaluation of the consequences, risking difficulties in the future. Prudent on the other hand is taken on
-with the trade-offs in mind and the knowledge of the future costs. Fowler differentiates between deliberate and inadvertent is similar to McConnell's differentiation between intentional and unintentional debt.
-The combination of those four result in either quick solutions without considering the long-term impact (reckless and deliberate), flawed design or implementation, either carelessly or unknowingly (reckless and inadvertent), 
-purposefully taking on debt to gain a short-term advantage with plans of repayment (prudent and deliberate) or taking on debt due to lack of knowledge or experience (prudent and inadvertent).\\
+The second type is taken on purpose `to optimize for the present rather than for the future.'\footcite[3]{mcconnellManagingTechnicalDebt2017} As the first is not planned, it is difficult to avoid. The second type, however, can be managed and controlled.\\
+Additionally, McConnell differentiates between different types of intentional debt. According to him, debt can be taken on a short-term or long-term basis. The short-term debt is taken on to meet a deadline or to deliver a feature. Therefore it is `taken on tactically or reactively'\footcite[3]{mcconnellManagingTechnicalDebt2017}.
+The long-term debt on the other hand is more strategic and is taken on to help the team in a larger context. The difference between those two is that short-term debt `should be paid off quickly, perhaps as the first part of the next release cycle'\footcite[4]{mcconnellManagingTechnicalDebt2017}, while 
+long-term debt can be carried by companies for years.\\
+Martin Fowler, on the other hand, warned against taking on too much deliberate debt. He argues that `Even the best teams will have debt to deal with as a project goes on - even more reason not to overload it with crummy code.'\footcite{fowlerTechnicalDebtQuadrant2009}
+He created a quadrant between reckless and prudent and deliberate and inadvertent debt. For Fowler, the difference between reckless and prudent is the way the debt is taken on. Reckless debt happens without an appropriate evaluation of the consequences, risking difficulties in the future. Alternatively prudent debt is taken on
+with the trade-offs in mind and the knowledge of the future costs. Fowler differentiates between deliberate and inadvertent in a similar way to McConnell's differentiation between intentional and unintentional debt.
+The various combinations of these four elements in the quadrant results in four different approaches. Reckless and deliberate would mean quick solutions without considering the long-term impact. Reckless and inadvertent results in flawed design or implementation, either carelessly or unknowingly. 
+Prudent and deliberate is purposefully taking on debt to gain a short-term advantage with plans of repayment and finally prudent and inadvertent means taking on debt due to lack of knowledge or experience.\footcite{fowlerTechnicalDebtQuadrant2009}\\
 
-In their article `Technical Debt: From Metaphor to Theory and Practice' (2012) Kruchten et al.\ \footcite{kruchtenTechnicalDebtMetaphor2012} criticize the concept of technical to be `somewhat diluted lately' \footcite[18]{kruchtenTechnicalDebtMetaphor2012}, stating that every issue in software development was called some form of debt. 
-Therefore they set out do define `a theoretical foundation'\footcite[19]{kruchtenTechnicalDebtMetaphor2012} for technical debt.\\
+In their article `Technical Debt: From Metaphor to Theory and Practice' (2012) Kruchten et al.\ criticize the concept of technical to be `somewhat diluted lately' \footcite[18]{kruchtenTechnicalDebtMetaphor2012}, stating that every issue in software development was called some form of debt. 
+Therefore they set out to define `a theoretical foundation'\footcite[19]{kruchtenTechnicalDebtMetaphor2012} for technical debt.\\
 Kruchten et al.\ state that technical debt has become more than the initial coding shortcuts and rather encompasses all kinds of internal software quality comprises.\footcite[19]{kruchtenTechnicalDebtMetaphor2012}
-According to them this includes architectural debt, `documentation and testing'\footcite[20]{kruchtenTechnicalDebtMetaphor2012} as well as requirements and infrastructure debt.
+According to them, this includes architectural debt, `documentation and testing'\footcite[20]{kruchtenTechnicalDebtMetaphor2012} as well as requirements and infrastructure debt.
 All these debt types allow engineers to better discuss the trade-offs with stakeholders and to make better decisions.\\
-Additionally, Kruchten et al. build upon the metaphor of Cunnigham 
 \\TODO: More about Kruchten and Theory?
 
-There have been many studies providing empirical evidence to the theoretical concepts of technical debt. Two very influential ones are the study by Potdar and Shihab (2014) \footcite{potdarExploratoryStudySelfAdmitted2014} as well as the study by Li et al.\ 2015 \footcite{liSystematicMappingStudy2015}.\\
-To do this Potdar and Shihab analyzed four large open source projects to find self admitted technical debt as well as how likely it is that the debt will be removed. They found that `self-admitted technical debt exists in 2.4\% to 31\% of the files.'\footcite[1]{potdarExploratoryStudySelfAdmitted2014}
-Additionally, they found that `developers with higher experience tend to introduce most of the self-admitted technical debt and that time pressures and complexity of the code do not correlate with teh amount of the self-admitted technical debt.'\footcite[1]{potdarExploratoryStudySelfAdmitted2014}
-They also discovered, that `only between 26.3\% and 63.5\% of the self-admitted technical debt gets removed'\footcite[1]{potdarExploratoryStudySelfAdmitted2014}. This relatively low removal rate of self-admitted technical debt indicates a wider challenge:
+There have been many studies providing empirical evidence for the theoretical concepts of technical debt. Highly influential studies were undertaken by Potdar and Shihab (2014) as well as by Li et al.\ (2015)\\
+In their study Potdar and Shihab analyzed four large open source projects to find self-admitted technical debt as well as the likelihood of debt being removed. They found that `self-admitted technical debt exists in 2.4\% to 31\% of the files.'\footcite[1]{potdarExploratoryStudySelfAdmitted2014}
+Additionally, they found that `developers with higher experience tend to introduce most of the self-admitted technical debt and that time pressures and complexity of the code do not correlate with the amount of the self-admitted technical debt.'\footcite[1]{potdarExploratoryStudySelfAdmitted2014}
+They also discovered that `only between 26.3\% and 63.5\% of the self-admitted technical debt gets removed'\footcite[1]{potdarExploratoryStudySelfAdmitted2014}. This relatively low removal rate of self-admitted technical debt indicates a wider challenge:
 developers recognize the issues of their implementation, but defer remediation potentially leading to a major impact on long-term maintainability.\\
 Another approach to provide empirical evidence towards technical debt was taken by Li et al.\ . They conducted a systematic mapping study to `get a comprehensive understanding of the concept of "technical debt"'\footcite[194]{liSystematicMappingStudy2015}, as well as getting an overview of the current research in the field.
-Different questions where asked like what types of technical debt exists, how does technical debt affect software quality and what is the limit of the technical debt metaphor.\\
-They found that the `10 types of TD are requirements TD, architectural TD, design TD, code TD, test TD, build TD, documentation TD, infrastructure TD, versioning TD, and defect TD.'\footcite[215]{liSystematicMappingStudy2015}
-Additionally they found that `Most studies argue that TD negatively affects the maintainability [\ldots] while other QAs and sub-QAs are only mentioned in a handful of studies'\footcite[215]{liSystematicMappingStudy2015}.\\
+Areas of investigation included existing types of technical debt (TD), the effect of technical debt on software quality and quality attributes (QAs) as well as the limit of the technical debt metaphor.\\
+They established that the `10 types of TD are requirements TD, architectural TD, design TD, code TD, test TD, build TD, documentation TD, infrastructure TD, versioning TD, and defect TD.'\footcite[215]{liSystematicMappingStudy2015}
+Additionally they found that `[m]ost studies argue that TD negatively affects the maintainability [\ldots] while other QAs and sub-QAs are only mentioned in a handful of studies'\footcite[215]{liSystematicMappingStudy2015}.\\
 During their studies,  Li et al. observed that the inconsistent and arbitrary use of the term `debt' among researchers and practitioners can cause confusion and hinder effective management of technical debt.\footcite[211]{liSystematicMappingStudy2015} Additionally practitioners `tend to connect any software quality issue to debt, such as code smells debt, dependency debt and usability debt.'\footcite[212]{liSystematicMappingStudy2015}
-This indicates a inflationary use of the term, which one has to be aware of when speaking about technical debt.\\
+This indicates an inflationary use of the term, which is important to keep in mind when speaking about technical debt.\\
 
-The implications these studies have on the software industry are significant. They show that software decay and technical debt are tangible and measurable in real world software projects.
-In their paper `Software complexity and maintenance costs' \footcite{bankerSoftwareComplexityMaintenance1993} (1993) Banker et al. empirically demonstrated that `software maintenance costs are significantly affected by the levels of existing software complexity.' \footcite[12]{bankerSoftwareComplexityMaintenance1993}
+The implications these studies have for the software industry are significant. They show that software decay and technical debt are tangible and measurable in real world software projects.
+In their paper `Software complexity and maintenance costs' (1993) Banker et al. empirically demonstrated that `software maintenance costs are significantly affected by the levels of existing software complexity.' \footcite[12]{bankerSoftwareComplexityMaintenance1993}
 This finding emphasizes the important of proactively managing the software quality and addressing debt early in the project lifecycle, to keep the complexity and therefore cost to a minimum.\\
 To address these effects, practitioners strongly recommend refactoring. Fowler argued in his book `Refactoring: Improving the Design of Existing Code' (2019)
-that `Without refactoring, the internal design - the architecture - of software tend to decay.'\footcite[58]{fowlerRefactoringImprovingDesign2019}
-To prevent this he suggests `Regular refactoring [to] help[s] keep the code in shape'\footcite[58]{fowlerRefactoringImprovingDesign2019}.\\
+that `[w]ithout refactoring, the internal design - the architecture - of software tend to decay.'\footcite[58]{fowlerRefactoringImprovingDesign2019}
+To prevent this, he suggests `[r]egular refactoring [to] help[s] keep the code in shape'\footcite[58]{fowlerRefactoringImprovingDesign2019}.\\
 To prevent long-term issues, practitioners recommend to actively manage technical debt through refactoring, tracking and other strategies 
 that integrate debt management into the software development process.\\
+
+
 
 \subsection{Mitigation Strategies in Commercial Environments}
 Technical debt and software decay have been recognized as significant challenges in the software industry. They can lead to 
