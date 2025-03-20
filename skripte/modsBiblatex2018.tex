@@ -103,18 +103,18 @@
   }
 
 %Verhindern, dass bei mehreren Quellen des gleichen Autors im gleichen Jahr
-%Buchstaben nach der Jahreszahl angezeigt werden wenn sich das Keyword in usera unterscheidet.
+%Buchstaben nach der Jahreszahl angezeigt werden wenn sich das Keyword in shorttitle unterscheidet.
 \DeclareExtradate{
   \scope{
     \field{labelyear}
     \field{year}
     }
     \scope{
-      \field{usera}
+      \field{shorttitle}
      }
 }
 
-%% Anzeige des Jahres nach dem Stichwort (usera) im Literaturverzeichnis
+%% Anzeige des Jahres nach dem Stichwort (shorttitle) im Literaturverzeichnis
 %% Wenn das Jahr bei Online-Quellen nicht explizit angegeben wurde, wird nach
 %% dem Stichwort 'o. J.' ausgegeben. Nach der URL steht dann 'keine
 %% Datumsangabe'. Ist das Jahr definiert, wird es an beiden Stellen ausgegeben.
@@ -122,7 +122,7 @@
 %% Für Nicht-Online-Quellen wird nichts geändert.
 \renewbibmacro*{date+extradate}{%
   \printtext[parens]{%
-    \printfield{usera}%
+    \printfield{shorttitle}%
     \setunit{\printdelim{titleyeardelim}}%
     \ifentrytype{online}
        {\setunit*{\addspace\addcomma\addspace}%
@@ -131,7 +131,7 @@
        {\printlabeldateextra}}%
        {\printlabeldateextra}}}
 
-%% Anzeige des Jahres nach dem Stichwort (usera) in der Fussnote
+%% Anzeige des Jahres nach dem Stichwort (shorttitle) in der Fussnote
 %% das Stichwort hat der Aufrufer hier schon ausgegeben.
 %% siehe auch Kommentar zu: \renewbibmacro*{date+extradate}
 \renewbibmacro*{cite:labeldate+extradate}{%
@@ -172,7 +172,7 @@
         \setunit{\printdelim{nonametitledelim}}}
        {\printnames{labelname}%
         \setunit{\printdelim{nametitledelim}}}%
-     \printfield{usera}%
+     \printfield{shorttitle}%
      \setunit{\printdelim{titleyeardelim}}%
      \usebibmacro{cite:labeldate+extradate}}
     {\usebibmacro{cite:shorthand}}}
@@ -233,7 +233,7 @@
       {\toggletrue{abx@bool@giveninits}%
         \printnames[family-given]{labelname}%
         \setunit{\printdelim{nameyeardelim}}}%
-      \printfield{usera}%
+      \printfield{shorttitle}%
       \setunit{\printdelim{titleyeardelim}}%
      \usebibmacro{cite:labeldate+extradate}}}}
    {\usebibmacro{cite:shorthand}}}

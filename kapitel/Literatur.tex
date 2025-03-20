@@ -83,6 +83,13 @@ To prevent this, he suggests `[r]egular refactoring [to] help[s] keep the code i
 To prevent long-term issues, practitioners recommend to actively manage technical debt through refactoring, tracking and other strategies 
 that integrate debt management into the software development process.\\
 
+In summary, software decay describes the gradual deterioration of software quality over time, driven continuous modifications, environmental changes and increasing complexity. This as theoretically established Belady, Lehman and Parnas and empirically validated by Eick et al. and others.
+Closely related yet conceptually distinct, technical debt captures the intentional and unintentional compromises made during software development. This leads to future costs if not proactively managed.
+While decay views a border spectrum of deterioration, technical debt specifically highlights how certain software engineering decisions increases the problem. 
+Empirical research by Potdar and Shihab, Li et al., and Banker et al. underscores the tangible impact technical debt and software complexity have on real-world maintenance costs and software quality.
+Consequently, addressing software decay effectively in practice demands a combination of proactive quality management, regular refactoring, explicit technical debt tracking and structured maintenance strategies.
+With these foundational concepts clarified, the next section explores concrete mitigation strategies employed in commercial software environments, providing valuable insights into preventing software decay within the unique constraints of military software development.
+
 
 
 \subsection{Mitigation Strategies in Commercial Environments}
@@ -129,14 +136,14 @@ Complementing these Agile practices, the adoption of automated \ac{CI/CD} pipeli
 and broader software decay through rigorous quality control and systematic automation.\\
 
 \paragraph{Continuous Integration/Continuous Deployment}
-\ac{CI} was first introduced by Beck in the context of \ac{XP} and later refined by Martin Fowler in his influential article `Continuous Integration'\footcite{ContinuousIntegration}.
+\ac{CI} was first introduced by Beck in the context of \ac{XP} and later refined by Martin Fowler in his influential article `Continuous Integration'\footcite{fowlerContinuousIntegration2006}.
 Fowler describes \ac{CI} as not only the frequent, automated integration of code into the main repository but also the systematic automation of building and testing process.
-According to Fowler, `Self-testing code is so important to Continuous Integration that it is a necessary prerequisite.'\footcite{ContinuousIntegration}.
-Furthermore, another critical prerequisite is `that they can correctly build the code,'\footcite{ContinuousIntegration} thus guaranteeing that code changes consistently
+According to Fowler, `Self-testing code is so important to Continuous Integration that it is a necessary prerequisite.'\footcite{fowlerContinuousIntegration2006}.
+Furthermore, another critical prerequisite is `that they can correctly build the code,'\footcite{fowlerContinuousIntegration2006} thus guaranteeing that code changes consistently
 integrate without issues.\\
 
 To further prevent technical debt and broader software decay, a quality analysis tools (e.g. static code analyzers such as SonarQube or DeepSource) are frequently integrated into
-\ac{CI} pipelines. These tools often provide a metric to evaluate technical debt which is calculated based on the effort in minutes to fix the found maintainability issues.\footcite{UnderstandingMeasuresMetrics}
+\ac{CI} pipelines. These tools often provide a metric to evaluate technical debt which is calculated based on the effort in minutes to fix the found maintainability issues.\footcite{sonarqubeUnderstandingMeasuresMetrics2025}
 In their paper `Technical Debt Measurement during Software Development using Sonarqube: Literature Review and a Case Study' (2021)\footcite{murilloTechnicalDebtMeasurement2021}
 Murillo et al. found that SonarQube is a useful tool for early debt detection. The estimated remediation effort metric allows for a good debt management prioritization.\footcite[5]{murilloTechnicalDebtMeasurement2021}
 However during their research they noticed if they changed SonarQubes default rules by just 26 rules, the technical debt effort would increase from
