@@ -21,7 +21,7 @@ This phenomenon is encapsulated in Lehman's laws of software evolution, which he
 software decay.
 
 \subsection{Software Decay and Technical Debt}
-The term software decay was empirically studied and statistically validated by Eick et al.\ in their influential paper `Does Code Decay? Assessing the Evidence from Change Management Data'(2001). They begin by stating that `software does not age or "wear out" in the conventional sense.' \footcite[1]{eickDoesCodeDecay2001}
+The term software decay or erosion was empirically studied and statistically validated by Eick et al.\ in their influential paper `Does Code Decay? Assessing the Evidence from Change Management Data'(2001). They begin by stating that `software does not age or "wear out" in the conventional sense.' \footcite[1]{eickDoesCodeDecay2001}
 If nothing in the environment changes, the software could run forever. However, this is almost never the case as there is a constant change in several areas. This is predominantly with respect to the two areas of the hard- and software environments and the requirements of the software.\\
 
 This is in accordance with the first two laws of Program Evolution Dynamics formulated by Belady and Lehman (1976).
@@ -160,19 +160,57 @@ Specially, \ac{CD} effectively reduces errors, particularly those introduced by 
 Empirical evidence from academic studies clearly demonstrates the effectiveness of \ac{CI/CD} in reducing both technical debt and software decay.
 For instance, 
 TODO: Find emperical evidence for CI/CD\\
-\subsubsection{Specific Techniques and Tool-Supported Practices}
-In addition to high-level strategies, there are a variety of specific techniques and tool-supported practices which can be used to managed technical debt 
-and prevent software decay. These practices are often integrated into the development process to provide targeted, effective quality assurance and debt management.\\
-\paragraph{Refactoring}
-As mentioned earlier, refactoring is a key practice to prevent the code base from decaying. However, not only the complexity can be reduced by refactoring.
-In their study `An Empirical Study of Refactoring Challenges and Benefits at Microsoft' (2014)\footcite{kimEmpiricalStudyRefactoringChallenges2014} Kim et al.
-investigated benefits and challenges of refactoring at Microsoft, due to the fact that other studies showed very different results when it comes to the benefits of refactoring.
+\subsubsection{Code-Level Practices for Preventing Decay}
+On the code level, a variety of practices can be used to prevent software decay and technical debt. The two major have been previously introduced: continuous refactoring and maintaining software quality.\\
+The benefits of refactoring have been demonstrated int the previous section. However, deeper empirical studies illustrate the impacts and challenges in a commercial environment.
+Kim et al. (2014) observed in their study `An empirical study of refactoring challenges and benefits at Microsoft' observed that `[d]evelopers perceive that refactoring involves substantial cost and risks'\footcite[17]{kimEmpiricalStudyRefactoringChallenges2014}.
+Additionally they found that the benefits refactoring brings `multidimensional'\footcite[17]{kimEmpiricalStudyRefactoringChallenges2014} and that its not consistent across different metrics, which is why they recommended a tool to monitor the impact of refactoring across these metrics.
+Similar, Tempero et al. (2017) found certain barriers to refactoring in their study `Barriers to refactoring'. They found that at least 40\% of the developers in their study would not refactor classes, even though they thought it would be beneficial. \footcite[60]{temperoBarriersRefactoring2017}
+Tempero et al. claims the reasons were `lack of resources, of information identifying consequences, of certainty regarding risk, and of support from management.'\footcite[60]{temperoBarriersRefactoring2017} even though developers did not state a lack of refactoring tools as a reason.
+Tempore et al. suggested to eliminate these barriers, refactoring should be goal-oriented instead of operations-oriented and a better quantification of the benefits refactoring should bring to better reach a decision.\footcite[61]{temperoBarriersRefactoring2017}\\
+Both studies show that the theoretical benefits of refactoring are not always directly translated into the industry. Developers often perceive refactoring as risky and costly, even though they see the benefits.\\
+\TODO: Write more about this
+
+\subsubsection{Architectural Strategies for Long-Term Qualtiy}
+In addition to code-level practices, maintaining the software architecture is crucial to prevent software decay and technical debt. The architecture was created as a solution to a problem and it should be ensured that the architecture erosion is prevented.
+This erosion happens through changing requirements. In an attempted to meet them, developers often make changes to the architecture.\footcite[1]{desilvaControllingSoftwareArchitecture2012} These changes can lead to a degradation of the architecture and the introduction of technical debt.
+To prevent this, a variety of strategies can be employed. These have been investigated by De Silvia and Balasubramaniam (2012).\\
+One option they named is process-oriented architecture conformance.\footcite[135]{desilvaControllingSoftwareArchitecture2012} This practice is used to ensure that code changes do not violate high level design rules. To enable this process, the required documentation, monitoring and dependency analysis need to be in place.\footcite[135]{desilvaControllingSoftwareArchitecture2012}
+This enables teams to detect violations through architecture compliance checking tools, preventing the drift away from the original architecture.
+\\TODO: Write more about thsis
+
+\subsubsection{Process and Organizational Measures}
+Organizational and process-oriented practices form the third pillar in combating software decay.
+One crucial practice is the management of technical debt. Many companies track technical debt items like outdated modules, quick fixes or known architectural shortcomings.
+This can be done through issue trackers or backlogs to allow for structured approach and time allocation to address them regularly.
+An industry-wide survey conducted by Ramač et al. (2021) found that 47\% `had some practical experience with TD identification and/or management'\footcite[40]{ramacPrevalenceCommonCauses2021}.
+By visualizing and tracking technical debt, teams can prioritize and address debt items systematically, preventing their accumulation and broader software decay.
+Ramač et al. also found that the most common cause for technical debt was time pressure caused by deadlines\footcite[40]{ramacPrevalenceCommonCauses2021} and the `single most cited effect of TD is delivery delay.'\footcite[40]{ramacPrevalenceCommonCauses2021}
+This indicates that time pressure is not only a cause for technical debt but also a consequence, leading to a vicious cycle of debt accumulation and delivery delays. To break this cycle, a balance of new development and maintenance is crucial to prevent a border software decay.
+This is promoted by agile methodologies through principle of continuos improvement, through practices like including refactoring in their definition of done or allowing dedicated maintenance sprints.
+
+Another important practice is conducting regular code reviews as part of the development workflow. This practice dates back to 1976 when Michael Fagan reviewed the benefits of peer code inspections.\footcite[183]{faganDesignCodeInspections1976}
+He found that `inspections increase productivity and improve final program quality.'\footcite[205]{faganDesignCodeInspections1976}
+Since then code reviews have become more lightweight compared to the inspection proposed by Fagan, increasing participation. By removing in-person meetings and reviewer checklists, code reviews have become a standard practice in software development and usually occur before code is merged into the main repository.
+McIntosh et al. (2016) investigated the impact of code reviews on software quality, by comparing the review coverage, participation and expertise of the reviewer against the post-release defects.\footcite[6]{mcintoshEmpiricalStudyImpact2016}
+They found that coverage, while important, is not the only factor that influences the post-release defects.\footcite[39]{mcintoshEmpiricalStudyImpact2016}
+They state that `review participation should be considered when making integration decisions.'\footcite[39]{mcintoshEmpiricalStudyImpact2016}
+Additionally, they recommend that if an expert in the matter is not available for the original code, they should be included in the review process to prevent defects.\footcite[39]{mcintoshEmpiricalStudyImpact2016}
+
+In conclusion, having a structured approach to managing technical debt and prevent software decay is crucial to maintaining software quality and long-term project sustainability.
+Process-integrated practices like code reviews, explicit technical debt control and a culture of continuous refactoring create an environment that proactively manages software decay and technical debt.
+
+\subsubsection{Tool Support for Continous Quality Assurance}
+To further support the proactively manage software decay, technical debt and the overall code health over time, a variety of tools have established themselves in the industry.
+Automated quality assurance tools are often integrated into modern development processes. A common approach, as previously mentioned, is the use of \ac{CI} pipelines. These can be used in combination with quality gates that use static code analysis to block additions to the code base that do not meet the quality standards e.g. a 
+certain code coverage, complexity or maintainability threshold. This allows developers to catch issues early before they are introduced into the code base and rectify them. While the concept of quality gates is not new, the automation of these gates have been investigated by Uzunova et al. (2024).
+They found that these gates can serve as a check point to assess software metrics like code coverage, bug density or compliance with coding standards. \footcite[8]{uzunovaQualityGatesSoftware2024}
+To allow for this kind of automation, they mentioned tools like SonarQube, Sigrid or Maverix.ai. These tools allow for real-time feedback allowing for an enforcement of quality criteria.\footcite[8]{uzunovaQualityGatesSoftware2024}\\
 
 
 
-\subsubsection{Formal Debt Management and Tracking Techniques}
-\subsubsection{Organizational and Cultural Factors}
-\subsubsection{Conclusion}
+
+
 
 
 
