@@ -157,9 +157,6 @@ Beyond predictability, additional significant benefits include team empowerment,
 Specially, \ac{CD} effectively reduces errors, particularly those introduced by poor configuration management, including problematic areas such as
 `configuration files, scripts to create databases and their schemas, build scripts, test harnesses, even development environments and operating system configurations'\footcite[19]{humbleContinuousDeliveryReliable2010}.\\
 
-Empirical evidence from academic studies clearly demonstrates the effectiveness of \ac{CI/CD} in reducing both technical debt and software decay.
-For instance, 
-TODO: Find emperical evidence for CI/CD\\
 \subsubsection{Code-Level Practices for Preventing Decay}
 On the code level, a variety of practices can be used to prevent software decay and technical debt. The two major have been previously introduced: continuous refactoring and maintaining software quality.\\
 The benefits of refactoring have been demonstrated int the previous section. However, deeper empirical studies illustrate the impacts and challenges in a commercial environment.
@@ -169,15 +166,47 @@ Similar, Tempero et al. (2017) found certain barriers to refactoring in their st
 Tempero et al. claims the reasons were `lack of resources, of information identifying consequences, of certainty regarding risk, and of support from management.'\footcite[60]{temperoBarriersRefactoring2017} even though developers did not state a lack of refactoring tools as a reason.
 Tempore et al. suggested to eliminate these barriers, refactoring should be goal-oriented instead of operations-oriented and a better quantification of the benefits refactoring should bring to better reach a decision.\footcite[61]{temperoBarriersRefactoring2017}\\
 Both studies show that the theoretical benefits of refactoring are not always directly translated into the industry. Developers often perceive refactoring as risky and costly, even though they see the benefits.\\
-\TODO: Write more about this
+
+\ac{TDD} is another code-level practice previously introduced. It was first formally described by Kent Beck in his book
+`Test Driven Development: By Example' (2002) in which he argues that writing tests before the implementation
+encourages cleaner code and gives developers the confidence to tackle complex problems.\footcite[pp. 8-9]{beckTestdrivenDevelopmentExample2002}
+This practice promotes modularity, testability and clean design, which are key characteristics in preventing software decay. By focusing solely on code
+that fulfills predefined tests, developers are guided toward creating small and focused code, which is loosely coupled. These qualities make systems
+easier to maintain and refactor, directly counteracting long-term degradation.
+Multiple studies have confirmed the quality-enhancing effects of \ac{TDD}.
+In an empirical study, Mäkinen and Münch (2014) found that  TDD most commonly led to a reduction in defects and increased maintainability, 
+though its effect on overall software quality was more limited.\footcite[13]{inproceedings}
+Importantly, they noted that TDD significantly improved test coverage, a key factor in preventing unintentional decay.
+These gains, however, were accompanied by higher development effort.\footcite[13]{inproceedings}\\
+This is consistent with the case study by Bhat and Nagappan (2006), who reported a 15-35\% increase in development time when using \ac{TDD}.\footcite[361]{bhatEvaluatingEfficacyTestdriven2006a}
+However they also observed that `the resulting quality was higher than teams that adopted a non-TDD approach by an order of at least two times.'\footcite[361]{bhatEvaluatingEfficacyTestdriven2006a}
+Similarly, Bhadauria et al. (2020) confirmed TDD’s positive effect on code quality and defect reduction.
+Interestingly, their study found that for less experienced developers, TDD did not lead to increased development time, and was associated with higher developer satisfaction.\footcite[1058]{bhadauriaPerformanceOutcomesTestDriven2020}\\
+These findings indicate that TDD can significantly improve code quality and maintainability - two critical factors in preventing software decay.
+However, the trade-off in development effort and time must be carefully considered, which may explain TDD's limited adoption in the industry.\\
 
 \subsubsection{Architectural Strategies for Long-Term Qualtiy}
-In addition to code-level practices, maintaining the software architecture is crucial to prevent software decay and technical debt. The architecture was created as a solution to a problem and it should be ensured that the architecture erosion is prevented.
-This erosion happens through changing requirements. In an attempted to meet them, developers often make changes to the architecture.\footcite[1]{desilvaControllingSoftwareArchitecture2012} These changes can lead to a degradation of the architecture and the introduction of technical debt.
-To prevent this, a variety of strategies can be employed. These have been investigated by De Silvia and Balasubramaniam (2012).\\
-One option they named is process-oriented architecture conformance.\footcite[135]{desilvaControllingSoftwareArchitecture2012} This practice is used to ensure that code changes do not violate high level design rules. To enable this process, the required documentation, monitoring and dependency analysis need to be in place.\footcite[135]{desilvaControllingSoftwareArchitecture2012}
-This enables teams to detect violations through architecture compliance checking tools, preventing the drift away from the original architecture.
-\\TODO: Write more about thsis
+In addition to code-level practices, maintaining the software architecture is essential for preventing software decay and architectural-level technical debt. 
+Architecture erosion, characterized by increasing divergence from the intended design due to continuos modifications and changing requirements,
+significantly impacts maintainability and introduces substantial technical debt.\footcite[1]{desilvaControllingSoftwareArchitecture2012}
+To mitigate these risks, one common strategy is architecture conformance checking, a process ensuring code changes comply with predefined design rules.
+De Silva and Balasubramaniam (2012) emphasize that proper documentation, dependency analysis and compliance monitoring are critical prerequisites for
+effectively employing this strategy.\footcite[135]{desilvaControllingSoftwareArchitecture2012}\\
+Beyond mere conformance, teams also must embrace managed architectural evolution, adapting architectures systematically rather than reactively. Such evolution
+should actively balance new requirements with long-term sustainability to avoid uncontrolled erosion.\footcite[34]{liUnderstandingSoftwareArchitecture2022}
+A key component in this proactive approach is managing the architectural technical debt. These structural design decision could impact future adaptability if not
+carefully controlled. Besker et al. (2016) suggest a framework to systematically identify, analyze and address architectural debt to preserve structural integrity.\footcite[11]{beskerManagingArchitecturalTechnical2018}\\
+Nevertheless, when architectural decay becomes substantial, teams face critical decisions between incremental refactoring and radical redesigns.
+Nord et al. (2012) highlight that systematic impact analysis, guided by explicit architectural metrics, is crucial for making informed decisions on when substantial 
+redesign becomes necessary to substantially restore software quality.\footcite[99]{nordSearchMetricManaging2012}\\
+Practical tooling, such as automated architectural monitoring and recovery solutions, plays a significant supportive role in these efforts. 
+The detailed application and empirical evidence of such tools are discussed thoroughly in the subsequent section on Tool Support for Continuous Quality Assurance.\\
+
+In summary, proactively maintaining software architecture is essential for mitigating long-term software decay. Architecture conformance checking 
+prevents the inadvertent erosion by ensuring adherence to established design principles. Managed architectural evolution further ensures that the architecture
+can sustainably adapt to changing requirements without introducing uncontrolled structural degradation. Moreover, explicitly recognizing and managing architectural
+technical debt enables targeted interventions before significant decays occurs. Ultimately, strategic decisions on refactoring versus comprehensive redesign should be 
+guided by systematic architectural analysis, metrics and empirical evaluations to ensure long-term maintainability and quality.
 
 \subsubsection{Process and Organizational Measures}
 Organizational and process-oriented practices form the third pillar in combating software decay.
@@ -206,10 +235,36 @@ Automated quality assurance tools are often integrated into modern development p
 certain code coverage, complexity or maintainability threshold. This allows developers to catch issues early before they are introduced into the code base and rectify them. While the concept of quality gates is not new, the automation of these gates have been investigated by Uzunova et al. (2024).
 They found that these gates can serve as a check point to assess software metrics like code coverage, bug density or compliance with coding standards. \footcite[8]{uzunovaQualityGatesSoftware2024}
 To allow for this kind of automation, they mentioned tools like SonarQube, Sigrid or Maverix.ai. These tools allow for real-time feedback allowing for an enforcement of quality criteria.\footcite[8]{uzunovaQualityGatesSoftware2024}\\
+Utilizing this approach allows the developers to catch issues early and prevent the introduction of technical debt and software decay into the codebase.\\
 
+As discussed in a previous section, ensuring that changes do not divert from the original architecture design is crucial to prevent the erosion of the architecture.
+To support this, tools have been developed to automatically detect architecture violations. These tools are able to collect information about the architecture from the source code
+and compare it to the proposed architecture.\footcite[6]{thomasStaticDynamicArchitecture2017} In their case study 
+`Evaluating an Architecture Conformance Monitoring Solution' (2016) Caracciolo et al. investigated three different tools to detect architecture violations:
+SonarQube, Sonargraph and TeamCity\footcite[43]{caraccioloEvaluatingArchitectureConformance2016}. They concluded that their approach was 
+`can be applied in an industrial context.'\footcite[44]{caraccioloEvaluatingArchitectureConformance2016}
+They furthermore argue that the tools can be conveniently added to a dashboard, allowing for a short feedback loop, allowing proactive management of architectural violations.\footcite[44]{caraccioloEvaluatingArchitectureConformance2016}
+These benefits can be seen in their case study, where they observed that the overall violations decreased from 606 to 600 in an 18 year old system with one million lines of code.\footcite[43]{caraccioloEvaluatingArchitectureConformance2016}.\\
 
+There have been empirical studies that show the effectiveness of these tools. For example in their paper `Empirical investigation of the influence of continuous integration bad practices on software quality' (2022)
+Silva and Bezerra found that `CI can improve software quality, especially about cohesion.'\footcite[4]{silvaEmpiricalInvestigationInfluence2022} However they also viewed the impact
+of bad practices in the implementation of CI. They could observe that the quality levels were incorrectly set and the standard configuration tools were used instead of 
+adjusting them to the project needs, overall harmed the software quality indicators. \footcite[4]{silvaEmpiricalInvestigationInfluence2022}
+This indicates that while the tools can be effective, they need to be correctly configured and adjusted to the project needs to be effective.\\
 
+\subsubsection{Synthesis of Commerical Mitigation Strategies}
+Effectively managing software decay and technical debt requires a balanced combination of technical architectural and organizational strategies.
+At the highest level, Agile methodologies and \ac{CI/CD} frameworks foster proactive maintenance cultures, reducing entropy through incremental improvement
+and automated quality assurance. On the code-level, disciplined practices such as continuous refactoring and \ac{TDD} have empirically demonstrated their effectiveness
+in maintaining modularity, testability and reducing technical debt - with the downside of a higher development effort. Architectural strategies complement these
+by ensuring structural integrity through systematic conformance checks, managed evolution and explicit handling of architectural technical debt, especially as
+projects scale or requirements evolve.
 
+Organizational measures - such as technical debt tracking, dedicated maintenance cycles and structured code reviews - provide essential process-level support,
+enabling teams to systematically prioritize and address decay risks before they escalate. Finally, the strategic use of modern quality-assurance tools, integrated
+into \ac{CI} pipelines and architectural monitoring systems, ensures continuos, automated and actionable feedback, thereby enabling developers to maintain
+software quality proactively. Ultimately, integrating these diverse practices into a combined quality culture is vital for sustainable software development,
+reduced maintenance costs and the long-term viability of software products.\\
 
 
 
