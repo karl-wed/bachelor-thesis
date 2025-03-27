@@ -90,10 +90,10 @@ To prevent this, he suggests `[r]egular refactoring [to] help[s] keep the code i
 To prevent long-term issues, practitioners recommend actively managing technical debt through refactoring, tracking and other strategies 
 that integrate debt management into the software development process.\\
 
-In summary, software decay describes the gradual deterioration of software quality over time, driven by continuous modifications, environmental changes and increasing complexity. This as theoretically established Belady, Lehman and Parnas and empirically validated by Eick et al. and others.
+In summary, software decay describes the gradual deterioration of software quality over time, driven by continuous modifications, environmental changes and increasing complexity. This was theoretically established by Belady, Lehman and Parnas and empirically validated by Eick et al. and others.
 Closely related yet conceptually distinct, technical debt captures the intentional and unintentional compromises made during software development. This leads to future costs if not proactively managed.
-While decay views a border spectrum of deterioration, technical debt specifically highlights how certain software engineering decisions increases the problem. 
-Empirical research by Potdar and Shihab, Li et al., and Banker et al. underscores the tangible impact technical debt and software complexity have on real-world maintenance costs and software quality.
+While decay views a border spectrum of deterioration, technical debt specifically highlights how certain software engineering decisions increase the problem. 
+Empirical research by Potdar and Shihab, Li et al. and Banker et al. underscores the tangible impact technical debt and software complexity have on real-world maintenance costs and software quality.
 Consequently, addressing software decay effectively in practice demands a combination of proactive quality management, regular refactoring, explicit technical debt tracking and structured maintenance strategies.
 With these foundational concepts clarified, the next section explores concrete mitigation strategies employed in commercial software environments, providing valuable insights into preventing software decay within the unique constraints of military software development.
 
@@ -101,44 +101,45 @@ With these foundational concepts clarified, the next section explores concrete m
 
 \subsection{Mitigation Strategies in Commercial Environments}
 Technical debt and software decay have been recognized as significant challenges in the software industry. They can lead to 
-increased maintenance costs, reduced software quality and decreased developer productivity, overall leading to a more expensive and less competitive product.
-To address the challenges, practitioners and researchers have developed a variety of strategies to manage, prevent and mitigate technical debt.
+increased maintenance costs, reduced software quality and decreased developer productivity, overall resulting in a more expensive and less competitive product.
+With these challenges in mind, practitioners and researchers have developed a variety of strategies which manage, prevent and mitigate technical debt.
 This section will provide an overview of the most common strategies, techniques and frameworks used in commercial environments to address technical debt.\\
 
 \subsubsection{High-Level Mitigation Strategies}
 To efficiently mitigate software decay and technical debt, proactive management strategies are essential. These strategies aim to prevent the accumulation of 
-debt and address software entropy and decay directly by integrating quality assurance directly into everyday development process.
+debt and address software entropy and decay directly by integrating quality assurance into everyday development process.
 Such strategies include Agile methodologies like Scrum or \ac{XP} as well as technical practices
 such as \ac{CI/CD}. These practices are designed to embed ongoing maintenance and quality assurance into routine workflows, thus combating software entropy at its core.\\
 Agile methods emphasize frequent iterations, close collaboration between developers and stakeholders as well as continuous refactoring to prevent the
-gradual degradation of the software quality and mitigation software decay.\\
-Similarly, \ac{CI/CD} introduces rigorous automation, rapid feedback loops and early detection of defects to proactively controlling both technical debt accumulation
+gradual degradation of software quality and mitigation of software decay.\\
+Similarly, \ac{CI/CD} introduces rigorous automation, rapid feedback loops and early detection of defects to proactively control both technical debt accumulation
 and broader software quality decay. Collectively, these methodologies create a culture of continuous improvement, adaptability and quality assurance, 
 ensuring software maintainability and long-term project sustainability.\\
+
 \paragraph{Agile Methodologies}
 In their paper `Technical Debt Management in Agile Software Development: A Systematic Mapping Study' (2024)\footcite{leiteTechnicalDebtManagement2024} Leite et al.
 investigated how agile methods can be used to manage technical debt. They found that `\ldots Scrum and Extreme Programming are the most utilized methodologies 
 for managing technical debt.'\footcite[318]{leiteTechnicalDebtManagement2024} While this study focuses explicitly on technical debt, both Scrum and \ac{XP}
-also inherently address the boarder issue of software decay by encouraging proactive quality management and continuous improvement practices.\\
-Scrum was first presented by Ken Schwaber in his paper `SCRUM Development Process' (1995)\footcite{schwaberSCRUMDevelopmentProcess1997}. 
-It has since become on of the most popular agile frameworks in the software industry. Scrum explicitly manages software quality and technical debt through iterative cycles called sprints.
+also inherently address the broader issue of software decay by encouraging proactive quality management and continuous improvement practices.\\
+Scrum was first presented by Ken Schwaber in his paper `SCRUM Development Process' (1997)\footcite{schwaberSCRUMDevelopmentProcess1997}. 
+It has since become one of the most popular agile frameworks in the software industry. Scrum explicitly manages software quality and technical debt through iterative cycles called sprints.
 After each sprint, the team reflects on their work, identifies quality issues, technical debt and potential decay indicators and plans improvements in
-retrospectives. Leite et al. found that for identifying technical debt in Scrum the Sprint and Product Backlog are the most used artifacts.\footcite[315]{leiteTechnicalDebtManagement2024}
+retrospectives. Leite et al. found that the most used artifacts for identifying technical debt in Scrum are the Sprint and Product Backlog.\footcite[315]{leiteTechnicalDebtManagement2024}
 By explicitly managing these items with their workflow, teams effectively reduce both debt and software entropy, improving overall software maintainability.\\
 
-\ac{XP}, first introduced by Kent Beck in his influential book `Extreme Programming Explained' (1999)\footcite{beckExtremeProgrammingExplained1999},
-explictly integrates practices to enhance software quality and prevent software decay directly.
-\ac{XP} practices such as pair programming, \ac{TDD} and \ac{CI} and continuous refactoring help maintain high software quality, thus preventing both debt accumulation
+\ac{XP} was first introduced by Kent Beck in his influential book `Extreme Programming Explained' (1999)\footcite{beckExtremeProgrammingExplained1999}.
+It explicitly integrates practices to enhance software quality and directly prevent software decay.
+\ac{XP} practices such as pair programming, \ac{TDD}, \ac{CI} and continuous refactoring help maintain high software quality, thus preventing both debt accumulation
 and broader software entropy.
-Pair programming prevents decay by ensuring higher-quality code through collaborative review and knowledge sharing between developers.
-Continuous Integration ensures regular, frequent code integration, significantly reducing integration complexity and associated decay risks.
-\ac{TDD} ensures robust test coverage, catching defects early and preventing quality erosion.
-Refactoring, a cornerstone XP practice, has proven its effectiveness empirically; for example, Moser et al.
-demonstrated in their case study(2008)\footcite{moserCaseStudyImpact2008} that refactoring explicitly `prevents an explosion of complexity'\footcite[262]{moserCaseStudyImpact2008}
+Pair programming prevents decay by securing higher-quality code through collaborative review and knowledge sharing between developers.
+\ac{CI} provides regular, frequent code integration, significantly reducing integration complexity and associated decay risks.
+\ac{TDD} establishes robust test coverage, catching defects early and preventing quality erosion.
+The effectiveness of refactoring, a cornerstone XP practice, has been proven empirically. For example, in their case study (2008) Moser et al.
+demonstrated that refactoring explicitly `prevents an explosion of complexity'\footcite[262]{moserCaseStudyImpact2008}
 and promotes simpler, easier-to-maintain designs.
-They found it drove developers toward simpler designs, reducing complexity, coupling, and long-term maintenance issues—directly counteracting software decay.\footcite[262]{moserCaseStudyImpact2008}
+They found it drove developers toward simpler designs, reducing complexity, coupling, and long-term maintenance issues thereby directly counteracting software decay.\footcite[262]{moserCaseStudyImpact2008}
 Beck argues that \ac{XP}'s incremental, continuous quality practices consistently maintain software quality and adaptability throughout development, directly addressing both debt and broader software decay.\\
-Overall Agile methodologies, particularly Scrum and \ac{XP}, systematically manage technical debt and proactively prevent software decay by fostering continuous improvement, structured quality management and adaptability.
+On the whole, agile methodologies, particularly Scrum and \ac{XP}, systematically manage technical debt and proactively prevent software decay by fostering continuous improvement, structured quality management and adaptability.
 Complementing these Agile practices, the adoption of automated \ac{CI/CD} pipelines further enhances the proactive management of both technical debt
 and broader software decay through rigorous quality control and systematic automation.\\
 
@@ -149,65 +150,65 @@ According to Fowler, `Self-testing code is so important to Continuous Integratio
 Furthermore, another critical prerequisite is `that they can correctly build the code,'\footcite{fowlerContinuousIntegration2006} thus guaranteeing that code changes consistently
 integrate without issues.\\
 
-To further prevent technical debt and broader software decay, a quality analysis tools (e.g. static code analyzers such as SonarQube or DeepSource) are frequently integrated into
+To further prevent technical debt and broader software decay, quality analysis tools such as static code analyzers like SonarQube or DeepSource are frequently integrated into
 \ac{CI} pipelines. These tools often provide a metric to evaluate technical debt which is calculated based on the effort in minutes to fix the found maintainability issues.\footcite{sonarqubeUnderstandingMeasuresMetrics2025}
 In their paper `Technical Debt Measurement during Software Development using Sonarqube: Literature Review and a Case Study' (2021)\footcite{murilloTechnicalDebtMeasurement2021}
 Murillo et al. found that SonarQube is a useful tool for early debt detection. The estimated remediation effort metric allows for a good debt management prioritization.\footcite[5]{murilloTechnicalDebtMeasurement2021}
 However during their research they noticed if they changed SonarQubes default rules by just 26 rules, the technical debt effort would increase from
-1 hours and 50 minutes to 11 hours.\footcite[4]{murilloTechnicalDebtMeasurement2021} This and the fact that SonarQube can only detect code related debt and not for example
+1 hours and 50 minutes to 11 hours.\footcite[4]{murilloTechnicalDebtMeasurement2021} This issue, together with the fact that SonarQube can only detect code related debt and not other debt such as
 infrastructure or requirements debt, makes these tools useful but not a complete solution.\\
 
-\ac{CD}, introduced by Jez Humble and David Farley in their foundational book `Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation' (2010)\footcite{humbleContinuousDeliveryReliable2010}
+\ac{CD}, introduced by Jez Humble and David Farley in their foundational book `Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation' (2010)
 extends \ac{CI} by automating the entire software release pipeline. \ac{CD} ensures that the software is always in a releasable state.
-According to Humble and Farley implementing a functional \ac{CD} pipeline `creates a release process that is repeatable, reliable, and predictable'\footcite[17]{humbleContinuousDeliveryReliable2010}.
+According to Humble and Farley, implementing a functional \ac{CD} pipeline `creates a release process that is repeatable, reliable, and predictable'\footcite[17]{humbleContinuousDeliveryReliable2010}.
 Beyond predictability, additional significant benefits include team empowerment, deployment flexibility and substantial error reduction.
 Specially, \ac{CD} effectively reduces errors, particularly those introduced by poor configuration management, including problematic areas such as
 `configuration files, scripts to create databases and their schemas, build scripts, test harnesses, even development environments and operating system configurations'\footcite[19]{humbleContinuousDeliveryReliable2010}.\\
 
 \subsubsection{Code-Level Practices for Preventing Decay}
-On the code level, a variety of practices can be used to prevent software decay and technical debt. The two major have been previously introduced: continuous refactoring and maintaining software quality.\\
-The benefits of refactoring have been demonstrated int the previous section. However, deeper empirical studies illustrate the impacts and challenges in a commercial environment.
-Kim et al. (2014) observed in their study `An empirical study of refactoring challenges and benefits at Microsoft' observed that `[d]evelopers perceive that refactoring involves substantial cost and risks'\footcite[17]{kimEmpiricalStudyRefactoringChallenges2014}.
-Additionally they found that the benefits refactoring brings `multidimensional'\footcite[17]{kimEmpiricalStudyRefactoringChallenges2014} and that its not consistent across different metrics, which is why they recommended a tool to monitor the impact of refactoring across these metrics.
-Similar, Tempero et al. (2017) found certain barriers to refactoring in their study `Barriers to refactoring'. They found that at least 40\% of the developers in their study would not refactor classes, even though they thought it would be beneficial. \footcite[60]{temperoBarriersRefactoring2017}
-Tempero et al. claims the reasons were `lack of resources, of information identifying consequences, of certainty regarding risk, and of support from management.'\footcite[60]{temperoBarriersRefactoring2017} even though developers did not state a lack of refactoring tools as a reason.
-Tempore et al. suggested to eliminate these barriers, refactoring should be goal-oriented instead of operations-oriented and a better quantification of the benefits refactoring should bring to better reach a decision.\footcite[61]{temperoBarriersRefactoring2017}\\
-Both studies show that the theoretical benefits of refactoring are not always directly translated into the industry. Developers often perceive refactoring as risky and costly, even though they see the benefits.\\
+On the code level, a variety of practices can be used to prevent software decay and technical debt. The two major practices have been previously introduced: continuous refactoring and maintaining software quality.\\
+The benefits of refactoring have been demonstrated in the previous section. However, deeper empirical research illustrates the impacts and challenges in a commercial environment.
+Kim et al. (2014) observe in their paper `An empirical study of refactoring challenges and benefits at Microsoft' that `[d]evelopers perceive that refactoring involves substantial cost and risks'\footcite[17]{kimEmpiricalStudyRefactoringChallenges2014}.
+Additionally they describe the benefits refactoring brings as `multidimensional'\footcite[17]{kimEmpiricalStudyRefactoringChallenges2014}. Furthermore it is not consistent across different metrics, leading to their recommendation of a tool to monitor the impact of refactoring across these metrics\footcite[17]{kimEmpiricalStudyRefactoringChallenges2014}.
+Similarly, Tempero et al. (2017) established certain barriers to refactoring in their study `Barriers to refactoring'. They found that at least 40\% of the developers in their study would not refactor classes, even though they thought it would be beneficial. \footcite[60]{temperoBarriersRefactoring2017}\\
+Tempero et al. claims the reasons were `lack of resources, of information identifying consequences, of certainty regarding risk, and of support from management'\footcite[60]{temperoBarriersRefactoring2017} even though developers did not state a lack of refactoring tools as a reason.
+To eliminate these barriers, Tempore et al. suggest refactoring should be goal-oriented instead of operations-oriented and a better quantification of the benefits refactoring should bring to better reach a decision.\footcite[61]{temperoBarriersRefactoring2017}\\
+Both studies show that the theoretical benefits of refactoring are not always directly translated into the industry. Developers often perceive refactoring as risky and costly, even though they are aware of the benefits.\\
 
 \ac{TDD} is another code-level practice previously introduced. It was first formally described by Kent Beck in his book
 `Test Driven Development: By Example' (2002) in which he argues that writing tests before the implementation
 encourages cleaner code and gives developers the confidence to tackle complex problems.\footcite[pp. 8-9]{beckTestdrivenDevelopmentExample2002}
-This practice promotes modularity, testability and clean design, which are key characteristics in preventing software decay. By focusing solely on code
+This practice promotes modularity, testability and clean design, key characteristics in preventing software decay. By focusing solely on code
 that fulfills predefined tests, developers are guided toward creating small and focused code, which is loosely coupled. These qualities make systems
 easier to maintain and refactor, directly counteracting long-term degradation.
 Multiple studies have confirmed the quality-enhancing effects of \ac{TDD}.
 In an empirical study, Mäkinen and Münch (2014) found that  TDD most commonly led to a reduction in defects and increased maintainability, 
-though its effect on overall software quality was more limited.\footcite[13]{inproceedings}
-Importantly, they noted that TDD significantly improved test coverage, a key factor in preventing unintentional decay.
+although its effect on overall software quality was more limited.\footcite[13]{inproceedings}
+Importantly, they note that TDD significantly improves test coverage, a key factor in preventing unintentional decay.
 These gains, however, were accompanied by higher development effort.\footcite[13]{inproceedings}\\
 This is consistent with the case study by Bhat and Nagappan (2006), who reported a 15-35\% increase in development time when using \ac{TDD}.\footcite[361]{bhatEvaluatingEfficacyTestdriven2006a}
 However they also observed that `the resulting quality was higher than teams that adopted a non-TDD approach by an order of at least two times.'\footcite[361]{bhatEvaluatingEfficacyTestdriven2006a}
-Similarly, Bhadauria et al. (2020) confirmed TDD’s positive effect on code quality and defect reduction.
+Similarly, Bhadauria et al. (2020) confirm TDD’s positive effect on code quality and defect reduction.
 Interestingly, their study found that for less experienced developers, TDD did not lead to increased development time, and was associated with higher developer satisfaction.\footcite[1058]{bhadauriaPerformanceOutcomesTestDriven2020}\\
-These findings indicate that TDD can significantly improve code quality and maintainability - two critical factors in preventing software decay.
+These findings indicate that TDD can significantly improve code quality and maintainability two critical factors in preventing software decay.
 However, the trade-off in development effort and time must be carefully considered, which may explain TDD's limited adoption in the industry.\\
 
 \subsubsection{Architectural Strategies for Long-Term Quality}
-In addition to code-level practices, maintaining the software architecture is essential for preventing software decay and architectural-level technical debt. 
+In addition to code-level practices, the maintenance of the software architecture is essential for preventing software decay and architectural-level technical debt. 
 Architecture erosion, characterized by increasing divergence from the intended design due to continuous modifications and changing requirements,
 significantly impacts maintainability and introduces substantial technical debt.\footcite[1]{desilvaControllingSoftwareArchitecture2012}
-To mitigate these risks, one common strategy is architecture conformance checking, a process ensuring code changes comply with predefined design rules.
+One common strategy to mitigate these risks,  is architecture conformance checking, a process ensuring code changes comply with predefined design rules.
 De Silva and Balasubramaniam (2012) emphasize that proper documentation, dependency analysis and compliance monitoring are critical prerequisites for
 effectively employing this strategy.\footcite[135]{desilvaControllingSoftwareArchitecture2012}\\
-Beyond mere conformance, teams also must embrace managed architectural evolution, adapting architectures systematically rather than reactively. Such evolution
+Beyond mere conformance, teams must also embrace managed architectural evolution, adapting architectures systematically rather than reactively. Such evolution
 should actively balance new requirements with long-term sustainability to avoid uncontrolled erosion.\footcite[34]{liUnderstandingSoftwareArchitecture2022}
-A key component in this proactive approach is managing the architectural technical debt. These structural design decision could impact future adaptability if not
+A key component in this proactive approach is managing the architectural technical debt. These structural design decisions could impact future adaptability if not
 carefully controlled. Besker et al. (2016) suggest a framework to systematically identify, analyze and address architectural debt to preserve structural integrity.\footcite[11]{beskerManagingArchitecturalTechnical2018}\\
 Nevertheless, when architectural decay becomes substantial, teams face critical decisions between incremental refactoring and radical redesigns.
 Nord et al. (2012) highlight that systematic impact analysis, guided by explicit architectural metrics, is crucial for making informed decisions on when substantial 
 redesign becomes necessary to substantially restore software quality.\footcite[99]{nordSearchMetricManaging2012}\\
 Practical tooling, such as automated architectural monitoring and recovery solutions, plays a significant supportive role in these efforts. 
-The detailed application and empirical evidence of such tools are discussed thoroughly in the subsequent section on Tool Support for Continuous Quality Assurance.\\
+The detailed application and empirical evidence of such tools issue discussed thoroughly in the subsequent section on Tool Support for Continuous Quality Assurance.\\
 
 In summary, proactively maintaining software architecture is essential for mitigating long-term software decay. Architecture conformance checking 
 prevents the inadvertent erosion by ensuring adherence to established design principles. Managed architectural evolution further ensures that the architecture
@@ -222,52 +223,52 @@ This can be done through issue trackers or backlogs to allow for structured appr
 An industry-wide survey conducted by Ramač et al. (2021) found that 47\% `had some practical experience with TD identification and/or management'\footcite[40]{ramacPrevalenceCommonCauses2021}.
 By visualizing and tracking technical debt, teams can prioritize and address debt items systematically, preventing their accumulation and broader software decay.
 Ramač et al. also found that the most common cause for technical debt was time pressure caused by deadlines\footcite[40]{ramacPrevalenceCommonCauses2021} and the `single most cited effect of TD is delivery delay.'\footcite[40]{ramacPrevalenceCommonCauses2021}
-This indicates that time pressure is not only a cause for technical debt but also a consequence, leading to a vicious cycle of debt accumulation and delivery delays. To break this cycle, a balance of new development and maintenance is crucial to prevent a border software decay.
-This is promoted by agile methodologies through principle of continuous improvement, through practices like including refactoring in their definition of done or allowing dedicated maintenance sprints.
+This indicates that time pressure is not only a cause of technical debt but also a consequence, leading to a vicious cycle of debt accumulation and delivery delays. To break this cycle, a balance of new development and maintenance is crucial to prevent a border software decay.
+This is promoted by agile methodologies through the principle of continuous improvement, practices like including refactoring in their definition of done or allowing dedicated maintenance sprints.
 
 Another important practice is conducting regular code reviews as part of the development workflow. This practice dates back to 1976 when Michael Fagan reviewed the benefits of peer code inspections.\footcite[183]{faganDesignCodeInspections1976}
 He found that `inspections increase productivity and improve final program quality.'\footcite[205]{faganDesignCodeInspections1976}
-Since then code reviews have become more lightweight compared to the inspection proposed by Fagan, increasing participation. By removing in-person meetings and reviewer checklists, code reviews have become a standard practice in software development and usually occur before code is merged into the main repository.
-McIntosh et al. (2016) investigated the impact of code reviews on software quality, by comparing the review coverage, participation and expertise of the reviewer against the post-release defects.\footcite[6]{mcintoshEmpiricalStudyImpact2016}
+Since then, code reviews have become more lightweight compared to the inspection proposed by Fagan, increasing participation. By removing in-person meetings and reviewer checklists, code reviews have become a standard practice in software development and usually occur before code is merged into the main repository.
+McIntosh et al. (2016) investigated the impact of code reviews on software quality by comparing the review coverage, participation and expertise of the reviewer against the post-release defects.\footcite[6]{mcintoshEmpiricalStudyImpact2016}
 They found that coverage, while important, is not the only factor that influences the post-release defects.\footcite[39]{mcintoshEmpiricalStudyImpact2016}
 They state that `review participation should be considered when making integration decisions.'\footcite[39]{mcintoshEmpiricalStudyImpact2016}
 Additionally, they recommend that if an expert in the matter is not available for the original code, they should be included in the review process to prevent defects.\footcite[39]{mcintoshEmpiricalStudyImpact2016}
 
-In conclusion, having a structured approach to managing technical debt and prevent software decay is crucial to maintaining software quality and long-term project sustainability.
+In conclusion, structured approach to managing technical debt and preventing software decay is crucial to maintain software quality and long-term project sustainability.
 Process-integrated practices like code reviews, explicit technical debt control and a culture of continuous refactoring create an environment that proactively manages software decay and technical debt.
 
 \subsubsection{Tool Support for Continuous Quality Assurance}
-To further support the proactively manage software decay, technical debt and the overall code health over time, a variety of tools have established themselves in the industry.
-Automated quality assurance tools are often integrated into modern development processes. A common approach, as previously mentioned, is the use of \ac{CI} pipelines. These can be used in combination with quality gates that use static code analysis to block additions to the code base that do not meet the quality standards e.g. a 
-certain code coverage, complexity or maintainability threshold. This allows developers to catch issues early before they are introduced into the code base and rectify them. While the concept of quality gates is not new, the automation of these gates have been investigated by Uzunova et al. (2024).
+To further support the proactive management of software decay, technical debt and the overall code health over time, a variety of tools have established themselves in the industry.
+Automated quality assurance tools are often integrated into modern development processes. A common approach, as previously mentioned, is the use of \ac{CI} pipelines. These can be used in combination with quality gates which use static code analysis to block additions to the code base that do not meet the quality standards e.g. a 
+certain code coverage, complexity or maintainability threshold. This allows developers to catch issues early and rectify them before they are introduced into the code base . While the concept of quality gates is not new, the automation of these gates have recently been investigated by Uzunova et al. (2024).
 They found that these gates can serve as a check point to assess software metrics like code coverage, bug density or compliance with coding standards. \footcite[8]{uzunovaQualityGatesSoftware2024}
-To allow for this kind of automation, they mentioned tools like SonarQube, Sigrid or Maverix.ai. These tools allow for real-time feedback allowing for an enforcement of quality criteria.\footcite[8]{uzunovaQualityGatesSoftware2024}\\
-Utilizing this approach allows the developers to catch issues early and prevent the introduction of technical debt and software decay into the codebase.\\
+To allow for this kind of automation, they suggest tools like SonarQube, Sigrid or Maverix.ai. These tools provide real-time feedback allowing for an enforcement of quality criteria.\footcite[8]{uzunovaQualityGatesSoftware2024}\\
+Utilizing this approach enables developers to catch issues early and prevent the introduction of technical debt and software decay into the codebase.\\
 
 As discussed in a previous section, ensuring that changes do not divert from the original architecture design is crucial to prevent the erosion of the architecture.
 To support this, tools have been developed to automatically detect architecture violations. These tools are able to collect information about the architecture from the source code
 and compare it to the proposed architecture.\footcite[6]{thomasStaticDynamicArchitecture2017} In their case study 
-`Evaluating an Architecture Conformance Monitoring Solution' (2016) Caracciolo et al. investigated three different tools to detect architecture violations:
-SonarQube, Sonargraph and TeamCity\footcite[43]{caraccioloEvaluatingArchitectureConformance2016}. They concluded that their approach was 
+`Evaluating an Architecture Conformance Monitoring Solution' (2016), Caracciolo et al. investigated three different tools to detect architecture violations:
+SonarQube, Sonargraph and TeamCity\footcite[43]{caraccioloEvaluatingArchitectureConformance2016}. They concluded that their approach 
 `can be applied in an industrial context.'\footcite[44]{caraccioloEvaluatingArchitectureConformance2016}
-They furthermore argue that the tools can be conveniently added to a dashboard, allowing for a short feedback loop, allowing proactive management of architectural violations.\footcite[44]{caraccioloEvaluatingArchitectureConformance2016}
-These benefits can be seen in their case study, where they observed that the overall violations decreased from 606 to 600 in an 18 year old system with one million lines of code.\footcite[43]{caraccioloEvaluatingArchitectureConformance2016}.\\
+They furthermore argue that the tools can be conveniently added to a dashboard, allowing for a short feedback loop as well as proactive management of architectural violations.\footcite[44]{caraccioloEvaluatingArchitectureConformance2016}
+These benefits can be seen in their case study, where they observed that the overall violations decreased from 606 to 600 in an 18 year old system with one million lines of code\footcite[43]{caraccioloEvaluatingArchitectureConformance2016}.\\
 
-There have been empirical studies that show the effectiveness of these tools. For example in their paper `Empirical investigation of the influence of continuous integration bad practices on software quality' (2022)
-Silva and Bezerra found that `CI can improve software quality, especially about cohesion.'\footcite[4]{silvaEmpiricalInvestigationInfluence2022} However they also viewed the impact
-of bad practices in the implementation of CI. They could observe that the quality levels were incorrectly set and the standard configuration tools were used instead of 
-adjusting them to the project needs, overall harmed the software quality indicators. \footcite[4]{silvaEmpiricalInvestigationInfluence2022}
-This indicates that while the tools can be effective, they need to be correctly configured and adjusted to the project needs to be effective.\\
+Numerous empirical studies show the effectiveness of these tools. In their paper `Empirical investigation of the influence of continuous integration bad practices on software quality' (2022),
+Silva and Bezerra found that `CI can improve software quality, especially about cohesion.'\footcite[4]{silvaEmpiricalInvestigationInfluence2022} However they also observed the impact
+of bad practices in the implementation of CI. They found that the quality levels were incorrectly set and the standard configuration tools were used instead of 
+adjusting them to the project needs, which overall harmed the software quality indicators. \footcite[4]{silvaEmpiricalInvestigationInfluence2022}
+This indicates that, for the tools to be effective, they need to be correctly configured and adjusted to the project needs.\\
 
-\subsubsection{Synthesis of Commerical Mitigation Strategies}
-Effectively managing software decay and technical debt requires a balanced combination of technical architectural and organizational strategies.
+\subsubsection{Synthesis of Commercial Mitigation Strategies}
+Effectively managing software decay and technical debt requires a balanced combination of technical, architectural and organizational strategies.
 At the highest level, Agile methodologies and \ac{CI/CD} frameworks foster proactive maintenance cultures, reducing entropy through incremental improvement
-and automated quality assurance. On the code-level, disciplined practices such as continuous refactoring and \ac{TDD} have empirically demonstrated their effectiveness
+and automated quality assurance. On the code level, disciplined practices such as continuous refactoring and \ac{TDD} have empirically demonstrated their effectiveness
 in maintaining modularity, testability and reducing technical debt - with the downside of a higher development effort. Architectural strategies complement these
 by ensuring structural integrity through systematic conformance checks, managed evolution and explicit handling of architectural technical debt, especially as
-projects scale or requirements evolve.
+the scale or requirements of projects evolve.
 
-Organizational measures - such as technical debt tracking, dedicated maintenance cycles and structured code reviews - provide essential process-level support,
+Organizational measures such as technical debt tracking, dedicated maintenance cycles and structured code reviews provide essential process-level support,
 enabling teams to systematically prioritize and address decay risks before they escalate. Finally, the strategic use of modern quality-assurance tools, integrated
 into \ac{CI} pipelines and architectural monitoring systems, ensures continuous, automated and actionable feedback, thereby enabling developers to maintain
 software quality proactively. Ultimately, integrating these diverse practices into a combined quality culture is vital for sustainable software development,
