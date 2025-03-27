@@ -309,16 +309,16 @@ and technical debt over time.\\
 
 Bundeswehr software utilizes the `V-Modell XT Bw' as the project lifecycle model. This model is a variant to the V-Modell XT and 
 is specifically tailored to the needs of the Bundeswehr and is linked to the \ac{CPM} process of the Bundeswehr.
-The V-Modell XT Bw is a comprehensive framework that encompasses the planning and execution of software projects in the Bundeswehr.\footcite[6]{bundeswehrVModellXTBw}
-It includes detailed guidelines for all parts of the software development process, from roles and requirements engineering to \ac{QA} and product quality.\footcite[pp. 20-21]{bundeswehrVModellXTBw}
+The V-Modell XT Bw is a comprehensive framework that encompasses the planning and execution of software projects in the Bundeswehr.\footcite[6]{bundeswehrVModellXTBw2013}
+It includes detailed guidelines for all parts of the software development process, from roles and requirements engineering to \ac{QA} and product quality.\footcite[pp. 20-21]{bundeswehrVModellXTBw2013}
 However, due to its rigid and sequential nature, the waterfall-based V-Modell XT Bw is known to limit flexibility, making iterative adjustments and agile methodologies challenging to implement.\\
 
-The procurement procedures of the Bundeswehr are outlined by the aforementioned \ac{CPM} which was revised in 2012 after a comission in 2010 found that
-TODO: Zitat aus der 2010 kommission.
+The procurement procedures of the Bundeswehr are outlined by the aforementioned \ac{CPM} which was revised in 2012 after a commission in 2010 found that: 
+`Die Streitkräfte erhalten ihre geforderte Ausrüstung zumeist weder im erforderlichen Zeit- noch im geplanten Kostenrahmen.'\footcite[36]{strukturkommissionderbundeswehrBerichtStrukturkommissionBundeswehr2010}.
 Due to these problems, the revised \ac{CPM} has an increased focus on upfront requirement definition and comprehensive risk assessments. This creates long lead times
 for approval and makes quick technological changes difficult to realize.
 In addition, the \ac{EVB-IT}, the standardized contracts for government IT solutions, hinders agile development. This is according to Holger Schröder in an article  from 2022
-where he claims that multiple different contract blueprints would have to be combined to allow for an agile development project. TODO: zitat Schröder\\
+where he claims that multiple different contract blueprints would have to be combined to allow for an agile development project.\footcite{schroederUngeeignetFuerAgile2022}
 
 Collectively, all these requirements and procurement constraints strongly influence software development practices. Control and predictability are prioritized, making
 a iterative and agile framework difficult to use. While accountability and risk reduction are realized, these regulations can significantly complicate long-term software
@@ -328,3 +328,5 @@ adaptability and maintenance. Adding to this complexity are strong security and 
 Military software must meet stringent security and compliance standards beyond the usual commercial requirements. Due to the sensitive nature of military operations and data,
 the software must adhere to both national and NATO standards. TODO: check if nato needs to be spelled out These strict requirements create sever difficulties 
 towards the lifecycle of the product, the software architecture and maintenance practices. These constrains accelerate the accumulation of technical debt and software decay.\\
+
+//TODO: Zitat der Komission auf laufdauer der projekte 
