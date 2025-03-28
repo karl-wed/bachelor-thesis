@@ -334,9 +334,32 @@ that includes technical, personnel and infrastructural security measures. Compli
 
 In addition to the national regulations, Bundeswehr software systems must comply with the NATO security standards. These guidelines establish requirements towards handling of classified data, encryption standards and security clearance of personnel.
 An example would be the NATO Security Policy (C-M(2002)49) which dictates the handling of NATO-classified information, constraining software flexibility and maintenance practices. TODO: Zitat von Nato standard
-In additon, the Bundeswehr applies national classification rules like \ac{VS-NFD}, creating additional measures to comply across all software lifecycles. TODO:Bundeswehr zitat\\
+In addition, the Bundeswehr applies national classification rules like \ac{VS-NFD}, creating additional measures to comply across all software lifecycles. TODO:Bundeswehr zitat\\
 
-Although these security and compliance requirements are essential for operational security, they create signifcant constraints on the adaptability, flexilibty and maintainability of military software systems.
+Although these security and compliance requirements are essential for operational security, they create significant constraints on the adaptability, flexibility and maintainability of military software systems.
+Extensive documentation, security certifications and audit process mandated by both the national and international regulations slow down software changes and
+increase the effort on proactive maintenance. Consequently, the extended approval processes and higher complexity can increase software decay, making extensive 
+refactoring and architectural evolution difficult to achieve. These practical implications underscore the balance between security compliance and maintaining 
+software quality and agility.
+
+In summary, security and compliance requirements play a crucial role in the practices of Bundeswehr software development, influencing the
+software architecture, maintenance practices and lifecycle management. While essential for operational security, it impacts the softwares adaptability and agility,
+often leading to accelerate software decay and technical debt. These effects are further compounded by the prolonged lifecycles and legacy software dependencies, which will 
+be discussed in the following section.\\
+
+\subsubsection{Legacy Systems and Extended Lifecycles}
+Legacy systems and extended lifecycles are a particularly challenging constraints within military software projects, notably in the Bundeswehr. Unlike commercial software
+that often have a lifecycle of a few years, military software often stays in operation for decades. Therefore the software has to evolve continually to allow for 
+new technologies and changing operational needs. In addition often complex integration with legacy systems are needed. This long lifecycle 
+inevitable leads to technical debt accumulation and progressive software decay, leading to increased difficulties maintaining the software as well as overall lifecycle costs.\\
+
+Military software systems typically remain in operation much longer than commercial software. Heidi Shyu highlights in her presentation that these extended lifetimes
+require a robust, adaptable architecture capable of updates over years, integration of new technologies and compatibility with older systems \footcite[pp. 15-17]{shyu2017military}.
+This need for long, operational support with frequent adaptations often creates a fragmented architecture with a lot of short-term fixes, rather than a sustainable solution\footcite[15]{shyu2017military}.\\
+A Bundeswehr example shows a similar issue. Thomas Wiegold discusses in his blog entry from 2019 that the Bundeswehr was planning on upgrading there custom
+SAP solution to a new version. However this included approximately 40.000 custom developments resulting in a massive undertaking \footcite{wiegoldBundeswehrMussFur2019}.
+This example illustrates the scale of legacy issues that exist in the Bundeswehr and their impact on complexity and technical debt.\\
+
 
 
 TODO: Zitat der Komission auf laufdauer der projekte 
