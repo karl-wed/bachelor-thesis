@@ -307,10 +307,10 @@ Bundeswehr software projects are tightly governed by formalized frameworks, rigo
 accountability, security, and reliability. However, these structures can inadvertently limit agility, prolong software updates and contribute significantly to software decay
 and technical debt over time.\\
 
-Bundeswehr software utilizes the `V-Modell XT Bw' as the project lifecycle model. This model is a variant to the V-Modell XT and 
-is specifically tailored to the needs of the Bundeswehr and is linked to the \ac{CPM} process of the Bundeswehr.
-The V-Modell XT Bw is a comprehensive framework that encompasses the planning and execution of software projects in the Bundeswehr.\footcite[6]{bundeswehrVModellXTBw2013}
-It includes detailed guidelines for all parts of the software development process, from roles and requirements engineering to \ac{QA} and product quality.\footcite[pp. 20-21]{bundeswehrVModellXTBw2013}
+Bundeswehr software utilizes the `V-Modell XT Bw' as the project lifecycle model. It is a customized variant of the standard V-Modell XT, specifically tailored to Bundeswehr needs and closely integrated with the 
+Bundeswehr's overarching procurement framework, \ac{CPM}.
+The V-Modell XT Bw is a comprehensive framework that encompasses the planning and execution of software projects in the Bundeswehr.\footcite[6]{bundeswehrVModellXTBw}
+It includes detailed guidelines for all parts of the software development process, from roles and requirements engineering to \ac{QA} and product quality.\footcite[pp. 20-21]{bundeswehrVModellXTBw}
 However, due to its rigid and sequential nature, the waterfall-based V-Modell XT Bw is known to limit flexibility, making iterative adjustments and agile methodologies challenging to implement.\\
 
 The procurement procedures of the Bundeswehr are outlined by the aforementioned \ac{CPM} which was revised in 2012 after a commission in 2010 found that: 
@@ -321,45 +321,64 @@ In addition, the \ac{EVB-IT}, the standardized contracts for government IT solut
 where he claims that multiple different contract blueprints would have to be combined to allow for an agile development project.\footcite{schroederUngeeignetFuerAgile2022}
 
 Collectively, all these requirements and procurement constraints strongly influence software development practices. Control and predictability are prioritized, making
-a iterative and agile framework difficult to use. While accountability and risk reduction are realized, these regulations can significantly complicate long-term software
-adaptability and maintenance. Adding to this complexity are strong security and compliance requirements, which are discussed in the following subsection.
+a iterative and agile framework difficult to use. While these procedures promote accountability and reduce risk, they can severely limit a system's ability to evolve over time, thereby fostering conditions under which software decay and technical debt accumulate. 
+Adding to this complexity are strong security and compliance requirements, which are discussed in the following subsection.
 
 \subsubsection{Security and Compliance Requirements}
 Military software must meet stringent security and compliance standards beyond the usual commercial requirements. Due to the sensitive nature of military operations and data,
-the software must adhere to both national and NATO standards. TODO: check if nato needs to be spelled out These strict requirements create sever difficulties 
+the software must adhere to both national and NATO standards. These strict requirements create severe difficulties 
 towards the lifecycle of the product, the software architecture and maintenance practices. These constrains accelerate the accumulation of technical debt and software decay.\\
 
 Like all federal agencies in Germany, the Bundeswehr must adhere to the \ac{BSI} guidelines for IT security called IT-Grundschutz\footcite{bundesamtfuersicherheitinderinformationstechnikBSIFAQ}. Through several standards it defines a comprehensive security framework
 that includes technical, personnel and infrastructural security measures. Compliance with these standards involve extensive documentation, risk management process and regular audits. This increases the complexity and effort required for ongoing software maintenance and updates.\footcite{bundesamtfuersicherheitinderinformationstechnikBSIStandards}\\
 
 In addition to the national regulations, Bundeswehr software systems must comply with the NATO security standards. These guidelines establish requirements towards handling of classified data, encryption standards and security clearance of personnel.
-An example would be the NATO Security Policy (C-M(2002)49) which dictates the handling of NATO-classified information, constraining software flexibility and maintenance practices. TODO: Zitat von Nato standard
-In addition, the Bundeswehr applies national classification rules like \ac{VS-NFD}, creating additional measures to comply across all software lifecycles. TODO:Bundeswehr zitat\\
+An example would be the NATO Security Policy (C-M(2002)49) which dictates the handling of NATO-classified information, constraining software flexibility and maintenance practices\footcite[Enclosure B, pp. 1–3; Enclosure F, pp. 1–2]{NATO2002SecurityPolicy}. 
+Compliance with NATO standards mandates extensive security accreditation procedures, detailed documentation and comprehensive vetting of software and hardware systems.
+These processes slow down software development cycles and restrict flexibility due to the necessity of re-certifying software after significant changes.
 
-Although these security and compliance requirements are essential for operational security, they create significant constraints on the adaptability, flexibility and maintainability of military software systems.
-Extensive documentation, security certifications and audit process mandated by both the national and international regulations slow down software changes and
-increase the effort on proactive maintenance. Consequently, the extended approval processes and higher complexity can increase software decay, making extensive 
-refactoring and architectural evolution difficult to achieve. These practical implications underscore the balance between security compliance and maintaining 
-software quality and agility.
+Furthermore the Bundeswehr adheres to national classification rules, such as \ac{VS-NFD}. Systems classified under \ac{VS-NFD} require access control, encrypted communications, dedicated network infrastructure and periodic security accreditation.\footcite[see Part 2, pp. 1–3; Part 3, pp. 1–6]{BMI2010VSNFD}
+Developers and system administrators must adhere to strict usage guidelines, which dictate the permissible software, hardware and methods of data handling.\footcite[Part 3, No. 3.1–3.7, pp. 1–5]{BMI2010VSNFD} Compliance significantly restricts the usage of modern technologies such as cloud services or external software libraries, unless explicitly cleared\footcite[Part 3, No. 3.4.1–3.4.5, pp. 4–5]{BMI2010VSNFD}, 
+which can be seen in the example of Genua’s secure remote working solution, which complies with both VS-NfD and NATO security requirements while offering functionality typically restricted in classified environments.\footcite{Genua2023VSNFD}
 
-In summary, security and compliance requirements play a crucial role in the practices of Bundeswehr software development, influencing the
-software architecture, maintenance practices and lifecycle management. While essential for operational security, it impacts the softwares adaptability and agility,
-often leading to accelerate software decay and technical debt. These effects are further compounded by the prolonged lifecycles and legacy software dependencies, which will 
-be discussed in the following section.\\
+Although essential for operational security, these security and compliance requirements markedly constrain software adaptability and agility. 
+Extensive documentation, mandatory security certifications, and regular audits mandated by national and international regulations considerably increase the maintenance workload and complexity. 
+Consequently, prolonged approval processes and heightened architectural complexity often accelerate software decay and technical debt accumulation, complicating extensive refactoring or proactive architectural evolution.
+
+In summary, security and compliance requirements play a pivotal role in shaping Bundeswehr software development practices, significantly influencing architecture design, 
+maintenance methodologies, and lifecycle management. While crucial for safeguarding operational security and classified information, these rigorous standards often inhibit software adaptability and innovation, exacerbating the challenges of software decay and technical debt inherent in military software systems.
 
 \subsubsection{Legacy Systems and Extended Lifecycles}
-Legacy systems and extended lifecycles are a particularly challenging constraints within military software projects, notably in the Bundeswehr. Unlike commercial software
-that often have a lifecycle of a few years, military software often stays in operation for decades. Therefore the software has to evolve continually to allow for 
-new technologies and changing operational needs. In addition often complex integration with legacy systems are needed. This long lifecycle 
-inevitable leads to technical debt accumulation and progressive software decay, leading to increased difficulties maintaining the software as well as overall lifecycle costs.\\
+Legacy systems and extended lifecycles impose particularly significant constraints within military software projects, especially within the Bundeswehr. 
+Unlike commercial software, which typically operates for a limited period, military systems frequently remain operational for decades due to high investment costs, complexity, and risk aversion to adopting new technologies. Such prolonged operational 
+lifespans inevitably contribute to technical debt accumulation and progressive software decay, significantly complicating maintenance and increasing lifecycle costs.
 
-Military software systems typically remain in operation much longer than commercial software. Heidi Shyu highlights in her presentation that these extended lifetimes
-require a robust, adaptable architecture capable of updates over years, integration of new technologies and compatibility with older systems \footcite[pp. 15-17]{shyu2017military}.
-This need for long, operational support with frequent adaptations often creates a fragmented architecture with a lot of short-term fixes, rather than a sustainable solution\footcite[15]{shyu2017military}.\\
-A Bundeswehr example shows a similar issue. Thomas Wiegold discusses in his blog entry from 2019 that the Bundeswehr was planning on upgrading there custom
-SAP solution to a new version. However this included approximately 40.000 custom developments resulting in a massive undertaking \footcite{wiegoldBundeswehrMussFur2019}.
-This example illustrates the scale of legacy issues that exist in the Bundeswehr and their impact on complexity and technical debt.\\
+A prominent example of these challenges emerged with the Bundeswehr's logistics and support IT systems at the turn of the century. According to Sebastian Stein's 2011 blog entry,
+ the Bundeswehr managed around 1,200 distinct outsourced IT systems, creating a highly fragmented and inefficient infrastructure.\footcite{steinBusinessProcessManagement2011} To address this issue, the Bundeswehr initiated the \ac{SASPF} program, consolidating procurement, accounting, 
+ and logistics systems into a single, integrated SAP-based solution. However, standard SAP software initially met only around 70\% of the Bundeswehr's unique operational requirements, necessitating extensive custom development and temporary workarounds.\footcite{steinBusinessProcessManagement2011} These integrations were further 
+ complicated by stringent regulatory requirements, diverse stakeholder interests, and interoperability challenges with outdated technologies. Consequently, significant technical debt and complexity accumulated, extending the modernization effort well over a decade and clearly demonstrating the severe maintenance implications of legacy systems.\footcite{steinBusinessProcessManagement2011}
 
+Another illustrative case within the Bundeswehr is the Luftwaffe's Tornado fighter jet program. Development began in 1981, and the aircraft entered operational service in 1992. Today, approximately 80 Tornado jets remain operational, with plans for 
+replacement only by 2030 resulting in a nearly 50-year lifecycle.\footcite{skibaTornado50Jahre2024} Continuous software updates have been crucial throughout this extensive period, including notable upgrades like the integration of the RecceLite reconnaissance system in 2009. However, 
+each update has progressively become more complex and costly due to aging hardware, software architecture limitations, and stringent compliance demands. This incremental layering of software modifications directly contributes to accelerated software decay, increasing the difficulty and expense of maintaining operational effectiveness.
 
+Comparable challenges are prevalent among international NATO allies as well. A notable example was highlighted by Kynan Carver (2022), describing how the U.S. \ac{DOD} continued operating critical strategic systems reliant on severely outdated technologies, 
+including 8-inch floppy disks, until the late 2010s.\footcite{carverTechnicalDebtCybersecurity2022} Carver emphasizes that maintaining these aging software infrastructures consumes significant financial and operational resources, limiting investment in innovation and proactive modernization strategies.\footcite{carverTechnicalDebtCybersecurity2022}
 
-TODO: Zitat der Komission auf laufdauer der projekte 
+In conclusion, effectively managing technical debt and mitigating software decay within military systems requires strategic, long-term investments, proactive modernization plans, and an explicit focus on maintainability. Addressing the unique challenges posed by legacy 
+systems and extended lifecycles is thus crucial for sustaining operational capability and flexibility within an increasingly dynamic military technology environment.
+
+\subsubsection{Conclusion}
+Military software development is fundamentally shaped by demands that are far beyond those of the commercial environments. The need for extreme reliable, long lasting systems while having strict classification regimes and multi-layered stakeholder requirements creates a highly regulated and risk-shy context.
+These characteristics collectively contribute to a development landscape where software decay and technical debt are not merely byproducts of poor practices but structural risks embedded within the system's lifecycle.\\
+
+As shown throughout this section, four constraint areas amplify these challenges. First the inherit complexity and longevity of military systems, often designed to operate for decades, create pressure to extend the viability of aging platforms.
+Secondly the rigid procurement and development frameworks, such as the V-Modell XT Bw and the \ac{CPM} process, prioritize upfront control and traceability over agility, hindering adaptive or incremental development practices.
+Third, extensive national and NATO security requirements impose detailed compliance burdens, restricting the use of modern tools and leading to prolonged certification cycles. Finally, the heavy reliance on legacy systems and technologies, as illustrated by the Tornado jet or SASPF, 
+reinforces technical inertia and raises the cost and difficulty of modernization efforts.\\
+
+Together, these factors present a software ecosystem where continuous improvement, architectural evolution and proactive quality management are severely constrained. Consequently, technical debt tends to accumulate more rapidly and opportunities to refactor or modernize the system are limited due To
+procedural, regulatory and operational constraints.\\
+
+Therefore it is crucial to understand how military software practitioners operate within this. The next section of this thesis will examine how experts working on Bundeswehr-related software systems experience and address these limitations in practice.
+A key point will be their strategies in managing software decay, handling long-lived legacy systems and the impact of the regulatory environment on their work.
