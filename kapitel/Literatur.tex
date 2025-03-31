@@ -20,7 +20,7 @@ The persistent nature of these challenges presented by Brooks have since been su
 This phenomenon is encapsulated in Lehman's laws of software evolution, which he formulated in multiple papers.  Lehman and Ramil present empirical observations supporting the notion that software quality tends to deteriorate over time\footcite[42]{lehmanSoftwareEvolutionBackground2003} - a phenomenon often described as
 software decay.
 
-\subsection{Software Decay and Technical Debt}
+\subsubsection{Software Decay}
 The term software decay or erosion was empirically studied and statistically validated by Eick et al.\ in their influential paper `Does Code Decay? Assessing the Evidence from Change Management Data'(2001). They begin by stating that `software does not age or "wear out" in the conventional sense.' \footcite[1]{eickDoesCodeDecay2001}
 If nothing in the environment changes, the software could run forever. However, this is almost never the case as there is a constant change in several areas, predominantly with respect to the two areas of the hard- and software environments and the requirements of the software.\footcite[1]{eickDoesCodeDecay2001}\\
 
@@ -37,8 +37,7 @@ The concept of software decay aligns closely with earlier theoretical discussion
 inadequately documented modifications which he termed `Ignorant surgery'\footcite[280]{296790}, as well as the failure to continuously adapt the architecture to evolving needs which he called `Lack of movement'\footcite[280]{296790}.
 Without this proactive maintenance and refactoring effort, Parnas argues that software inevitably reaches a state where changes become more risky, costly and error-prone\footcite[280-281]{296790}.
 
-//TODO: Emperical studies like Banker or Bieman maybe?
-
+\subsubsection{Technical Debt}
 The term `Technical Debt' was first coined by Ward Cunningham in his paper `The WyCash Portfolio Management System' (1992). This metaphor was used to describe the trade-off between a quickly implemented solution and a thought-out process. 
 Using the quick solution `is like going into debt.'\footcite[2]{cunninghamWyCashPortfolioManagement1992} Cunningham argues that this debt accumulates interest if not repaid or rewritten. 
 If this does not happen, Cunningham warns that `Entire engineering organizations can be brought to a stand-still under the debt load of an unconsolidated implementation'\footcite[2]{cunninghamWyCashPortfolioManagement1992}.\\
@@ -90,12 +89,22 @@ To prevent this, he suggests `[r]egular refactoring [to] help[s] keep the code i
 To prevent long-term issues, practitioners recommend actively managing technical debt through refactoring, tracking and other strategies 
 that integrate debt management into the software development process.\\
 
-In summary, software decay describes the gradual deterioration of software quality over time, driven by continuous modifications, environmental changes and increasing complexity. This was theoretically established by Belady, Lehman and Parnas and empirically validated by Eick et al. and others.
-Closely related yet conceptually distinct, technical debt captures the intentional and unintentional compromises made during software development. This leads to future costs if not proactively managed.
-While decay views a border spectrum of deterioration, technical debt specifically highlights how certain software engineering decisions increase the problem. 
-Empirical research by Potdar and Shihab, Li et al. and Banker et al. underscores the tangible impact technical debt and software complexity have on real-world maintenance costs and software quality.
-Consequently, addressing software decay effectively in practice demands a combination of proactive quality management, regular refactoring, explicit technical debt tracking and structured maintenance strategies.
-With these foundational concepts clarified, the next section explores concrete mitigation strategies employed in commercial software environments, providing valuable insights into preventing software decay within the unique constraints of military software development.
+\subsubsection{Conclusion}
+
+This chapter has outlined the foundational challenges inherent to software engineering and introduced two critical concepts: software decay and technical debt.
+Drawing on Frederick Brooks' distinction between essential and accidental difficulties, it becomes evident that complexity, changeability and lack of uniformity are deeply rooted in the nature of software itself and cannot be fully resolved.
+These enduring challenges are the foundation of the concepts of software decay and technical debt.\\
+
+Software Decay refers to the gradual degradation of a software system's internal quality, leading to reduced maintainability, increased complexity and higher change effort. This is a natural outcome of continuous system evolution in a response to changing requirements and environments.
+As shown through empirical work of Eick et al. and the theoretical contributions of Lehman and Parnas, software that is not actively maintained becomes harder to main, less modular and more fragile, making decay a systematic and long-term threat to software sustainability.\\
+
+On the other hand, technical debt captures the intentional or unintentional compromises made during software development that create short-term advantages but lead to long-term costs. Originating as a metaphor, it has since evolved into a structured framework for describing, architectural design, code or process-related liabilities.
+While software decay can be seen as a developing property of ongoing change, technical debt often originates from conscious decisions. Whether this is due to deadlines, insufficient knowledge or lack of resources, it manifests through debt like code quality deterioration, architectural erosion or insufficient testing.\\
+
+Importantly, technical debt and software decay are closely related: unmanaged technical debt accelerates software decay, while software decay can lead to the accumulation of technical debt. Empirical studies from Potdar, Li and Banker confirm the measurable impact of these phenomenon on maintenance costs, defect rates and overall system quality.\\
+
+To effectively manage these issues, the software industry has developed strategies that go beyond reactive maintenance. Structured, proactive practices such as continuous refactoring, rigorous quality assurance, technical debt management and automated testing are essential to prevent the accumulation of debt and decay.
+Based on these foundations, the next chapter will explore concrete mitigation strategies in commercial environments providing a comprehensive overview of the most common strategies, techniques and frameworks used in the industry to address technical debt and software decay.\\
 
 
 
