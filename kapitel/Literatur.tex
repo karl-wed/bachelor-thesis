@@ -391,3 +391,39 @@ procedural, regulatory and operational constraints.\\
 
 Therefore it is crucial to understand how military software practitioners operate within this. The next section of this thesis will examine how experts working on Bundeswehr-related software systems experience and address these limitations in practice.
 A key point will be their strategies in managing software decay, handling long-lived legacy systems and the impact of the regulatory environment on their work.
+
+\subsection{Summary of the Literature Review}
+Software development faces inherent challenges that have existed for decades. The previous chapters examined theses problems from three key perspectives: the foundational problems of software engineering, the mitigation strategies used in commercial environments and the unique constraints faced in military projects.
+This summary will highlight the key insights to establish a foundation about software decay and technical debt, laying the groundwork for the empirical investigation the following chapters.\\
+
+\subsubsection{Problems of Software Engineering}
+The complexity of software systems, combined with their extended lifecycle and constant evolution, creates significant challenges. As presented by Brooks (1986), essential difficulties such as complexity, conformity, changeability and invisibility are inherent in software development.
+On the other side are the accidental difficulties which stem from the tooling and process problems of the current software development practices.
+These foundational issues create two common issues:\\
+
+Software decay refers to the gradual deterioration of software quality. This is due to evolving requirements and the constant need for updates and maintenance. This has been empirically validated by Eick et al and theoretically supported by Lehman, Belady and Parnas.
+Technical Debt, a metaphor introduced by Cunningham, represents the cost of implementation or design shortcuts taken to meet immediate needs, which can lead to long-term maintenance challenges. This concept has been further developed by McConnel, Fowler and Kruchten, highlighting the risks and management needs
+associated with both intentional and unintentional technical debt. Together, these two concepts create a complex environment where long-term degradation is inevitable unless proactively managed.\\
+
+\subsubsection{Mitigation Strategies in Commercial Environments}
+To combat software decay and manage technical debt, commercial software projects have developed a wide range of strategies. These include high-level practices such as agile methodologies like Scrum, \ac{XP} or CI/CD pipelines which embed quality into the daily workflow.
+These practices are complemented by code level-techniques like continuous refactoring, \ac{TDD} or code reviews which help manage the complexity and ensure maintainability. Architectural strategies like conformance checking and managing architectural technical debt support long-term structural integrity.
+This is further supported by organizational practices like backlog tracking of debt, balancing time pressure and cultivating a quality-focused culture. Finally, the use of modern tooling through automated analysis tools (e.g. SonarQube, TeamCity) allows enforcement of standards and early detection of issues.\\
+
+These approaches aim to proactively manage quality and control the complexity, thereby reducing the long-term cost of maintenance. 
+
+\subsubsection{Constraints in the Military Software Environments}
+While the challenges of decay and technical debt are universal, military software projects face unique constraints that complicate their management:\\
+
+The project structure in the Bundeswehr is defined by the V-Modell XT Bw and the \ac{CPM} processes, which emphasize documentation, predictability and rigid lifecycle phases, making agile practices difficult to implement.
+The procurement contracts like the \ac{EVB-IT} further limit flexibility and iterative development. The security and compliance requirement from the BSI, NATO policies and VS-NfD create additional burdens through mandatory certifications, audits and limitations on tooling or external software.
+The extended lifecycles and legacy systems that exist in every military environment create decade long systems that need service, have to remain operational while also adapting to new requirements.\\
+
+These conditions results in higher maintenance burdens, slower update cycles and reduce the ability to refactor or modernize systems. This creates a software ecosystem where decay and technical debt accumulation are accelerated.\\
+
+\subsubsection{Conclusion}
+In conclusion, software decay and technical debt are persistent and measurable risk in all software systems. While commercial environments have developed effective mitigation strategies, there applicability in military projects is limited by structural, regulatory and operational constraints.\\
+
+Understanding these differences is essential for designing effective strategies to manage decay and technical debt in military software projects. The next chapter will explore, how practitioners in military related software projects deal with these constraints in practices, offering real-world
+insights through expert interviews. They will provide a deeper understanding on how decay and debt are managed, despite the rigid frameworks and complex environments.
+
