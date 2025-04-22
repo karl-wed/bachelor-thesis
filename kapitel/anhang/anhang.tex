@@ -1,70 +1,70 @@
-\section*{Interviewfragebogen}
-\textbf{Einleitung:}
 
-Vielen Dank für Ihre Teilnahme. Ziel dieser Studie ist es, zu verstehen, wie in Ihrem Unternehmen aktuell Strategien zur Vermeidung und Minderung technischer Schuld und Softwareverfall (Software Decay) genutzt werden und wie effektiv diese Maßnahmen sind.
+\subsection*{Interviewleitfaden – Bachelorarbeit Softwareverfall}
 
-\subsection*{1. Allgemeine Informationen}
+\subsubsection*{1. Einstieg und Hintergrund}
 
 \begin{enumerate}
-    \item Welche Rolle haben Sie aktuell inne und wie lange arbeiten Sie bereits im Bereich der Softwareentwicklung militärischer Projekte?
-    \item Mit welchen Arten von Softwaresystemen arbeiten Sie aktuell hauptsächlich?
+  \item Welche Rolle haben Sie aktuell im Bereich der Softwareentwicklung militärischer Systeme? Seit wann sind Sie in diesem Umfeld tätig und wie sieht Ihre typische Projektarbeit aus?
+  \item Mit welchen Arten von Softwaresystemen arbeiten Sie hauptsächlich? (z.\,B. eingebettete Systeme, einsatzkritische Plattformen, Verwaltungssoftware, Legacy-Systeme)
 \end{enumerate}
 
-\subsection*{2. Agile Methoden und technischer Schuld}
+\subsubsection*{2. Legacy-Systeme und lange Lebenszyklen}
 
 \begin{enumerate}[resume]
-    \item Werden agile Methoden (z.B. Scrum, XP) in Ihren Projekten eingesetzt? Wenn ja, wie genau?
-    \item Wie bewerten Sie die Effektivität agiler Methoden zur Prävention und Minderung technischer Schuld und Softwareverfall? Erläutern Sie bitte Ihre Erfahrungen.
-    \item Falls agile Methoden nicht möglich sind, wie geht Ihr Team dann mit technischer Schuld um? Welche konkreten Praktiken nutzen Sie?
+  \item Welche Herausforderungen begegnen Ihnen beim Umgang mit Legacy-Systemen oder langlaufenden Projekten?
+  \item Kommt es im Projektverlauf regelmäßig zu Problemen, die durch veraltete Strukturen oder historisch gewachsene Systeme entstehen?
+  \item Welche Auswirkungen haben lange Lebenszyklen auf Wartbarkeit und Weiterentwicklung?
 \end{enumerate}
 
-\subsection*{3. CI/CD-Praktiken}
+\subsubsection*{3. Strategien zur Qualitätssicherung}
 
 \begin{enumerate}[resume]
-    \item Nutzen Sie aktuell CI/CD? Falls ja, beschreiben Sie kurz Ihre CI/CD-Implementierung (z.B. Tools, Abläufe).
-    \item Wie wirksam schätzen Sie CI/CD zur Reduktion technischer Schuld oder Softwareverfall ein?
-    \item Welche Faktoren erschweren aktuell die Einführung oder optimale Nutzung von CI/CD in Ihren Projekten?
+  \item Welche Maßnahmen setzen Sie ein, um Softwareverfall oder technische Schuld zu vermeiden oder zu reduzieren? (z.\,B. Refactoring, Reviews, Automatisierung) Sehen Sie diese Maßnahmen als sinnvoll?
+  \item Gibt es Bedingungen, unter denen technische Schuld bewusst in Kauf genommen wird? Wird bewusste Schuld getrackt?
 \end{enumerate}
 
-\subsection*{4. Code Reviews}
+\subsubsection*{4. Agile Methodik}
 
 \begin{enumerate}[resume]
-    \item Werden regelmäßig Code Reviews durchgeführt? Falls ja, wie genau (z.B. Peer Review, automatisierte Tools)?
-    \item Wie effektiv sind Code Reviews aus Ihrer Sicht, um technische Schuld oder Softwareverfall zu reduzieren? Nennen Sie gerne konkrete Erfahrungen.
-    \item Welche Faktoren könnten die Effektivität von Code Reviews weiter verbessern?
+  \item Verwenden Sie agile Methodiken wie Scrum oder XP? Falls ja, wie wirken sich diese Praktiken auf den Umgang mit technischer Schuld und Softwareverfall aus?
+  \item Wenn keine agilen Methodiken verwendet werden, wie werden Refactoring und Schuldenabbau sonst durchgeführt?
 \end{enumerate}
 
-\subsection*{5. Architekturmanagement und Konformität}
+\subsubsection*{5. Architekturmanagement}
 
 \begin{enumerate}[resume]
-    \item Wie wird in Ihren Projekten die Softwarearchitektur aktuell verwaltet und dokumentiert?
-    \item Wie stellen Sie sicher, dass die Implementierung der geplanten Architektur entspricht? Nutzen Sie Tools oder automatisierte Checks?
-    \item Was sind die größten Herausforderungen im Bereich Architekturkonformität, speziell bei langlaufenden oder Legacy-Projekten?
+  \item Wie wird die Systemarchitektur geplant, dokumentiert und gepflegt?
+  \item Wie wird sichergestellt, dass sich die Umsetzung an der vorgesehenen Architektur orientiert, insbesondere bei älteren Projekten?
+  \item Welche Herausforderungen treten bei der Weiterentwicklung von Architekturentscheidungen auf?
 \end{enumerate}
 
-\subsection*{6. Umgang mit Legacy-Systemen und langen Lebenszyklen}
+\subsubsection*{6. Automatisierung und CI/CD}
 
 \begin{enumerate}[resume]
-    \item Welche besonderen Herausforderungen bestehen bei der Wartung und dem Management technischer Schuld in Legacy-Systemen oder Projekten mit besonders langen Laufzeiten?
-    \item Welche Strategien oder Maßnahmen haben sich in Ihrem Team konkret bewährt, um Softwareverfall und technische Schuld bei Legacy-Systemen zu reduzieren?
+  \item Setzen Sie CI/CD in Ihren Projekten ein? Wie sehen die Prozesse konkret aus und hilft CI/CD gegen die zuvor genannten Probleme?
+  \item Welche Werkzeuge und Metriken verwenden Sie zur Qualitätssicherung im Build- oder Deployprozess? Was sind Ihre Erfahrungen mit diesen Werkzeugen? Gab es bestimmte Stärken oder Schwächen, die sich auf die Codequalität oder Wartbarkeit ausgewirkt haben?
 \end{enumerate}
 
-\subsection*{7. Bewertung und Effektivität der aktuellen Mitigationsstrategien}
+\subsubsection*{7. Reviews und Tests}
 
 \begin{enumerate}[resume]
-    \item Welche konkreten Strategien oder Maßnahmen setzen Sie aktuell hauptsächlich ein, um technische Schuld und Softwareverfall aktiv zu verhindern oder zu verringern?
-    \item Wie bewerten Sie insgesamt die Effektivität dieser Strategien?
-    \item Welche Hindernisse oder Herausforderungen erschweren aktuell die erfolgreiche Umsetzung Ihrer Mitigationsstrategien?
-    \item Gibt es Arten technischer Schuld, die besonders schwierig zu handhaben sind? Falls ja, warum?
-    \item Können Sie ein konkretes Beispiel für eine erfolgreiche Mitigationsmaßnahme nennen? Was genau machte diese Maßnahme erfolgreich?
-    \item Welchen Einfluss haben externe Faktoren (z.B. regulatorische Vorgaben, Sicherheitsanforderungen, Beschaffungsprozesse) auf Ihre Fähigkeit, technische Schuld effektiv zu managen?
+  \item Wie wird bei Ihnen mit Code Reviews gearbeitet? Wer beteiligt sich, und wie wird der Prozess organisiert?
+  \item Welche Rolle spielen Tests? Nutzen Sie automatisierte Verfahren wie Unit-Tests oder Test-Driven Development? Gibt es bestimmte Tests, die Ihrer Meinung nach am besten zur Vermeidung von technischen Schulden helfen?
 \end{enumerate}
 
-\subsection*{Abschluss}
+\subsubsection*{8. Besondere Rahmenbedingungen im militärischen Umfeld}
 
 \begin{enumerate}[resume]
-    \item Welche Maßnahme wäre Ihrer Erfahrung nach besonders wirksam, um technische Schuld und Softwareverfall in Ihrer Organisation zukünftig effektiver zu managen?
-    \item Gibt es weitere relevante Erfahrungen oder Einsichten, die Sie mitteilen möchten?
+  \item Welche Anforderungen an Sicherheit, Zuverlässigkeit oder regulatorische Vorgaben wirken sich auf Ihre Arbeit aus?
+  \item Inwiefern beeinflussen Beschaffungsprozesse oder lange Freigabeschleifen Ihre Projekte in Bezug auf technische Schulden und Softwareverfall?
 \end{enumerate}
+
+\subsubsection*{9. Abschluss}
+
+\begin{enumerate}[resume]
+  \item Können Sie ein Beispiel nennen, in dem eine Maßnahme zur Reduktion von technischer Schuld oder zur Vermeidung von Softwareverfall besonders erfolgreich war? Was genau machte diese Maßnahme aus Ihrer Sicht erfolgreich?
+  \item Gibt es weitere Erfahrungen oder Empfehlungen, die Sie im Zusammenhang mit Softwareverfall oder technischer Schuld teilen möchten?
+\end{enumerate}
+
 
 Vielen Dank für Ihre Teilnahme!

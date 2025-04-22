@@ -103,16 +103,15 @@ While software decay can be seen as a developing property of ongoing change, tec
 
 Importantly, technical debt and software decay are closely related: unmanaged technical debt accelerates software decay, while software decay can lead to the accumulation of technical debt. Empirical studies from Potdar, Li and Banker confirm the measurable impact of these phenomenon on maintenance costs, defect rates and overall system quality.\\
 
-To effectively manage these issues, the software industry has developed strategies that go beyond reactive maintenance. Structured, proactive practices such as continuous refactoring, rigorous quality assurance, technical debt management and automated testing are essential to prevent the accumulation of debt and decay.
+To effectively manage these issues, the software industry has developed strategies that go beyond reactive maintenance. Structured, proactive practices such as continuous refactoring, rigorous quality assurance, technical debt management and large scale testing are essential to prevent the accumulation of debt and decay.
 Based on these foundations, the next chapter will explore concrete mitigation strategies in commercial environments providing a comprehensive overview of the most common strategies, techniques and frameworks used in the industry to address technical debt and software decay.\\
 
-
-
 \subsection{Mitigation Strategies in Commercial Environments}
-Technical debt and software decay have been recognized as significant challenges in the software industry. They can lead to 
+As discussed in the previous section, technical debt and software decay have been recognized as significant challenges in the software industry. They can lead to 
 increased maintenance costs, reduced software quality and decreased developer productivity, overall resulting in a more expensive and less competitive product.
 With these challenges in mind, practitioners and researchers have developed a variety of strategies which manage, prevent and mitigate technical debt.
-This section will provide an overview of the most common strategies, techniques and frameworks used in commercial environments to address technical debt.\\
+This section will provide an overview of the most common strategies, techniques and frameworks used in commercial environments to address technical debt.
+This will be viewed on different levels: high-level strategies, code-level practices, architectural level as well as process and organizational measures.\\
 
 \subsubsection{High-Level Mitigation Strategies}
 To efficiently mitigate software decay and technical debt, proactive management strategies are essential. These strategies aim to prevent the accumulation of 
@@ -159,12 +158,12 @@ According to Fowler, `Self-testing code is so important to Continuous Integratio
 Furthermore, another critical prerequisite is `that they can correctly build the code,'\footcite{fowlerContinuousIntegration2006} thus guaranteeing that code changes consistently
 integrate without issues.\\
 
-To further prevent technical debt and broader software decay, quality analysis tools such as static code analyzers like SonarQube or DeepSource are frequently integrated into
+To further prevent technical debt and broader software decay by maintaining a specific code quality, quality analysis tools such as static code analyzers like SonarQube or DeepSource are frequently integrated into
 \ac{CI} pipelines. These tools often provide a metric to evaluate technical debt which is calculated based on the effort in minutes to fix the found maintainability issues.\footcite{sonarqubeUnderstandingMeasuresMetrics2025}
 In their paper `Technical Debt Measurement during Software Development using Sonarqube: Literature Review and a Case Study' (2021)\footcite{murilloTechnicalDebtMeasurement2021}
 Murillo et al. found that SonarQube is a useful tool for early debt detection. The estimated remediation effort metric allows for a good debt management prioritization.\footcite[5]{murilloTechnicalDebtMeasurement2021}
 However during their research they noticed if they changed SonarQubes default rules by just 26 rules, the technical debt effort would increase from
-1 hours and 50 minutes to 11 hours.\footcite[4]{murilloTechnicalDebtMeasurement2021} This issue, together with the fact that SonarQube can only detect code related debt and not other debt such as
+1 hours and 50 minutes to 11 hours.\footcite[4]{murilloTechnicalDebtMeasurement2021} This issue, together with the fact that SonarQube can only detect code related debt if correctly configured as well as no other debt such as
 infrastructure or requirements debt, makes these tools useful but not a complete solution.\\
 
 \ac{CD}, introduced by Jez Humble and David Farley in their foundational book `Continuous Delivery: Reliable Software Releases through Build, Test and Deployment Automation' (2010)
@@ -232,12 +231,11 @@ This can be done through issue trackers or backlogs to allow for structured appr
 An industry-wide survey conducted by Ramač et al. (2021) found that 47\% `had some practical experience with TD identification and/or management'\footcite[40]{ramacPrevalenceCommonCauses2021}.
 By visualizing and tracking technical debt, teams can prioritize and address debt items systematically, preventing their accumulation and broader software decay.
 Ramač et al. also found that the most common cause for technical debt was time pressure caused by deadlines\footcite[40]{ramacPrevalenceCommonCauses2021} and the `single most cited effect of TD is delivery delay.'\footcite[40]{ramacPrevalenceCommonCauses2021}
-This indicates that time pressure is not only a cause of technical debt but also a consequence, leading to a vicious cycle of debt accumulation and delivery delays. To break this cycle, a balance of new development and maintenance is crucial to prevent a border software decay.
-This is promoted by agile methodologies through the principle of continuous improvement, practices like including refactoring in their definition of done or allowing dedicated maintenance sprints.
+This indicates that time pressure is not only a cause of technical debt but also a consequence, leading to a vicious cycle of debt accumulation and delivery delays. To break this cycle, a balance of new development and maintenance is crucial to prevent a border software decay.\\
 
 Another important practice is conducting regular code reviews as part of the development workflow. This practice dates back to 1976 when Michael Fagan reviewed the benefits of peer code inspections.\footcite[183]{faganDesignCodeInspections1976}
 He found that `inspections increase productivity and improve final program quality.'\footcite[205]{faganDesignCodeInspections1976}
-Since then, code reviews have become more lightweight compared to the inspection proposed by Fagan, increasing participation. By removing in-person meetings and reviewer checklists, code reviews have become a standard practice in software development and usually occur before code is merged into the main repository.
+Since then, code reviews have become more lightweight compared to the inspection proposed by Fagan, increasing participation. By removing in-person meetings and reviewer checklists, accelerating and simplifying the process, code reviews have become a standard practice in software development and usually occur before code is merged into the main repository.
 McIntosh et al. (2016) investigated the impact of code reviews on software quality by comparing the review coverage, participation and expertise of the reviewer against the post-release defects.\footcite[6]{mcintoshEmpiricalStudyImpact2016}
 They found that coverage, while important, is not the only factor that influences the post-release defects.\footcite[39]{mcintoshEmpiricalStudyImpact2016}
 They state that `review participation should be considered when making integration decisions.'\footcite[39]{mcintoshEmpiricalStudyImpact2016}
@@ -261,7 +259,8 @@ and compare it to the proposed architecture.\footcite[6]{thomasStaticDynamicArch
 SonarQube, Sonargraph and TeamCity\footcite[43]{caraccioloEvaluatingArchitectureConformance2016}. They concluded that their approach 
 `can be applied in an industrial context.'\footcite[44]{caraccioloEvaluatingArchitectureConformance2016}
 They furthermore argue that the tools can be conveniently added to a dashboard, allowing for a short feedback loop as well as proactive management of architectural violations.\footcite[44]{caraccioloEvaluatingArchitectureConformance2016}
-These benefits can be seen in their case study, where they observed that the overall violations decreased from 606 to 600 in an 18 year old system with one million lines of code\footcite[43]{caraccioloEvaluatingArchitectureConformance2016}.\\
+These benefits can be seen in their case study, where they observed that the overall violations decreased from 606 to 600 in an 18 year old system with one million lines of code\footcite[43]{caraccioloEvaluatingArchitectureConformance2016}.
+Based on these project parameters Caracciolo et al. `consider that to be a positive outcome.'\footcite[43]{caraccioloEvaluatingArchitectureConformance2016}\\
 
 Numerous empirical studies show the effectiveness of these tools. In their paper `Empirical investigation of the influence of continuous integration bad practices on software quality' (2022),
 Silva and Bezerra found that `CI can improve software quality, especially about cohesion.'\footcite[4]{silvaEmpiricalInvestigationInfluence2022} However they also observed the impact
@@ -320,7 +319,7 @@ Bundeswehr software utilizes the `V-Modell XT Bw' as the project lifecycle model
 Bundeswehr's overarching procurement framework, \ac{CPM}.
 The V-Modell XT Bw is a comprehensive framework that encompasses the planning and execution of software projects in the Bundeswehr.\footcite[6]{bundeswehrVModellXTBw}
 It includes detailed guidelines for all parts of the software development process, from roles and requirements engineering to \ac{QA} and product quality.\footcite[pp. 20-21]{bundeswehrVModellXTBw}
-However, due to its rigid and sequential nature, the waterfall-based V-Modell XT Bw is known to limit flexibility, making iterative adjustments and agile methodologies challenging to implement.\\
+However, due to its rigid and sequential nature, the waterfall-based V-Modell XT Bw is known to limit flexibility, making iterative adjustments and agile methodologies not possible.\\
 
 The procurement procedures of the Bundeswehr are outlined by the aforementioned \ac{CPM} which was revised in 2012 after a commission in 2010 found that: 
 `Die Streitkräfte erhalten ihre geforderte Ausrüstung zumeist weder im erforderlichen Zeit- noch im geplanten Kostenrahmen.'\footcite[36]{strukturkommissionderbundeswehrBerichtStrukturkommissionBundeswehr2010}.
@@ -339,7 +338,7 @@ the software must adhere to both national and NATO standards. These strict requi
 regarding the lifecycle of the product, the software architecture and maintenance practices. The resulting constraints accelerate the accumulation of technical debt and software decay.\\
 
 Like all federal agencies in Germany, the Bundeswehr must adhere to the \ac{BSI} guidelines for IT security, called IT-Grundschutz\footcite{bundesamtfuersicherheitinderinformationstechnikBSIFAQ}. This defines a comprehensive security framework
-that includes technical, personnel and infrastructural security measures through the use of several standards. Compliance with these standards involves extensive documentation, risk management processes and regular audits. 
+that includes technical, personnel and infrastructural security measures through the use of several standards. Eventhough these standards Compliance with these standards involves extensive documentation, risk management processes and regular audits. 
 This leads to an increase in the complexity and effort required for ongoing software maintenance and updates.\footcite{bundesamtfuersicherheitinderinformationstechnikBSIStandards}\\
 
 In addition to the national regulations, Bundeswehr software systems are obligated to comply with the NATO security standards. These guidelines establish requirements for the handling of classified data, encryption standards and security clearance of personnel.
