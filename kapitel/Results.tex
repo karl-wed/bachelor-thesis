@@ -1,0 +1,80 @@
+\section{Results}
+\subsection{Introduction}
+This chapter will present the findings of the qualitative content analysis of the three semi-structured expert interviews. The interviews were analyzed by the coding framework of Braun and Clarke as described in the methodology chapter.
+The results are structured into nine key themes, each containing several subthemes that emerged from recurring topics in the data.
+\subsection{Challenges in Managing Long-Lived Military Software}
+As established in the literature review, military software systems are typically designed for extended operational lifespans, sometimes for decades. This leads to significant challenges across technical, organizational and structural dimensions.
+From the expert interviews, the following subthemes emerged: System Complexity, Legacy Technologies and Compatibility Issues and Organizational Challenges.
+
+\subsubsection{System Complexity}
+One key challenge in maintaining long-lived military software lies within the complexity of the systems. This is not only due to the accumulation of new features but also the strict requirements towards reliability, testability and compliance.\\
+
+As one interviewee stated:`Je kritischer die Software, desto höher ist eben auch der Einfluss, den es auf unsere Arbeit hat, weil desto höher ist eben auch der Testaufwand [\ldots] oder desto höher sind die Ansprüche an die Software.'\\
+
+This highlights how the need for a reliable and operationally safe systems lead to higher development and maintenance demands. Additionally, early architectural decisions which are often made decades ago, 
+still constrain the current development process. For example, existing system architectures can no longer be easily modified: `gewisse Entscheidungen [sind] vielleicht auch im Vorwege schon limitiert.'\\
+Such constraints make implementing modern solutions or adapting to changing requirements difficult. This indicates a need for proactive simplicity and modularity in initial designs.
+
+\subsubsection{Legacy Technologies and Compatibility Issues}
+The continued reliance on outdated technologies represents another significant challenge in maintaining military systems. Many components are based on frameworks, languages and tools that are no longer widely used or supported.
+As one interviewee expressed, `wir arbeiten noch mit sehr, sehr alten Versionen, [\ldots] es ist alles sehr alt und es passt mit den Sachen nicht mehr zusammen.'\\
+
+The problem not only not only exists in the development but also in testing and tool integration. Test environments often rely on virtual machines and tools that require substantial manual effort, making it prone for errors like misconfigurations or copy-paste mistakes.
+Moreover, forced tool usage from the customer side can lead to further complications: `wenn wir eine Vorgabe bekommen, dass wir mit bestimmten Tools testen müssen, dann ist das natürlich wieder mit extra Aufwand verbunden.'\\
+
+These issues contribute to software decay. Several participants described how initial shortcuts like skipping broken automated tests because they passed locally led to accumulated technical debt and a decrease in test reliability.\\
+
+\subsubsection{Organizational Challenges}
+Finally, organizational factors significantly impact the long-term sustainability of software. Knowledge loss due to employee turnover and the lack of documentation were recurring themes in the interviews.
+As one interviewee noted: `wenn du selbst Quellcode geschrieben hast, ihn dann zehn Jahre später noch warten und verstehen zu müssen, ist eben eine Herausforderung.' This challenge is reinforced by the retirements of experienced employees and the onboarding of younger developers
+unfamiliar with the legacy systems.\\
+
+The interviews revealed that documentation and review practices were inconsistent. Review process only happened only before major releases or were conducted informally. One participant stated:
+`Früher fast gar nicht. Also früher gab es quasi einen, der es gemacht hat und einen, der die offiziellen Tests dafür gemacht hat.'Today, although formalized practices like mandatory reviews and issue tracking are in place, their absence in older project 
+phases continues to impact the maintainability. 
+
+\subsection{Impact of Procurement and Approval Processes}
+The procurement and approval processes in Bundeswehr software projects have a significant impact on the evolution and maintainability of long-lived systems. Multiple participants across the interviews highlighted that even though technical shortcomings are often recognized, 
+procedural, financial or contractual constraints obstruct the implementation of fixes. As one participant observed, although issues are raised, `oft ist das dann für den Kunden attraktiver, ein neues Feature zu nehmen, statt irgendwas Bestehendes nochmal zu korrigieren.'
+This indicates a systemic preference for visible new features over addressing underlying technical debt.
+
+\subsubsection{Financial Constraints}
+One central barrier is a limited budget flexibility. In several cases, technical debt was acknowledged and documented, yet not addressed due to financial constraints. As one project manager noted, `Wir hatten halt ein festes Budget, [\ldots] aber da hat sich jetzt kein Folgeauftrag ergeben, deswegen liegen sie da jetzt erstmal.'
+In this context, the willingness to fix issues exist, but funding remains a bottleneck: `Grundsätzlich ist der Wille da es zu beheben aber das Geld nicht.' These conditions create an environment where known issues remain unsolved and accumulate over time.
+
+\subsubsection{Procurement Barriers}
+In addition to funding, rigid procurement processes restrict the ability of developers to act proactively. Retroactive code improvements or technical debt remediation often require formal authorization, as developers are not permitted to modify already delivered code without explicit approval:
+`Ohne dass wir einen Auftrag bekommen, dürfen wir halt auch nichts machen.' Even when shortcomings are identified, requests may be stalled due to insufficient contractual flexibility. This is particularly problematic under traditional methodologies like the V-Model, where
+`ein Riesenwust an falschen Umsetzungen' can emerge from misinterpreted or outdated requirements. As one interviewee pointed out, greater contractual agility could enable a more responsive development process:
+`Wenn man halt in den Verträgen schon leichte Spielräume schaffen würde, [\ldots] wäre schon dem Problem viel geholfen.'\\
+
+\subsubsection{Slow Approval Processes}
+The formal structure of software certification further increases the lack of flexibility. Even minor adjustments are subject to lengthy testing and approval processes. One participant described how a simple removal of unreachable code is often not pursued:
+`Weil die Prozesse eben so aufwendig sind, wird das dann eben normalerweise nicht gemacht.' This is not due to technical difficulty but to procedural formalities: `Die Softwareänderungen [dauern] manchmal 10 Minuten, aber der Prozess mit Testen und Nachweis und Lieferung und Freigabe dann durchaus mal eine Woche.'
+These approval processes are not only time-consuming but also discourage iterative improvement and create a cautious approach to change.\\
+
+\subsection{Technical Debt and Software Decay Practices}
+The interviews revealed that technical debt and software decay are recognized challenges in military software development. While they are not always tracked formally, they are commonly acknowledged, with participants stating that both strategic and pragmatic decisions about when to accept or mitigate them are made.
+Four subthemes emerged from the interviews: tracking and visibility, consequences, sources and the handling of existing technical debt.
+
+\subsubsection{Tracking and Visibility of Technical Debt}
+The interviews showed that tracking of technical debt varies between projects. In some cases, teams maintained issues of known technical debt in a backlog, even when they could not address them immediately. One participant explained, `die potenziellen Verbesserungen [werden] als Issue aufgenommen und mit einem `Wont do' Label markiert [\ldots]
+sodass wir im Nachgang jederzeit gucken können, das sind Dinge, die wir besser machen könnten.'\\
+However, others stated that such documentation is often missing. As another interviewee noted, `Also getrackt wird es auf jeden Fall nicht. Das wüsste ich jetzt nicht, dass sich das jemand irgendwie merkt, dass da und da irgendwie was noch zu tun wäre.'
+This discrepancy indicates to inconsistent practices regarding the visibility of known technical debt, often depending on project maturity or individual initiative.\\
+
+\subsubsection{Consequences of Technical Debt}
+Unaddressed technical debt was widely viewed as having long-term negative consequences on development efficiency. One interviewee reflected, `Man hat, glaube ich, eine Menge Zeit da verloren und man hätte, glaube ich, wenn man im Vorwege schon solche Dinge gemacht hätte, [\ldots] eine Menge Aufwand sparen können.'
+This sentiment was confirmed by others, highlighting that the cost of technical debt is often not immediately visible but often manifests in the long run, leading to increased maintenance efforts and reduced system reliability.\\
+
+\subsubsection{Sources of Technical Debt}
+Through the interviews, several sources of technical debt, ranging from outdated infrastructure to organizational pressure could be identified. Time pressure emerged as a dominant cause, with participants stating that deadlines often constrain quality practices:`Andererseits haben wir auch die Deadlines [\ldots] von daher is es immer eine Abwägung
+[\ldots], gerade ehr gegen Ende der Laufzeit [\ldots], wenn Software nicht optimal ist, solange eben keine Fehler drin sind.' This acceptance of a `good enough' solution under time constraints is a recurring pattern.\\
+
+Additionally, legacy systems contributed significantly to the accumulation of technical debt. Outdated tooling and incomplete test maintenance were cited repeatedly. For example, `Da hat man die Testskripte ewig nicht angefasst [\ldots] und jetzt habe ich gefühlt wieder ein paar Monate gebraucht, um die alle auf Stand zu kriegen [\ldots].
+Das ist halt [\ldots] diese technische Schuld, die wir im Vorweg hätten verhindern können.' Moreover, knowledge gaps introduced by inconsistent documentation and employee turnover were another root cause: `Dinge behoben worden sind im Quellcode, aber in den Testskripten nicht'.
+
+\subsubsection{Handling of Existing Technical Debt}
+Participants reported both proactive and passive strategies for handling technical debt. In more proactive cases, debt was addressed during related work. One participant described this approach: `Wenn wir jetzt neue Dinge überarbeiten, gucken wir, können wir das an anderen Stellen auch vereinfachen, können wir Sachen zentralisieren.'
+Opposed to this, there were also instances where technical debt was ignored due to effort or time constraints: `Wenn es dann wirklich nur um nicht optimale Implementierung geht, dann wurde es dann meistens doch eher unter den Teppich gekehrt.'
+This underscores the role of effort-benefit considerations in managing long-term quality.\\
