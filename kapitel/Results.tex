@@ -78,3 +78,77 @@ Das ist halt [\ldots] diese technische Schuld, die wir im Vorweg hätten verhind
 Participants reported both proactive and passive strategies for handling technical debt. In more proactive cases, debt was addressed during related work. One participant described this approach: `Wenn wir jetzt neue Dinge überarbeiten, gucken wir, können wir das an anderen Stellen auch vereinfachen, können wir Sachen zentralisieren.'
 Opposed to this, there were also instances where technical debt was ignored due to effort or time constraints: `Wenn es dann wirklich nur um nicht optimale Implementierung geht, dann wurde es dann meistens doch eher unter den Teppich gekehrt.'
 This underscores the role of effort-benefit considerations in managing long-term quality.\\
+
+\subsection{Mitigation Strategies in Military Software Projects}
+In order to address the accumulation of technical debt and the long-term effects of software decay, the interviewed experts described several mitigation strategies that have been implemented in their projects over time. These include improvements to the documentation, an increase in automation,
+use of refactoring and formalized code review processes.
+
+\subsubsection{Documentation Improvements}
+While documentation was often described as historically lacking, recent practices have begun to address this gap. Lightweight documentation tools like Markdown became the preferred choice for documenting over traditional tools like Word. This is due to ease of use and the ability to integrate 
+them directly into the development workflow. One expert emphasized the convenience of `einfach in der Entwicklungsumgebung heraus, da schnell was zu dokumentieren,' particularly using Markdown-based approaches. Additionally, issue tracking systems like Jira were mentioned not only for task management
+but to trace changes and problem resolution, providing a project memory. Nevertheless, some participants acknowledged that automated document generation is still not widely used due to complexity.\\
+
+\subsubsection{Automation}
+Automation emerged as a particularly influential strategy, seen as both a time-saver and quality enabler. All three interviews highlighted a move from legacy CI tools like Jenkins toward more integrated solutions like GitLab. Automation is now widely used in builds, tests and static code analysis.
+One practitioner noted that, `man kann es nicht auslassen \ldots es wird ja automatisch gemacht', referring to the inevitability of running the automated test pipelines on commits to the codebase. This shift has not only allowed for faster feedback loops but also for parallel testing through
+containers as well as enhanced scaling and efficiency. Test reliability and frequency have improved as well, especially in regression testing.\\
+
+\subsubsection{Refactoring}
+Refactoring is increasingly practiced, although with some constraints. While historically uncommon, agile workflows have made it more normalized. According to experts, this is due to code reviews or developer initiative and sometimes results in a complete rewrite of problematic components.
+One developer recounted the rewrite of a poorly maintainable test script: `wir schmeißen ihn weg und schreiben ihn komplett neu\ldots dadurch ist er jetzt viel besser, viel wartbarer.' This illustrates how refactoring can increase long-term maintainability, even at the cost of short-term effort.
+Nevertheless, the previously mentioned procurement and approval processes hinder such refactoring efforts, especially of older, already established code. Adding on to this are resource constraints, limiting the formalization of refactoring tickets in some teams.\\
+
+\subsubsection{Code Reviews}
+Systematic code reviews were consistently described as a critical practice for modern mitigation efforts. The standard has shifted from informal peer checks to mandatory multi-eye reviews, often documented in GitLab creating a clear audit trail. As one interviewee explained, `jede Änderung wird eben nochmal gereviewt'
+underscoring that no code is merged without review. These processes are not only seen as a quality assurance measure but also as a knowledge transfer opportunity. Review discussion often help to find hidden issues and prevent accidental technical debt early on. In some contexts,
+less experienced developers also participate, allowing for a team wide code knowledge transfer.\\
+
+\subsection{Quality Assurance and Testing}
+Ensuring long-term software quality is essential in military software projects, particularly due to the extended lifespans and the strict regulatory demands. The interviews revealed a combined approach of different strategies to ensure quality, which has evolved over time.
+Core elements included overcoming testing challenges, the use of tools and metrics, maintaining test coverage and developing systematic testing processes.
+
+\subsubsection{Testing Challenges}
+Participants noted several recurring challenges in maintaining test quality. The most significant one was sustaining automated testing pipelines: `Wenn man jetzt ein Schwäche nennen müsste, ist es natürlich der Aufwand dahinter, das Ganze so weit zu automatisieren.'
+Additionally, legacy testing processes and infrequent test execution in earlier project phases were cited as obstacles. These resulted in problems with the tests being detected much later, resulting in high maintenance efforts. 
+As on interviewee noted, `bei gewissen Projekten war es halt so, da hat man die Testskripte ewig nicht angefasst,' highlighting how neglecting test maintenance can cause significant issues later on.\\
+Another challenge was the lack of traceability especially when test were changed far later then the code. One interviewee stated that `wenn man dann nicht nachvollziehe kann, was im Quellcode geändert worden ist [\ldots] dann ist das schon sehr lästig', indicating
+the importance of maintaining a clear connection between code changes and test updates. Furthermore, a lack of consistency in responsibility for test maintenance was noted, often divided between developers and testers, creating additional coordination issues.
+Requirements themselves were sometimes found to be vague, making precise testing difficult.\\
+
+\subsubsection{Use of Metrics and Tools}
+Quantitative quality metrics have been increasingly used to assess and improve software quality. Metrics such as code coverage, complexity and static code analysis findings were frequently mentioned. One interviewee stated: `Wir haben die Codecoverage als Kennzahl und wir haben die statische Codeanalyse,
+die uns dann Findings quasi hochwirft.' Tools like Logiscope and Jenkins play a key role in these evaluations and are integrated into the CI pipelines for continuous feedback.\\
+The use of unit tests metrics and graphical feedback was also mentioned as a way to improve code quality. Thresholds for metric violations were set by the client, creating external pressure as well as standardization. In addition to technical tools, project management tools like Jira contribute to traceability and error tracking,
+showing that quality encompasses both code and process aspects.\\
+
+\subsubsection{Test Coverage and Test Maintenance}
+Ensuring high test coverage as well as maintaining test scripts were identified as key strategies to prevent software decay. Automated coverage reports allows developers to monitor how well the code is covered by tests: `dann halt auch so Messwerte wie Test-Coverage mir auch ausgeben lassen [\ldots] und kann da halt gegebenenfalls nachbessern.'
+The integration of test automation into CI/CD pipelines was described as both a reliability and a knowledge preservation mechanism.\\
+Participants emphasized the need to regularly update test scripts immediately after code changes, especially in long-lived projects. One expert advised: `Testskripte immer direkt nach der Softwareanpassung auch mit anpassen,' warning that even developers might struggle remembering the reasons for their own code changes after a few months.
+The benefit of nightly test runs and regression detection was also highlighted, described as crucial for sustainable quality assurance.\\
+
+\subsubsection{Testing Practices}
+Over the last years, testing practices have evolved from manual execution to a more automated and systematic approach. Several interviewees recalled earlier practices where tests had to be executed manually over days: `vor zehn Jahren [\ldots] mussten viele von diesen Testprozessen per Hand durchgeklickt werden.' In contrast, today's pipelines
+integrate code compilation, test execution and reporting in tools like GitLab or Jenkins.\\
+The resulting transparency was described as a significant improvement, allowing developers to receive detailed failure reports and even screenshots in case of \ac{UI} errors. As one expert put it, `den Überblick zu haben [\ldots] ist schon ein großer Gewinn.'
+Despite these advancements, some areas like system-level tests still rely on manual testing. Nevertheless, the overall trend is towards a more automated and integrated testing approach and is seen as a major improvement in software quality assurance.\\
+
+\subsection{Agile Methodologies in Military Projects}
+The introduction of agile methodologies into military software development marks a significant shift from traditional approaches. While usually reliant on plan-driven models such as the V-Modell XT, participants described how agile methodologies, particularly Scrum, are being adopted in some form in some projects.
+The reported effects of this shift include a change in team dynamics, software quality and the ability to adapt to changes. Nonetheless, several constraints still remain.
+
+\subsubsection{Knowledge Sharing and Collaboration}
+A key benefit of agile practices in the military context is improved knowledge sharing and collaboration. Participants emphasized the positive impact of regular stand-ups, code reviews and a collaborative problem-solving culture: `Dadurch, dass wir täglich miteinander reden und täglich Fragen stellen und im Review mit anderen 
+Personen zusammensitzen, da wird sowas dann halt immer [\ldots] gefördert.' Agile methods work against the silo knowledge structure typical in legacy projects. By encouraging broader ownership of code and increased onboarding support for new team members, a participant noted a shift away from the `Keller-Mentalität'. According to him,
+this shift more learning opportunities as well as project resilience.\\
+
+\subsubsection{Limitations in Agile Implementations}
+Despite the positive aspects, the implementation of agile methodologies faces several structural challenges in military software projects. Firstly, agile practices are still relatively new: `Agil ist tatsächlich ein neues Thema im Bereich militärisch. Das gab es bisher gar nicht.'
+Secondly, organizational and contractual constraints restrict the iterative nature of agile development. For example, procurement offices would be required to be more involved and responsive in iterative decisions, which would increase their workload. Additionally, early-phase resource investments which are common in agile approaches
+clash with the traditional planning and fixed-scope contracts: `Es wird natürlich im Vorwege teurer, damit man hinten raus [\ldots] technische Schuld [\ldots] abfedert.' These constraints highlight the need for an adapted agile model that can accommodate the regulatory and hierarchical structures of military software development.\\
+
+\subsubsection{Use and Impact of Agile Methods}
+In practice, the use of tools like GitLab and Jira has enabled a more agile-friendly development environment. Participants highlighted the benefit of a closer connection between issue tracking, branching strategies and code delivery pipelines. 
+Agile processes also improve responsiveness. Teams can now react more easily to changing requirements or design flaws. By breaking work into smaller increments and regularly revisiting priorities, scope issues can be identified and addressed earlier:
+`Der Scope [ist] zu groß geworden und haben das dann abgekapselt in ein eigenes Item.' Moreover, the agile approach of having a potentially shippable product at the end of each sprint has improved planning discipline and improvement cycles.
+Nevertheless, participants stressed that the full potential of these benefits can only be realized with a more flexible and responsive organizational structure.\\
