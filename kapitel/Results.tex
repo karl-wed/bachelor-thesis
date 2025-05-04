@@ -152,3 +152,63 @@ In practice, the use of tools like GitLab and Jira has enabled a more agile-frie
 Agile processes also improve responsiveness. Teams can now react more easily to changing requirements or design flaws. By breaking work into smaller increments and regularly revisiting priorities, scope issues can be identified and addressed earlier:
 `Der Scope [ist] zu groß geworden und haben das dann abgekapselt in ein eigenes Item.' Moreover, the agile approach of having a potentially shippable product at the end of each sprint has improved planning discipline and improvement cycles.
 Nevertheless, participants stressed that the full potential of these benefits can only be realized with a more flexible and responsive organizational structure.\\
+
+\subsection{Influence of Regulatory and Security Requirements}
+The development and maintenance of military software is heavily influenced by regulatory and security requirements. These requirements not only shape the development process but also impact both technical decisions and organizational flexibility.
+The interviews revealed that while these requirements are essential for maintaining safety and reliability, they also introduce significant challlenges that can hinder adaptive development practices.
+
+\subsubsection{Impact on Flexiblity}
+A recurring themes that emerged is the limited flexibility in making changes to the software once it has been delivered. Participants described how even minor adjustments need to pass through extensive testing and approval processes, which can take weeks or even months.
+As one interviewee noted: `Software kann nicht einfach geändert werden, sondern wir müssen einen recht komplexen Prozess durchlaufen,' highlighting the bureaucratic complexity that can restrict maintenance and optimization efforts. Even clearly obsolote compoennts such as unreachable or `dead' code
+often remain in the system due to the time and effort required for formal approval.\\
+
+The flexibility issue has a direct impact on the maintainability. As another expert pointed out, even if a better solution is available, `wir dürfen nicht einfach beliebig irgendwelche Sachen ändern,' due to certification status and client approval. A lack of contractual agility furhter increases the problem,
+with interviewees expressing that small changes which coul improve quality are often not purused because `die Spielräume aktuell zu wenig gentutz werden.'
+
+\subsubsection{Standards Compliance}
+The interviws undersocred the stringent compliance requirements around coding standards and documentation. All projects adher to formal coding guidelines and use tools like Logiscope to automaticaly enforce these standards defined in cooperation with the client.
+These metrics not only insure code quality and maintainability but also serve to enforce compliance with the regulatory framework. As one expert noted, `wir haben im Projekt auch feste Codierrichtlinien \ldots die dafür gemacht sind, den Code am Ende wartbar zu halten.'\\
+Furthermore, formal review are required for any delivered code, with audi trails and standarized documentation ensuring traceability and accountability. One participant described how `es mussten regelmäßige Reports angelegt werden, die dann auch auf Nachfrage dem Kunden vorzulegen sind,' reinforcing how compliance proccesses are integrated into the development.
+
+\subsubsection{Security and Reliability Requirements}
+The security and reliability requirements tied to critical military systems add another layer of complexity. Systems with higher criticality are required to have elveated test coverage, often reaching 95\%, and must adhere to strict validation practices. That was framed both as a challenge and a motivator
+as one particiant remarked that `je kritischer die Softawre, desto höher ist eben auch der Testaufwand.'\\
+Desptite these requirements, the interviews suggest that the security and reliabiltiy standards are also intrinsic motivatory for the team. One interviewee observed that teams are `ehr intrinisch getrieben,' indicating a strong internal commitment to quality, beyond the external regulations. 
+Some particiapnts even hinted, that in certain cases, regulatory pressure may fall short of the actual quality standards that the teams set for themselves, describing the standards as `ehr ein bisschen lascher.'
+
+\subsection{Succesful Examples}
+Despite the many challenges discussed throughout the interviews, the participants also described a number of successful practices that have mitigated software decay and reduced technical debt in their projects. These succesful measuers offer insights into what strategies have worked well in practice and could be applied to other projects.
+
+\subsubsection{Effective Measures against Software Decay}
+One of the most frequently mentioned successful measures was the introduction of automation, particularly in the areas of testing and continous integration. The shift from isolated VM-based tests to containized, pipeline-driven environemnts was described as a key improvement. This change enabled faster, parallel test execution
+and improved visiblity across the codebase. As one particiapnt stated, the move to GitLab and automated pipelines allowed for `schnelle Ergebnisse' and ensured that `jeder, der ein Issue bearbeitet, auch sicherstellen muss, dass die Tests \ldots durchlaufen.'\\
+
+Another significant improvement came from refactoring efforts, often initiated through broader modernization efforts. During the migration from SVN to Git, teams took the opportunity to `Ballast ab[zu]werfen' remvoing unnecessary legacy code an simplyfing complex structures. These efforts directly improved code clarity and maintainability,
+making it easier for new devleopers to enagage with the system: `Viele Methoden sind eben kürzer geworden, leichter lesbar \ldots auch einem laien dann leichter fällt \ldots zu verstehen.'\\
+
+The CI/CD infrastrcture was described as a continously evolving system. Orginally implemented as a basic buld pipeline, it has grown to incorperate automated testing, static code analysis and compiler warning tracking. This evolution has made the development process `praktischer und bequemer,' illustrating how technical
+investments translate into tangible benefits for the team.\\
+
+Lastly, the use of agile practices was highlighted as a driver of responsive and adapative development. In one case, an agile approach allowed a fast response to a customer request that otherwise have been ignored due to implementation complexity: `\ldots sehr schnell auf einen Kundenwunsch reagiert \ldots korrigiert udn mit wenig Aufwand umgesetzt.'
+This example illustrates how agile and technical practices can directly reduce software decay by adressing issues early and efficiently.\\
+
+\subsection{Recommendations For Future Practices}
+The final theme of this study focuses on the recommendation for future pracitces by practiioners to reduce long-term software decay and technical debt. Interviewees consistently highlighted proactive measures and early intervention as key strategies. This is reflected in the recommendations targeting agile adoption, continous documentation, sustained test maintenance and upfront investment.
+
+\subsubsection{Agile Expansion}
+Agile practices, while still uncommon in military software contexts were regarded as promising in counteracting technical debt. Participants reported greater responsivness to emerging needs and improved alignment with user priorities when using agile methods.
+As one interviewee decibred, agile approaches made it possible to `mit wenig Aufwand' adapt systems quickly to cusotmer demands. The iterative nature of sprints also enabled isolation of complex issues and allowed for more focused problem-solving.
+In a border view, agile working was seen as an opportunity to adress usablity shortcomings and allow for better prioritazation. However, participants noted that realizitng these benefits requires contractural flexibility and the ability to reallocate resuources mid project, an area that still is problematic due to the rigid procurement settings.\\
+
+\subsubsection{Focus on Test Maintenance}
+Interviewees emphasized the improtance of maintaining and adapting test scripts. Negelect in this area was seen as a major source of avoidable technical debt. One expert reflected that without timley updates, even small code changes resulted in signifcant high maintenance efforts.
+Automated pipelines helped reduce this bruden, but maintaining the relevance and accuarcy of test scripts remains a manual task. In long-lived software systems, proactively synchronizing code and test logic was viewed as a foundational elemnent of sustainability.\\
+
+\subsubsection{Continous Documentation}
+Improving documentation emegred as another important mitigation approach. Experts pointed out the necessity of reducing the threshold of developers to contribute to documentation, particually by adopting lightweight and integrated tools. For example, Git and Markdown were favored due to their accessbility and ease of use.
+Beyond technical documentation, tracebility through issue tracking and automated records of reviews were also seen as a step towards preserving architectural and design knowledge over time. As one interviewee stated, clear documentation ensures that `auch Jahre später \ldots nachvollzogen werden kann', supporting maintainability across generational changes.\\
+
+\subsubsection{Early Investment}
+A recurring insight across all interviews was the value of early, deliberate investment in software maintainability. Participants stressed the benefits of planning from the beginning for a system's long lifecycle. Strategic choices such as introducing modularity, automated tools and test infrastructure early on were seen to yield long-term benefits.
+One practioner noted that `wenn man es direkt zu Beginn macht \ldots hat [man] auch den geringsten Aufwand nacher', capturing the concept that frontloading technical quality reduces costs and complexity in the long run. Moreover, even small-scale improvements, if made consistently and early, were regarded as effective in preserving system health over time.\\
+
