@@ -7,11 +7,11 @@ As established in the literature review, military software systems are typically
 From the expert interviews, the following subthemes emerged: System Complexity, Legacy Technologies and Compatibility Issues and Organizational Challenges.
 
 \subsubsection{System Complexity}
-One key challenge in maintaining long-lived military software lies within the complexity of the systems. This is not only due to the accumulation of new features but also the strict requirements towards reliability, testability and compliance.\\
+One key challenge in maintaining long-lived military software lies within the complexity of the systems. This is not only due to the accumulation of new features but also the strict requirements regarding reliability, testability and compliance.\\
 
-As one interviewee stated:`Je kritischer die Software, desto höher ist eben auch der Einfluss, den es auf unsere Arbeit hat, weil desto höher ist eben auch der Testaufwand [\ldots] oder desto höher sind die Ansprüche an die Software.'\\
+As one interviewee stated: `Je kritischer die Software, desto höher ist eben auch der Einfluss, den es auf unsere Arbeit hat, weil desto höher ist eben auch der Testaufwand [\ldots] oder desto höher sind die Ansprüche an die Software.'\\
 
-This highlights how the need for a reliable and operationally safe systems lead to higher development and maintenance demands. Additionally, early architectural decisions which are often made decades ago, 
+This highlights how the need for reliable and operationally safe systems leads to higher development and maintenance demands. Additionally, early architectural decisions which were often made decades ago, 
 still constrain the current development process. For example, existing system architectures can no longer be easily modified: `gewisse Entscheidungen [sind] vielleicht auch im Vorwege schon limitiert.'\\
 Such constraints make implementing modern solutions or adapting to changing requirements difficult. This indicates a need for proactive simplicity and modularity in initial designs.
 
@@ -19,18 +19,18 @@ Such constraints make implementing modern solutions or adapting to changing requ
 The continued reliance on outdated technologies represents another significant challenge in maintaining military systems. Many components are based on frameworks, languages and tools that are no longer widely used or supported.
 As one interviewee expressed, `wir arbeiten noch mit sehr, sehr alten Versionen, [\ldots] es ist alles sehr alt und es passt mit den Sachen nicht mehr zusammen.'\\
 
-The problem not only not only exists in the development but also in testing and tool integration. Test environments often rely on virtual machines and tools that require substantial manual effort, making it prone for errors like misconfigurations or copy-paste mistakes.
-Moreover, forced tool usage from the customer side can lead to further complications: `wenn wir eine Vorgabe bekommen, dass wir mit bestimmten Tools testen müssen, dann ist das natürlich wieder mit extra Aufwand verbunden.'\\
+The problem not only exists in development but also in testing and tool integration. Test environments often rely on virtual machines and tools that require substantial manual effort, and are therefore prone for errors like misconfigurations or copy-paste mistakes.
+Moreover, forced tool usage from the customer side can lead to further complications: `Wenn wir eine Vorgabe bekommen, dass wir mit bestimmten Tools testen müssen, dann ist das natürlich wieder mit extra Aufwand verbunden.'\\
 
 These issues contribute to software decay. Several participants described how initial shortcuts like skipping broken automated tests because they passed locally led to accumulated technical debt and a decrease in test reliability.\\
 
 \subsubsection{Organizational Challenges}
 Finally, organizational factors significantly impact the long-term sustainability of software. Knowledge loss due to employee turnover and the lack of documentation were recurring themes in the interviews.
-As one interviewee noted: `wenn du selbst Quellcode geschrieben hast, ihn dann zehn Jahre später noch warten und verstehen zu müssen, ist eben eine Herausforderung.' This challenge is reinforced by the retirements of experienced employees and the onboarding of younger developers
+As one interviewee noted: `Wenn du selbst Quellcode geschrieben hast, ihn dann zehn Jahre später noch warten und verstehen zu müssen, ist eben eine Herausforderung.' This challenge is reinforced by the retirement of experienced employees and the onboarding of younger developers
 unfamiliar with the legacy systems.\\
 
-The interviews revealed that documentation and review practices were inconsistent. Review process only happened only before major releases or were conducted informally. One participant stated:
-`Früher fast gar nicht. Also früher gab es quasi einen, der es gemacht hat und einen, der die offiziellen Tests dafür gemacht hat.'Today, although formalized practices like mandatory reviews and issue tracking are in place, their absence in older project 
+The interviews revealed that documentation and review practices were inconsistent. Review processes only took place before major releases or were conducted informally. One participant stated:
+`Früher fast gar nicht. Also früher gab es quasi einen, der es gemacht hat und einen, der die offiziellen Tests dafür gemacht hat.' Today, although formalized practices like mandatory reviews and issue tracking are in place, their absence in older project 
 phases continues to impact the maintainability. 
 
 \subsection{Impact of Procurement and Approval Processes}
@@ -40,10 +40,10 @@ This indicates a systemic preference for visible new features over addressing un
 
 \subsubsection{Financial Constraints}
 One central barrier is a limited budget flexibility. In several cases, technical debt was acknowledged and documented, yet not addressed due to financial constraints. As one project manager noted, `Wir hatten halt ein festes Budget, [\ldots] aber da hat sich jetzt kein Folgeauftrag ergeben, deswegen liegen sie da jetzt erstmal.'
-In this context, the willingness to fix issues exist, but funding remains a bottleneck: `Grundsätzlich ist der Wille da es zu beheben aber das Geld nicht.' These conditions create an environment where known issues remain unsolved and accumulate over time.
+In this context, the willingness to fix issues exists, but funding remains a bottleneck: `Grundsätzlich ist der Wille da, es zu beheben, aber das Geld nicht.' These conditions create an environment where known issues remain unsolved and accumulate over time.
 
 \subsubsection{Procurement Barriers}
-In addition to funding, rigid procurement processes restrict the ability of developers to act proactively. Retroactive code improvements or technical debt remediation often require formal authorization, as developers are not permitted to modify already delivered code without explicit approval:
+In addition to funding, rigid procurement processes restrict the ability of developers to act proactively. Retroactive code improvements or technical debt remediation often require formal authorization, as developers are not permitted to modify code already delivered without explicit approval:
 `Ohne dass wir einen Auftrag bekommen, dürfen wir halt auch nichts machen.' Even when shortcomings are identified, requests may be stalled due to insufficient contractual flexibility. This is particularly problematic under traditional methodologies like the V-Model, where
 `ein Riesenwust an falschen Umsetzungen' can emerge from misinterpreted or outdated requirements. As one interviewee pointed out, greater contractual agility could enable a more responsive development process:
 `Wenn man halt in den Verträgen schon leichte Spielräume schaffen würde, [\ldots] wäre schon dem Problem viel geholfen.'\\
@@ -58,25 +58,25 @@ The interviews revealed that technical debt and software decay are recognized ch
 Four subthemes emerged from the interviews: tracking and visibility, consequences, sources and the handling of existing technical debt.
 
 \subsubsection{Tracking and Visibility of Technical Debt}
-The interviews showed that tracking of technical debt varies between projects. In some cases, teams maintained issues of known technical debt in a backlog, even when they could not address them immediately. One participant explained, `die potenziellen Verbesserungen [werden] als Issue aufgenommen und mit einem `Wont do' Label markiert [\ldots]
+The interviews showed that tracking of technical debt varies between projects. In some cases, teams maintained issues of known technical debt in a backlog, even when they could not address them immediately. One participant explained, `die potenziellen Verbesserungen [werden] als Issue aufgenommen und mit einem Won't do Label markiert, [\ldots]
 sodass wir im Nachgang jederzeit gucken können, das sind Dinge, die wir besser machen könnten.'\\
 However, others stated that such documentation is often missing. As another interviewee noted, `Also getrackt wird es auf jeden Fall nicht. Das wüsste ich jetzt nicht, dass sich das jemand irgendwie merkt, dass da und da irgendwie was noch zu tun wäre.'
-This discrepancy indicates to inconsistent practices regarding the visibility of known technical debt, often depending on project maturity or individual initiative.\\
+This discrepancy indicates inconsistent practices regarding the visibility of known technical debt, often depending on project maturity or individual initiative.\\
 
 \subsubsection{Consequences of Technical Debt}
 Unaddressed technical debt was widely viewed as having long-term negative consequences on development efficiency. One interviewee reflected, `Man hat, glaube ich, eine Menge Zeit da verloren und man hätte, glaube ich, wenn man im Vorwege schon solche Dinge gemacht hätte, [\ldots] eine Menge Aufwand sparen können.'
-This sentiment was confirmed by others, highlighting that the cost of technical debt is often not immediately visible but often manifests in the long run, leading to increased maintenance efforts and reduced system reliability.\\
+This sentiment was confirmed by others, highlighting that the cost of technical debt is often not immediately visible but manifests in the long run, leading to increased maintenance efforts and reduced system reliability.\\
 
 \subsubsection{Sources of Technical Debt}
-Through the interviews, several sources of technical debt, ranging from outdated infrastructure to organizational pressure could be identified. Time pressure emerged as a dominant cause, with participants stating that deadlines often constrain quality practices:`Andererseits haben wir auch die Deadlines [\ldots] von daher is es immer eine Abwägung
-[\ldots], gerade ehr gegen Ende der Laufzeit [\ldots], wenn Software nicht optimal ist, solange eben keine Fehler drin sind.' This acceptance of a `good enough' solution under time constraints is a recurring pattern.\\
+Through the interviews, several sources of technical debt, ranging from outdated infrastructure to organizational pressure could be identified. Time pressure emerged as a dominant cause, with participants stating that deadlines often constrain quality practices: `Andererseits haben wir auch die Deadlines [\ldots] von daher is es immer eine Abwägung
+[\ldots], gerade eher gegen Ende der Laufzeit [\ldots], wenn Software nicht optimal ist, solange eben keine Fehler drin sind.' This acceptance of a `good enough' solution under time constraints is a recurring pattern.\\
 
-Additionally, legacy systems contributed significantly to the accumulation of technical debt. Outdated tooling and incomplete test maintenance were cited repeatedly. For example, `Da hat man die Testskripte ewig nicht angefasst [\ldots] und jetzt habe ich gefühlt wieder ein paar Monate gebraucht, um die alle auf Stand zu kriegen [\ldots].
-Das ist halt [\ldots] diese technische Schuld, die wir im Vorweg hätten verhindern können.' Moreover, knowledge gaps introduced by inconsistent documentation and employee turnover were another root cause: `Dinge behoben worden sind im Quellcode, aber in den Testskripten nicht'.
+Additionally, legacy systems contributed significantly to the accumulation of technical debt. Outdated tooling and incomplete test maintenance were cited repeatedly as evident in the following example: `Da hat man die Testskripte ewig nicht angefasst [\ldots] und jetzt habe ich gefühlt wieder ein paar Monate gebraucht, um die alle auf Stand zu kriegen [\ldots].
+Das ist halt [\ldots] diese technische Schuld, die wir im Vorweg hätten verhindern können.' Moreover, knowledge gaps introduced by inconsistent documentation and employee turnover were another root cause: `Wenn Dinge behoben worden sind im Quellcode, aber in den Testskripten nicht'.
 
 \subsubsection{Handling of Existing Technical Debt}
-Participants reported both proactive and passive strategies for handling technical debt. In more proactive cases, debt was addressed during related work. One participant described this approach: `Wenn wir jetzt neue Dinge überarbeiten, gucken wir, können wir das an anderen Stellen auch vereinfachen, können wir Sachen zentralisieren.'
-Opposed to this, there were also instances where technical debt was ignored due to effort or time constraints: `Wenn es dann wirklich nur um nicht optimale Implementierung geht, dann wurde es dann meistens doch eher unter den Teppich gekehrt.'
+Participants reported both proactive and passive strategies for handling technical debt. In more proactive cases, debt was addressed during related work. One participant described this approach as follows: `Wenn wir jetzt neue Dinge überarbeiten, gucken wir, können wir das an anderen Stellen auch vereinfachen, können wir Sachen zentralisieren.'
+In contrast, there were also instances where technical debt was ignored due to effort or time constraints: `Wenn es dann wirklich nur um nicht optimale Implementierung geht, dann wurde es dann meistens doch eher unter den Teppich gekehrt.'
 This underscores the role of effort-benefit considerations in managing long-term quality.\\
 
 \subsection{Mitigation Strategies in Military Software Projects}
@@ -86,129 +86,130 @@ use of refactoring and formalized code review processes.
 \subsubsection{Documentation Improvements}
 While documentation was often described as historically lacking, recent practices have begun to address this gap. Lightweight documentation tools like Markdown became the preferred choice for documenting over traditional tools like Word. This is due to ease of use and the ability to integrate 
 them directly into the development workflow. One expert emphasized the convenience of `einfach in der Entwicklungsumgebung heraus, da schnell was zu dokumentieren,' particularly using Markdown-based approaches. Additionally, issue tracking systems like Jira were mentioned not only for task management
-but to trace changes and problem resolution, providing a project memory. Nevertheless, some participants acknowledged that automated document generation is still not widely used due to complexity.\\
+but to trace changes and problem resolution, providing a project memory. Nevertheless, some participants acknowledged that automated document generation is still not used widely due to complexity.\\
 
 \subsubsection{Automation}
 Automation emerged as a particularly influential strategy, seen as both a time-saver and quality enabler. All three interviews highlighted a move from legacy CI tools like Jenkins toward more integrated solutions like GitLab. Automation is now widely used in builds, tests and static code analysis.
-One practitioner noted that, `man kann es nicht auslassen \ldots es wird ja automatisch gemacht', referring to the inevitability of running the automated test pipelines on commits to the codebase. This shift has not only allowed for faster feedback loops but also for parallel testing through
+One practitioner noted that, `man kann es nicht auslassen [\ldots] es wird ja automatisch gemacht', referring to the inevitability of running the automated test pipelines on commits to the codebase. This shift has not only allowed for faster feedback loops but also for parallel testing through
 containers as well as enhanced scaling and efficiency. Test reliability and frequency have improved as well, especially in regression testing.\\
 
 \subsubsection{Refactoring}
-Refactoring is increasingly practiced, although with some constraints. While historically uncommon, agile workflows have made it more normalized. According to experts, this is due to code reviews or developer initiative and sometimes results in a complete rewrite of problematic components.
-One developer recounted the rewrite of a poorly maintainable test script: `wir schmeißen ihn weg und schreiben ihn komplett neu\ldots dadurch ist er jetzt viel besser, viel wartbarer.' This illustrates how refactoring can increase long-term maintainability, even at the cost of short-term effort.
+Refactoring is practiced increasingly, although with some constraints. While historically uncommon, agile workflows have made it more normalized. According to experts, this is due to code reviews or developer initiative and sometimes results in a complete rewrite of problematic components.
+One developer recounted the rewrite of a poorly maintainable test script: `wir schmeißen ihn weg und schreiben ihn komplett neu, [\ldots] dadurch ist er jetzt viel besser, viel wartbarer.' This illustrates how refactoring can increase long-term maintainability, even at the cost of short-term effort.
 Nevertheless, the previously mentioned procurement and approval processes hinder such refactoring efforts, especially of older, already established code. Adding on to this are resource constraints, limiting the formalization of refactoring tickets in some teams.\\
 
 \subsubsection{Code Reviews}
-Systematic code reviews were consistently described as a critical practice for modern mitigation efforts. The standard has shifted from informal peer checks to mandatory multi-eye reviews, often documented in GitLab creating a clear audit trail. As one interviewee explained, `jede Änderung wird eben nochmal gereviewt'
-underscoring that no code is merged without review. These processes are not only seen as a quality assurance measure but also as a knowledge transfer opportunity. Review discussion often help to find hidden issues and prevent accidental technical debt early on. In some contexts,
-less experienced developers also participate, allowing for a team wide code knowledge transfer.\\
+Systematic code reviews were described consistently as a critical practice for modern mitigation efforts. The standard has shifted from informal peer checks to mandatory multi-eye reviews, often documented in GitLab creating a clear audit trail. As one interviewee explained, `jede Änderung wird eben nochmal gereviewt'
+underscoring that no code is merged without review. These processes are not only seen as a quality assurance measure but also as a knowledge transfer opportunity. Review discussion often helps to find hidden issues and prevent accidental technical debt early on. In some contexts,
+less experienced developers also participate, allowing for a teamwide transfer of code knowledge.\\
 
 \subsection{Quality Assurance and Testing}
-Ensuring long-term software quality is essential in military software projects, particularly due to the extended lifespans and the strict regulatory demands. The interviews revealed a combined approach of different strategies to ensure quality, which has evolved over time.
+Ensuring long-term software quality is essential in military software projects, particularly due to the extended lifespans and strict regulatory demands. The interviews revealed a combination of different strategies to ensure quality, an approach which has evolved over time.
 Core elements included overcoming testing challenges, the use of tools and metrics, maintaining test coverage and developing systematic testing processes.
 
 \subsubsection{Testing Challenges}
-Participants noted several recurring challenges in maintaining test quality. The most significant one was sustaining automated testing pipelines: `Wenn man jetzt ein Schwäche nennen müsste, ist es natürlich der Aufwand dahinter, das Ganze so weit zu automatisieren.'
-Additionally, legacy testing processes and infrequent test execution in earlier project phases were cited as obstacles. These resulted in problems with the tests being detected much later, resulting in high maintenance efforts. 
-As on interviewee noted, `bei gewissen Projekten war es halt so, da hat man die Testskripte ewig nicht angefasst,' highlighting how neglecting test maintenance can cause significant issues later on.\\
-Another challenge was the lack of traceability especially when test were changed far later then the code. One interviewee stated that `wenn man dann nicht nachvollziehe kann, was im Quellcode geändert worden ist [\ldots] dann ist das schon sehr lästig', indicating
-the importance of maintaining a clear connection between code changes and test updates. Furthermore, a lack of consistency in responsibility for test maintenance was noted, often divided between developers and testers, creating additional coordination issues.
+Participants noted several recurring challenges in maintaining test quality. The most significant of these was sustaining automated testing pipelines: `Wenn man jetzt ein Schwäche nennen müsste, ist es natürlich der Aufwand dahinter, das Ganze so weit zu automatisieren.'
+Additionally, legacy testing processes and infrequent test execution in earlier project phases were cited as obstacles. As a result problems with the tests were detected much later, resulting in high maintenance efforts. 
+As one interviewee noted, `bei gewissen Projekten war es halt so, da hat man die Testskripte ewig nicht angefasst,' which highlights how neglecting test maintenance can cause significant issues in the future.\\
+Another challenge was the lack of traceability, especially when tests were changed much later than the code. One interviewee stated that `wenn man dann nicht nachvollziehen kann, was im Quellcode geändert worden ist, [\ldots] dann ist das schon sehr lästig', indicating
+the importance of maintaining a clear connection between code changes and test updates. Furthermore, a lack of consistency in responsibility for test maintenance was noted.
+This responsibility was often divided between developers and testers, which created additional coordination issues.
 Requirements themselves were sometimes found to be vague, making precise testing difficult.\\
 
 \subsubsection{Use of Metrics and Tools}
 Quantitative quality metrics have been increasingly used to assess and improve software quality. Metrics such as code coverage, complexity and static code analysis findings were frequently mentioned. One interviewee stated: `Wir haben die Codecoverage als Kennzahl und wir haben die statische Codeanalyse,
 die uns dann Findings quasi hochwirft.' Tools like Logiscope and Jenkins play a key role in these evaluations and are integrated into the CI pipelines for continuous feedback.\\
-The use of unit tests metrics and graphical feedback was also mentioned as a way to improve code quality. Thresholds for metric violations were set by the client, creating external pressure as well as standardization. In addition to technical tools, project management tools like Jira contribute to traceability and error tracking,
+The use of unit test metrics and graphical feedback was also mentioned as a way to improve code quality. Thresholds for metric violations were set by the client, creating external pressure as well as standardization. In addition to technical tools, project management tools like Jira contribute to traceability and error tracking,
 showing that quality encompasses both code and process aspects.\\
 
 \subsubsection{Test Coverage and Test Maintenance}
-Ensuring high test coverage as well as maintaining test scripts were identified as key strategies to prevent software decay. Automated coverage reports allows developers to monitor how well the code is covered by tests: `dann halt auch so Messwerte wie Test-Coverage mir auch ausgeben lassen [\ldots] und kann da halt gegebenenfalls nachbessern.'
+Ensuring high test coverage as well as maintaining test scripts were identified as key strategies to prevent software decay. Automated coverage reports allow developers to monitor how well the code is covered by tests: `dann halt auch so Messwerte wie Test-Coverage mir auch ausgeben lassen [\ldots] und kann da halt gegebenenfalls nachbessern.'
 The integration of test automation into CI/CD pipelines was described as both a reliability and a knowledge preservation mechanism.\\
-Participants emphasized the need to regularly update test scripts immediately after code changes, especially in long-lived projects. One expert advised: `Testskripte immer direkt nach der Softwareanpassung auch mit anpassen,' warning that even developers might struggle remembering the reasons for their own code changes after a few months.
+Participants emphasized the need to regularly update test scripts immediately after code changes, especially in long-lived projects. One expert advised: `Testskripte immer direkt nach der Softwareanpassung auch mit anpassen,' warning that even developers might struggle to remember the reasons for their own code changes after a few months.
 The benefit of nightly test runs and regression detection was also highlighted, described as crucial for sustainable quality assurance.\\
 
 \subsubsection{Testing Practices}
-Over the last years, testing practices have evolved from manual execution to a more automated and systematic approach. Several interviewees recalled earlier practices where tests had to be executed manually over days: `vor zehn Jahren [\ldots] mussten viele von diesen Testprozessen per Hand durchgeklickt werden.' In contrast, today's pipelines
-integrate code compilation, test execution and reporting in tools like GitLab or Jenkins.\\
-The resulting transparency was described as a significant improvement, allowing developers to receive detailed failure reports and even screenshots in case of \ac{UI} errors. As one expert put it, `den Überblick zu haben [\ldots] ist schon ein großer Gewinn.'
+Over the last years, testing practices have evolved from manual execution to a more automated and systematic approach. Several interviewees recalled earlier practices where tests had to be executed manually over days: `Vor zehn Jahren [\ldots] mussten viele von diesen Testprozessen per Hand durchgeklickt werden.' In contrast, today's pipelines
+integrate code compilation, test execution and reporting using tools like GitLab or Jenkins.\\
+The resulting transparency was described as a significant improvement, allowing developers to receive detailed failure reports and even screenshots in case of \ac{UI} errors. As one expert stated, `den Überblick zu haben [\ldots] ist schon ein großer Gewinn.'
 Despite these advancements, some areas like system-level tests still rely on manual testing. Nevertheless, the overall trend is towards a more automated and integrated testing approach and is seen as a major improvement in software quality assurance.\\
 
 \subsection{Agile Methodologies in Military Projects}
-The introduction of agile methodologies into military software development marks a significant shift from traditional approaches. While usually reliant on plan-driven models such as the V-Modell XT, participants described how agile methodologies, particularly Scrum, are being adopted in some form in some projects.
+The introduction of agile methodologies into military software development marks a significant shift from traditional approaches. While usually reliant on plan-driven models such as the V-Modell XT, participants described how agile methodologies, particularly Scrum, are being adopted in some form in certain projects.
 The reported effects of this shift include a change in team dynamics, software quality and the ability to adapt to changes. Nonetheless, several constraints still remain.
 
 \subsubsection{Knowledge Sharing and Collaboration}
 A key benefit of agile practices in the military context is improved knowledge sharing and collaboration. Participants emphasized the positive impact of regular stand-ups, code reviews and a collaborative problem-solving culture: `Dadurch, dass wir täglich miteinander reden und täglich Fragen stellen und im Review mit anderen 
 Personen zusammensitzen, da wird sowas dann halt immer [\ldots] gefördert.' Agile methods work against the silo knowledge structure typical in legacy projects. By encouraging broader ownership of code and increased onboarding support for new team members, a participant noted a shift away from the `Keller-Mentalität'. According to him,
-this shift more learning opportunities as well as project resilience.\\
+this shift creates more learning opportunities as well as project resilience.\\
 
 \subsubsection{Limitations in Agile Implementations}
 Despite the positive aspects, the implementation of agile methodologies faces several structural challenges in military software projects. Firstly, agile practices are still relatively new: `Agil ist tatsächlich ein neues Thema im Bereich militärisch. Das gab es bisher gar nicht.'
-Secondly, organizational and contractual constraints restrict the iterative nature of agile development. For example, procurement offices would be required to be more involved and responsive in iterative decisions, which would increase their workload. Additionally, early-phase resource investments which are common in agile approaches
+Secondly, organizational and contractual constraints restrict the iterative nature of agile development. For example, procurement officers would be required to be more involved and responsive in iterative decisions, which would increase their workload. Additionally, early-phase resource investments, common in agile approaches,
 clash with the traditional planning and fixed-scope contracts: `Es wird natürlich im Vorwege teurer, damit man hinten raus [\ldots] technische Schuld [\ldots] abfedert.' These constraints highlight the need for an adapted agile model that can accommodate the regulatory and hierarchical structures of military software development.\\
 
 \subsubsection{Use and Impact of Agile Methods}
 In practice, the use of tools like GitLab and Jira has enabled a more agile-friendly development environment. Participants highlighted the benefit of a closer connection between issue tracking, branching strategies and code delivery pipelines. 
 Agile processes also improve responsiveness. Teams can now react more easily to changing requirements or design flaws. By breaking work into smaller increments and regularly revisiting priorities, scope issues can be identified and addressed earlier:
-`Der Scope [ist] zu groß geworden und haben das dann abgekapselt in ein eigenes Item.' Moreover, the agile approach of having a potentially shippable product at the end of each sprint has improved planning discipline and improvement cycles.
+`Der Scope [ist] zu groß geworden und [wir] haben das dann abgekapselt in ein eigenes Item.' Moreover, the agile approach of having a potentially shippable product at the end of each sprint has improved planning discipline and improvement cycles.
 Nevertheless, participants stressed that the full potential of these benefits can only be realized with a more flexible and responsive organizational structure.\\
 
 \subsection{Influence of Regulatory and Security Requirements}
 The development and maintenance of military software is heavily influenced by regulatory and security requirements. These requirements not only shape the development process but also impact both technical decisions and organizational flexibility.
-The interviews revealed that while these requirements are essential for maintaining safety and reliability, they also introduce significant challlenges that can hinder adaptive development practices.
+The interviews revealed that while these requirements are essential for maintaining safety and reliability, they also introduce significant challenges that can hinder adaptive development practices.
 
 \subsubsection{Impact on Flexiblity}
-A recurring themes that emerged is the limited flexibility in making changes to the software once it has been delivered. Participants described how even minor adjustments need to pass through extensive testing and approval processes, which can take weeks or even months.
-As one interviewee noted: `Software kann nicht einfach geändert werden, sondern wir müssen einen recht komplexen Prozess durchlaufen,' highlighting the bureaucratic complexity that can restrict maintenance and optimization efforts. Even clearly obsolote compoennts such as unreachable or `dead' code
+A recurring theme which emerged is the limited flexibility in making changes to the software once it has been delivered. Participants described how even minor adjustments need to pass through extensive testing and approval processes, which can take weeks or even months.
+As one interviewee noted: `Software kann nicht einfach geändert werden, sondern wir müssen einen recht komplexen Prozess durchlaufen,' which highlights the bureaucratic complexity that can restrict maintenance and optimization efforts. Even clearly obsolete components such as unreachable or `dead' code
 often remain in the system due to the time and effort required for formal approval.\\
 
-The flexibility issue has a direct impact on the maintainability. As another expert pointed out, even if a better solution is available, `wir dürfen nicht einfach beliebig irgendwelche Sachen ändern,' due to certification status and client approval. A lack of contractual agility furhter increases the problem,
-with interviewees expressing that small changes which coul improve quality are often not purused because `die Spielräume aktuell zu wenig gentutz werden.'
+The flexibility issue has a direct impact on the maintainability. As another expert pointed out, even if a better solution is available, `wir dürfen nicht einfach beliebig irgendwelche Sachen ändern,' due to certification status and client approval. A lack of contractual agility further increases the problem,
+with interviewees emphasizing that small changes which could improve quality are often not pursued because `die Spielräume aktuell zu wenig genutzt werden.'
 
 \subsubsection{Standards Compliance}
-The interviws undersocred the stringent compliance requirements around coding standards and documentation. All projects adher to formal coding guidelines and use tools like Logiscope to automaticaly enforce these standards defined in cooperation with the client.
-These metrics not only insure code quality and maintainability but also serve to enforce compliance with the regulatory framework. As one expert noted, `wir haben im Projekt auch feste Codierrichtlinien \ldots die dafür gemacht sind, den Code am Ende wartbar zu halten.'\\
-Furthermore, formal review are required for any delivered code, with audi trails and standarized documentation ensuring traceability and accountability. One participant described how `es mussten regelmäßige Reports angelegt werden, die dann auch auf Nachfrage dem Kunden vorzulegen sind,' reinforcing how compliance proccesses are integrated into the development.
+The interviews underscored the stringent compliance requirements around coding standards and documentation. All projects adhere to formal coding guidelines defined in cooperation with the client and use tools like Logiscope to automatically enforce these standards.
+These metrics not only insure code quality and maintainability but also serve to enforce compliance with the regulatory framework. As one expert noted, `wir haben im Projekt auch feste Codierrichtlinien [\ldots] die dafür gemacht sind, den Code am Ende wartbar zu halten.'\\
+Furthermore, a formal review is required for any delivered code, with audit trails and standardized documentation ensuring traceability and accountability. One participant described how `es mussten regelmäßige Reports angelegt werden, die dann auch auf Nachfrage dem Kunden vorzulegen sind,' reinforcing how compliance processes are integrated into the development.
 
 \subsubsection{Security and Reliability Requirements}
-The security and reliability requirements tied to critical military systems add another layer of complexity. Systems with higher criticality are required to have elveated test coverage, often reaching 95\%, and must adhere to strict validation practices. That was framed both as a challenge and a motivator
-as one particiant remarked that `je kritischer die Softawre, desto höher ist eben auch der Testaufwand.'\\
-Desptite these requirements, the interviews suggest that the security and reliabiltiy standards are also intrinsic motivatory for the team. One interviewee observed that teams are `ehr intrinisch getrieben,' indicating a strong internal commitment to quality, beyond the external regulations. 
-Some particiapnts even hinted, that in certain cases, regulatory pressure may fall short of the actual quality standards that the teams set for themselves, describing the standards as `ehr ein bisschen lascher.'
+The security and reliability requirements tied to critical military systems add another layer of complexity. Systems with higher criticality are required to have elevated test coverage, often reaching 95\%, and must adhere to strict validation practices. That was framed both as a challenge and a motivator
+as one participant remarked that `je kritischer die Software, desto höher ist eben auch der Testaufwand.'\\
+Despite these requirements, the interviews suggest that the security and reliability standards are also intrinsically motivating for the team. One interviewee observed that teams are `ehr intrinsisch getrieben,' indicating a strong internal commitment to quality, beyond the external regulations. 
+Some participants even suggested that, in certain cases, regulatory pressure may be less than the actual quality standards that the teams set for themselves, describing the standards as `ehr ein bisschen lascher.'
 
-\subsection{Succesful Examples}
-Despite the many challenges discussed throughout the interviews, the participants also described a number of successful practices that have mitigated software decay and reduced technical debt in their projects. These succesful measuers offer insights into what strategies have worked well in practice and could be applied to other projects.
+\subsection{Successful Examples}
+Despite the many challenges discussed throughout the interviews, the participants also described a number of successful practices that have mitigated software decay and reduced technical debt in their projects. These successful measures offer insights into the strategies which have worked well in practice and could be applied to other projects.
 
 \subsubsection{Effective Measures against Software Decay}
-One of the most frequently mentioned successful measures was the introduction of automation, particularly in the areas of testing and continous integration. The shift from isolated VM-based tests to containized, pipeline-driven environemnts was described as a key improvement. This change enabled faster, parallel test execution
-and improved visiblity across the codebase. As one particiapnt stated, the move to GitLab and automated pipelines allowed for `schnelle Ergebnisse' and ensured that `jeder, der ein Issue bearbeitet, auch sicherstellen muss, dass die Tests \ldots durchlaufen.'\\
+One of the most frequently mentioned successful measures was the introduction of automation, particularly in the areas of testing and continuous integration. The shift from isolated VM-based tests to containerized, pipeline-driven environments was described as a key improvement. This change enabled faster, parallel test execution
+and improved visibility across the codebase. As one participant stated, the move to GitLab and automated pipelines allowed for `schnelle Ergebnisse' and ensured that `jeder, der ein Issue bearbeitet, auch sicherstellen muss, dass die Tests [\ldots] durchlaufen.'\\
 
-Another significant improvement came from refactoring efforts, often initiated through broader modernization efforts. During the migration from SVN to Git, teams took the opportunity to `Ballast ab[zu]werfen' remvoing unnecessary legacy code an simplyfing complex structures. These efforts directly improved code clarity and maintainability,
-making it easier for new devleopers to enagage with the system: `Viele Methoden sind eben kürzer geworden, leichter lesbar \ldots auch einem laien dann leichter fällt \ldots zu verstehen.'\\
+Another significant improvement came from refactoring efforts, often initiated through broader modernization efforts. During the migration from SVN to Git, teams took the opportunity to `Ballast ab[zu]werfen' removing unnecessary legacy code and simplifying complex structures. These efforts directly improved code clarity and maintainability,
+making it easier for new developers to engage with the system: `Viele Methoden sind eben kürzer geworden, leichter lesbar \ldots [so dass es] auch einem Laien dann leichter fällt \ldots zu verstehen.'\\
 
-The CI/CD infrastrcture was described as a continously evolving system. Orginally implemented as a basic buld pipeline, it has grown to incorperate automated testing, static code analysis and compiler warning tracking. This evolution has made the development process `praktischer und bequemer,' illustrating how technical
+The CI/CD infrastructure was described as a continuously evolving system. Originally implemented as a basic build pipeline, it has grown to incorporate automated testing, static code analysis and compiler warning tracking. This evolution has made the development process `praktischer und bequemer,' illustrating how technical
 investments translate into tangible benefits for the team.\\
 
-Lastly, the use of agile practices was highlighted as a driver of responsive and adapative development. In one case, an agile approach allowed a fast response to a customer request that otherwise have been ignored due to implementation complexity: `\ldots sehr schnell auf einen Kundenwunsch reagiert \ldots korrigiert udn mit wenig Aufwand umgesetzt.'
-This example illustrates how agile and technical practices can directly reduce software decay by adressing issues early and efficiently.\\
+Lastly, the use of agile practices was highlighted as a driver of responsive and adaptive development. In one case, an agile approach allowed a fast response to a customer request that otherwise would have been ignored due to implementation complexity: `\ldots sehr schnell auf einen Kundenwunsch reagiert \ldots korrigiert und mit wenig Aufwand umgesetzt.'
+This example illustrates how agile and technical practices can directly reduce software decay by addressing issues early and efficiently.\\
 
 \subsection{Recommendations For Future Practices}
-The final theme of this study focuses on the recommendation for future pracitces by practiioners to reduce long-term software decay and technical debt. Interviewees consistently highlighted proactive measures and early intervention as key strategies. This is reflected in the recommendations targeting agile adoption, continous documentation, sustained test maintenance and upfront investment.
+The final theme of this study focuses on the recommendation for future practices by practitioners to reduce long-term software decay and technical debt. Interviewees consistently highlighted proactive measures and early intervention as key strategies. This is reflected in the recommendations targeting agile adoption, continuous documentation, sustained test maintenance and upfront investment.
 
 \subsubsection{Agile Expansion}
-Agile practices, while still uncommon in military software contexts were regarded as promising in counteracting technical debt. Participants reported greater responsivness to emerging needs and improved alignment with user priorities when using agile methods.
-As one interviewee decibred, agile approaches made it possible to `mit wenig Aufwand' adapt systems quickly to cusotmer demands. The iterative nature of sprints also enabled isolation of complex issues and allowed for more focused problem-solving.
-In a border view, agile working was seen as an opportunity to adress usablity shortcomings and allow for better prioritazation. However, participants noted that realizitng these benefits requires contractural flexibility and the ability to reallocate resuources mid project, an area that still is problematic due to the rigid procurement settings.\\
+Agile practices, while still uncommon in military software contexts, were regarded as promising in counteracting technical debt. Participants reported greater responsiveness to emerging needs and improved alignment with user priorities when using agile methods.
+As one interviewee described, agile approaches made it possible to `mit wenig Aufwand' adapt systems quickly to customer demands. The iterative nature of sprints also enabled isolation of complex issues and allowed for more focused problem-solving.
+In a broader view, agile working was seen as an opportunity to address usability shortcomings and allow for better prioritization. However, participants noted that realizing these benefits requires contractual flexibility and the ability to reallocate resources mid-project, an area that still is problematic due to the rigid procurement settings.\\
 
 \subsubsection{Focus on Test Maintenance}
-Interviewees emphasized the improtance of maintaining and adapting test scripts. Negelect in this area was seen as a major source of avoidable technical debt. One expert reflected that without timley updates, even small code changes resulted in signifcant high maintenance efforts.
-Automated pipelines helped reduce this bruden, but maintaining the relevance and accuarcy of test scripts remains a manual task. In long-lived software systems, proactively synchronizing code and test logic was viewed as a foundational elemnent of sustainability.\\
+Interviewees emphasized the importance of maintaining and adapting test scripts. Neglect in this area was seen as a major source of avoidable technical debt. One expert reflected that without timely updates, even small code changes resulted in significantly high maintenance efforts.
+Automated pipelines helped reduce this burden, but maintaining the relevance and accuracy of test scripts remains a manual task. In long-lived software systems, proactively synchronizing code and test logic was viewed as a foundational element of sustainability.\\
 
-\subsubsection{Continous Documentation}
-Improving documentation emegred as another important mitigation approach. Experts pointed out the necessity of reducing the threshold of developers to contribute to documentation, particually by adopting lightweight and integrated tools. For example, Git and Markdown were favored due to their accessbility and ease of use.
-Beyond technical documentation, tracebility through issue tracking and automated records of reviews were also seen as a step towards preserving architectural and design knowledge over time. As one interviewee stated, clear documentation ensures that `auch Jahre später \ldots nachvollzogen werden kann', supporting maintainability across generational changes.\\
+\subsubsection{Continuous Documentation}
+Improving documentation emerged as another important mitigation approach. Experts pointed out the necessity of reducing the threshold of developers to contribute to documentation, particularly by adopting lightweight and integrated tools. For example, Git and Markdown were favoured due to their accessability and ease of use.
+Beyond technical documentation, traceability through issue tracking and automated records of reviews was also seen as a step towards preserving architectural and design knowledge over time. As one interviewee stated, clear documentation ensures that `auch Jahre später \ldots nachvollzogen werden kann', supporting maintainability across generational changes.\\
 
 \subsubsection{Early Investment}
 A recurring insight across all interviews was the value of early, deliberate investment in software maintainability. Participants stressed the benefits of planning from the beginning for a system's long lifecycle. Strategic choices such as introducing modularity, automated tools and test infrastructure early on were seen to yield long-term benefits.
-One practioner noted that `wenn man es direkt zu Beginn macht \ldots hat [man] auch den geringsten Aufwand nacher', capturing the concept that frontloading technical quality reduces costs and complexity in the long run. Moreover, even small-scale improvements, if made consistently and early, were regarded as effective in preserving system health over time.\\
+One practitioner noted that `wenn man es direkt zu Beginn macht, \ldots hat [man] auch den geringsten Aufwand nachher', capturing the concept that frontloading technical quality reduces costs and complexity in the long term. Moreover, even small-scale improvements, if made consistently and early, were regarded as effective in preserving system health over time.\\
 
