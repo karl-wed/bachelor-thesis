@@ -18,24 +18,28 @@ The discussion aims to bridge the gap between empirical observations and theoret
 \subsection{Causes and Symptoms of Software Decay in the Military Domain}
 Addressing the first sub-question regarding the main causes and symptoms of software decay, the findings align with existing literature. The interviews highlighted the inherit complexity of long-lived military systems, reinforcing Brooks' (1987) concept of `essential difficulties', like complexity, conformity and changeability, which are increased over time.\\
 
-One of the most prominent causes is the long life cycle of military systems, which often leads to accumulation of outdated code, architectural rigidity and the use of obsolete technologies such as older C++ versions or even Ada.
+One of the most prominent causes is the long life cycle of military systems, which often leads to accumulation of outdated code, architectural rigidity and the use of obsolete technologies such as older C++ or Ada versions.
+This is a problem all throughout the military domain, as can be seen by the previously mentioned example of the German Air Force, where the Tornado system is still in use after 40 years.
 This supports the findings of Lehman and Belady (1976) who argued that software evolution inevitably leads to increased complexity and decay, especially in systems with long lifecycles.
 Additionally, interviewees reported difficulties caused by loss of knowledge when original developers retire, an issue Parnas' (1994) highlighted regarding documentation inadequacies and implicit knowledge.\\
 
 Another recurring theme was the lack of early investment into the maintainability of the software as well as adaptability of the architectures. Several interviewees pointed out that many systems were designed decades ago, meaning the original architects and developers are no longer available.
-This makes it difficult to fully understand the system's architecture and design decisions, in turn making modifications and updates more risky and time-consuming. Over time, this contributes to a buildup of technical debt, particularly when quick solutions are chosen to meet delivery deadlines.\\
+This makes it difficult to fully understand the system's architecture and design decisions, in turn making modifications and updates more risky and time-consuming. 
+Over time, this contributes to a buildup of technical debt, particularly when quick solutions are chosen to meet delivery deadlines.
+This aligns with Parnas `Lack of movement' theory, where a lack of proactive maintenance and refactoring leads to these problems.
+These issues were also noted by Shyu (2017), who emphasized that due to the long lifecycles, patchworks of legacy code are very common. She proposed more use of flexible architectures as well as self testing modular code to allow for easier updates and modifications.\\
 
 Another notable finding is the influence of regulatory rigidity on software decay. The military domain's stringent compliance and documentation requirements, while necessary for safety and reliability, lead to an increase in software decay, due to limited flexibility.
 The constraints prevent proactive refactoring and architectural improvements, resulting in a focus on short-term fixes over long-term stability. This backs the findings of Kruchten (2012) where compliance-driven environments often inadvertently accumulate technical debt.
 
 Organizational challenges also play a central role. Teams often work under rigid procurement and approval processes, where minor improvements may require extensive justification and approval from the stakeholders. This leads to non-functional aspects such as internal refactoring being neglected.
-Often developers are aware of weaknesses in the code but are unable to address them due to lack of authority and budget.\\
+Often developers are aware of weaknesses in the code but are unable to address them due to lack of authority and budget. This was also methioned by Schröder (2022) who stated that the current standard contracts do not allow some form of agility or iteration.\\
 Furthermore, the interviews revealed a form of acceptance towards technical debt as an inevitable cost of doing business. This acceptance not only allows technical debt to persist but also can create a cycle where decay is managed reactively rather than proactively.
 This acceptance of technical debt underscores the need for a cultural shift on all levels, where by technical debt is recognized as a critical issue to be addressed rather than the implementation of new features. These findings align with McConnell's (2007) observations regarding 
 the impact of organizational constraints on technical debt management.\\
 
 Symptoms cited by participants included unreliable test scripts, incomplete documentation as well as system behaviour that is difficult to predict or reproduce. A particularly significant indicator of software decay is the difficulty in onboarding new developers. When new personal struggles to understand
-the system architecture, legacy code and the rationale behind design decisions, it often reflects insufficient documentation, lack of modularization and a high need for implicit knowledge. These indicators align with Fowler's (2019) description of technical debt symptoms.
+the system architecture, legacy code and the rationale behind design decisions, it often reflects insufficient documentation, lack of modularization and a high need for implicit knowledge. These problems can be found in Kruchten et al. (2012) definition of technical debt, which encompasses not only the code itself but also the surrounding processes and practices.
 These symptoms reflect structural issues such as lack of modularization, outdated documentation practices and insufficient test infrastructure, confirming theoretical assertions by Cunningham (1992) regarding the long-term maintenance consequences of technical shortcuts.\\
 
 In summary, long lifecycles, legacy constraints, regulatory rigidity and organizational challenges not only align with theoretical concepts but also provide a practical understanding of how software decay manifests in military systems.
@@ -45,13 +49,17 @@ Regarding the second sub-question about current mitigation strategies and their 
 
 One of the most prominent developments across all interviews was the increased use of automation in testing, building and deployment. The introduction of containerized environments and CI/CD pipelines allows for regular execution of tests and static code analyses, without the need for manual intervention.
 This improves not only the frequency of tests but also their reliability, as regressions and integration issues can be detected earlier. This is due to the fact that developers can no longer skip tests easily, since they are now part of the automated build process.
-This automation forces discipline that might otherwise be neglected under time pressure. Additionally, the automated pipelines allow for a scaled development process and ensure consistent quality, which is particularly important in long-lived systems.\\
+This automation forces discipline that might otherwise be neglected under time pressure. Additionally, the automated pipelines allow for a scaled development process and ensure consistent quality, which is particularly important in long-lived systems.
+However, as Fowler stated, a functioning test suite and build process is key for CI to work correctly. Therefore both factors need special attention to make sure the pipeline gets used as intended.
+Additonally, it has to be insured that the pipeline is overall correctly configured as Silva and Bezerra (2022) found that the wrong quality levels and configuration can lead to a decrease in software quality.\\
 
 Another practice used against software decay was the formal code review. This has evolved from inconsistent and informal peer checks into structured, documented processes involving multiple reviewers. Participants emphasized that code reviews not only help to catch mistakes and prevent technical debt but also
-serve as a way to share knowledge and create a team wide quality assurance. Code reviews are often combined with Git-based workflows, allowing a transparent history of changes and discussions.\\
+serve as a way to share knowledge and create a team wide quality assurance. Code reviews are often combined with Git-based workflows, allowing a transparent history of changes and discussions. This is backed McIntosh et al. (2016) although he emphasized that the right participants play a major role in the effect of the the review,
+which was seen not as important by the interviewees.\\
 
 Refactoring, while not always practiced over the entire codebase, is used in projects that have a more agile approach. In these projects, problematic components are occasionally rewritten or restructured. However, resource constraints and rigid approval processes limit a more systematic approach to refactoring.
-As one developer explained: `wir haben jetzt keine festen Refactoring-Tickets, aber prinzipiell ist es jedem freigestellt, eigene Tickets zu erstellen.' This indicates that while there is a local initiative to address technical debt, a border process is still lacking.\\
+As one developer explained: `wir haben jetzt keine festen Refactoring-Tickets, aber prinzipiell ist es jedem freigestellt, eigene Tickets zu erstellen.' This indicates that while there is a local initiative to address technical debt, a border process is still lacking.
+These reasons against refactoring align with the studies of Kim et al. (2014) and Tempero et al. (2017), which named costs, risks and lack of support from management as the main reasons why developers did not refactor, even though they would see it as beneficial.\\
 
 Interviewees also stressed the importance of documentation improvements, especially the use of lightweight tools like Markdown or systems like Jira to track changes and decisions. Documentation is often a weak spot in legacy projects, but newer practices 
 emphasize the importance of keeping documentation up to date by lowering the barrier for contributions by embedding it into the development process.\\
@@ -68,6 +76,7 @@ and reduce the accumulation of technical debt within the constraints of the mili
 
 A key recommendation was the expansion of agile practices, enabling a more flexible and iterative approach to the development. Agile methods were not only seen as useful to provide short feedback loops but also to prevent a misinterpretation of requirements.
 Additionally, interviewees found that sprints, issue prioritization and iterative delivery allowed a better communication with stakeholders and prevented technical debt.
+This aligns with the findings of Leite et al. (2024), who found that agile practices were the most used method for managing technical debt and by integrating them into the workflow, teams could reduce technical debt accumulation.
 However, successful and effective agile practices require the contractual framework to allow more flexibility and adaptability, which is not the case in many projects.\\
 
 Another important theme was the prioritization of test maintenance. Several participants stressed the fact that test script should be updated with the code changes, rather than being an afterthought.
@@ -81,6 +90,13 @@ All these practices also help new developers to onboard faster, as the issue of 
 Finally, the experts underlined the importance of early investment into maintainability. They emphasized that making initial costly decisions like modularization, testability or automation pays off significantly over time.
 As the average lifecycle of military systems is often decades, the initial investment is mostly negligible compared to the long-term costs of maintaining a decaying system.
 To prevent the initial cost being too high, the recommendation was to start small and gradually build up these practices, rather than trying to implement them all at once. This would allow them to be implemented even under tight timelines and budget constraints.\\
+
+One aspect that was not mentioned as often by the interviewees as it was in the literature is the refactoring process. While Moser et al. (2008) provided evidence in a case study, that regular refactoring decreases complexity and prevent maintenance issues, the interviewees presented a reluctance to refactor.
+This is largely due to the fact that to refactor old code, a new contract from the customer is needed, which rarely happens as new features are prioritized over refactoring. Additionally, the risk of introducing new bugs is often seen as too high, especially in a domain where safety and reliability are paramount.
+This could be prevented by having a functioning test suite, which would allow for a more confident refactoring process. With a proper test suite as a safety net, the customer could be convinced to allow for refactoring, as the risk of introducing new bugs is significantly reduced.\\
+
+Another practice that was not mentioned by the interviewees is the use of quality gates in the pipelines. While the interviewees confirmed the use of static analysis tools, there is no direct enforcement of the metrics. 
+Due to the fact, that the metrics are already investigated, the recommendation would be to enforce certain thresholds in the pipeline, preventing addition of new code that does not meet the requirements. Uzunova et al. (2024) found that the use of quality gates allows for real time feedback and allows developers to catch issues early in the development process.\\
 
 All in all, these recommendations show a clear awareness among practitioners of the challenges posed by software decay and the need for a proactive approach for mitigation. While the constraints of the military domain are significant and unlikely to change in the near future, even small procedural and 
 cultural changes can make a substantial difference in the long-term maintainability of military software systems.\\
