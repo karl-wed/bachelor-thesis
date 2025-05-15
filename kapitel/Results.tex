@@ -20,7 +20,7 @@ The continued reliance on outdated technologies represents another significant c
 As one interviewee expressed, `wir arbeiten noch mit sehr, sehr alten Versionen, [\ldots] es ist alles sehr alt und es passt mit den Sachen nicht mehr zusammen.'\\
 
 The problem not only exists in development but also in testing and tool integration. Test environments often rely on virtual machines and tools that require substantial manual effort, and are therefore prone for errors like misconfigurations or copy-paste mistakes.
-Moreover, forced tool usage from the customer side can lead to further complications: `Wenn wir eine Vorgabe bekommen, dass wir mit bestimmten Tools testen müssen, dann ist das natürlich wieder mit extra Aufwand verbunden.'\\
+Moreover, forced tool usage from the customer side can lead to further complications: `Wenn wir eine Vorgabe bekommen, dass wir mit bestimmten Tools testen müssen, dann ist das natürlich wieder mit extra Aufwand verbunden', as the tool might not be as commonly used and therefore might require additional training.\\
 
 These issues contribute to software decay. Several participants described how initial shortcuts like skipping broken automated tests because they passed locally led to accumulated technical debt and a decrease in test reliability.\\
 
@@ -45,7 +45,7 @@ In this context, the willingness to fix issues exists, but funding remains a bot
 \subsubsection{Procurement Barriers}
 In addition to funding, rigid procurement processes restrict the ability of developers to act proactively. Retroactive code improvements or technical debt remediation often require formal authorization, as developers are not permitted to modify code already delivered without explicit approval:
 `Ohne dass wir einen Auftrag bekommen, dürfen wir halt auch nichts machen.' Even when shortcomings are identified, requests may be stalled due to insufficient contractual flexibility. This is particularly problematic under traditional methodologies like the V-Model, where
-`ein Riesenwust an falschen Umsetzungen' can emerge from misinterpreted or outdated requirements. As one interviewee pointed out, greater contractual agility could enable a more responsive development process:
+`ein Riesenwust an falschen Umsetzungen' can emerge from misinterpreted or outdated requirements. As one interviewee pointed out, greater contractual flexibility and agility could enable a more responsive development process:
 `Wenn man halt in den Verträgen schon leichte Spielräume schaffen würde, [\ldots] wäre schon dem Problem viel geholfen.'\\
 
 \subsubsection{Slow Approval Processes}
@@ -149,7 +149,8 @@ Secondly, organizational and contractual constraints restrict the iterative natu
 clash with the traditional planning and fixed-scope contracts: `Es wird natürlich im Vorwege teurer, damit man hinten raus [\ldots] technische Schuld [\ldots] abfedert.' These constraints highlight the need for an adapted agile model that can accommodate the regulatory and hierarchical structures of military software development.\\
 
 \subsubsection{Use and Impact of Agile Methods}
-In practice, the use of tools like GitLab and Jira has enabled a more agile-friendly development environment. Participants highlighted the benefit of a closer connection between issue tracking, branching strategies and code delivery pipelines. 
+In practice, tools like GitLab and Jira allow for better transparency and allowing for a better integration of tasks, coding and deployment. Participants emphasized that these tools facilitate iterative development cycles, quicker feedback loops and 
+improved visibility of ongoing work, alining closely with agile principles. 
 Agile processes also improve responsiveness. Teams can now react more easily to changing requirements or design flaws. By breaking work into smaller increments and regularly revisiting priorities, scope issues can be identified and addressed earlier:
 `Der Scope [ist] zu groß geworden und [wir] haben das dann abgekapselt in ein eigenes Item.' Moreover, the agile approach of having a potentially shippable product at the end of each sprint has improved planning discipline and improvement cycles.
 Nevertheless, participants stressed that the full potential of these benefits can only be realized with a more flexible and responsive organizational structure.\\
@@ -174,8 +175,8 @@ Furthermore, a formal review is required for any delivered code, with audit trai
 \subsubsection{Security and Reliability Requirements}
 The security and reliability requirements tied to critical military systems add another layer of complexity. Systems with higher criticality are required to have elevated test coverage, often reaching 95\%, and must adhere to strict validation practices. That was framed both as a challenge and a motivator
 as one participant remarked that `je kritischer die Software, desto höher ist eben auch der Testaufwand.'\\
-Despite these requirements, the interviews suggest that the security and reliability standards are also intrinsically motivating for the team. One interviewee observed that teams are `ehr intrinsisch getrieben,' indicating a strong internal commitment to quality, beyond the external regulations. 
-Some participants even suggested that, in certain cases, regulatory pressure may be less than the actual quality standards that the teams set for themselves, describing the standards as `ehr ein bisschen lascher.'
+Despite these requirements, the interviews suggest that the security and reliability standards are also intrinsically motivating for the team. One interviewee observed that teams are `eher intrinsisch getrieben,' indicating a strong internal commitment to quality, beyond the external regulations. 
+Some participants even suggested that, in certain cases, regulatory pressure may be less than the actual quality standards that the teams set for themselves, describing the standards as `eher ein bisschen lascher.'
 
 \subsection{Successful Examples}
 Despite the many challenges discussed throughout the interviews, the participants also described a number of successful practices that have mitigated software decay and reduced technical debt in their projects. These successful measures offer insights into the strategies which have worked well in practice and could be applied to other projects.

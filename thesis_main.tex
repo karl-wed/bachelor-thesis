@@ -436,25 +436,6 @@
 %TC:ignore - ignoriert die folgnden Wörter beim Wordcount in Overleaf
 
 %-----------------------------------
-% Apendix / Anhang
-%-----------------------------------
-\newpage
-\section*{\AppendixName} %Überschrift "Anhang", ohne Nummerierung
-\addcontentsline{toc}{section}{\AppendixName} %Den Anhang ohne Nummer zum Inhaltsverzeichnis hinzufügen
-
-\begin{appendices}
-% Nachfolgende Änderungen erfolgten aufgrund von Issue 163
-\makeatletter
-\renewcommand\@seccntformat[1]{\csname the#1\endcsname:\quad}
-\makeatother
-\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %
-	\renewcommand{\thesection}{\AppendixName\ \arabic{section}}
-	\renewcommand\thesubsection{\AppendixName\ \arabic{section}.\arabic{subsection}}
-	\input{kapitel/anhang/anhang}
-\end{appendices}
-\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
-
-%-----------------------------------
 % Literaturverzeichnis
 %-----------------------------------
 \newpage
@@ -505,6 +486,25 @@
 % Inhaltsverzeicnis anzeigen.
 %\printbibliography[type=online,heading=bibintoc,title={\headingNameInternetSources}]
 \printbibliography[type=online,heading=subbibliography,title={\headingNameInternetSources}]
+
+%-----------------------------------
+% Apendix / Anhang
+%-----------------------------------
+\newpage
+\section*{\AppendixName} %Überschrift "Anhang", ohne Nummerierung
+\addcontentsline{toc}{section}{\AppendixName} %Den Anhang ohne Nummer zum Inhaltsverzeichnis hinzufügen
+
+\begin{appendices}
+% Nachfolgende Änderungen erfolgten aufgrund von Issue 163
+\makeatletter
+\renewcommand\@seccntformat[1]{\csname the#1\endcsname:\quad}
+\makeatother
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}} %
+	\renewcommand{\thesection}{\AppendixName\ \arabic{section}}
+	\renewcommand\thesubsection{\AppendixName\ \arabic{section}.\arabic{subsection}}
+	\input{kapitel/anhang/anhang}
+\end{appendices}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
 
 \input{kapitel/anhang/erklaerung}
 \end{document}

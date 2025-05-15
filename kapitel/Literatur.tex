@@ -66,7 +66,6 @@ Therefore they set out to define `a theoretical foundation'\footcite[19]{kruchte
 Kruchten et al.\ state that technical debt has become more than the initial coding shortcuts and rather encompasses all kinds of internal software quality comprises.\footcite[19]{kruchtenTechnicalDebtMetaphor2012}
 According to them, this includes architectural debt, `documentation and testing'\footcite[20]{kruchtenTechnicalDebtMetaphor2012} as well as requirements and infrastructure debt.
 All these debt types allow engineers to better discuss the trade-offs with stakeholders and to make better decisions.\\
-\\TODO: IMPORTANT add Kruchten and theory of compliace driven environemnts
 
 There have been many studies providing empirical evidence for the theoretical concepts of technical debt. Highly influential studies were undertaken by Potdar and Shihab (2014) as well as by Li et al.\ (2015).\\
 In their study Potdar and Shihab analyzed four large open source projects to find self-admitted technical debt as well as the likelihood of debt being removed. They found that `self-admitted technical debt exists in 2.4\% to 31\% of the files.'\footcite[1]{potdarExploratoryStudySelfAdmitted2014}
@@ -135,10 +134,10 @@ After each sprint, the team reflects on their work, identifies quality issues, t
 retrospectives. Leite et al. found that the most used artifacts for identifying technical debt in Scrum are the Sprint and Product Backlog.\footcite[315]{leiteTechnicalDebtManagement2024}
 By explicitly managing these items with their workflow, teams effectively reduce both debt and software entropy, improving overall software maintainability.\\
 
-\ac{XP} was first introduced by Kent Beck in his influential book `Extreme Programming Explained' (1999)\footcite{beckExtremeProgrammingExplained1999}.
+\ac{XP} was first introduced by Kent Beck in his influential book `Extreme Programming Explained' (1999).
 It explicitly integrates practices to enhance software quality and directly prevent software decay.
 \ac{XP} practices such as pair programming, \ac{TDD}, \ac{CI} and continuous refactoring help maintain high software quality, thus preventing both debt accumulation
-and broader software entropy.
+and broader software entropy\footcite[5-6]{beckExtremeProgrammingExplained1999}.
 Pair programming prevents decay by securing higher-quality code through collaborative review and knowledge sharing between developers.
 \ac{CI} provides regular, frequent code integration, significantly reducing integration complexity and associated decay risks.
 \ac{TDD} establishes robust test coverage, catching defects early and preventing quality erosion.
@@ -146,7 +145,7 @@ The effectiveness of refactoring, a cornerstone XP practice, has been proven emp
 demonstrated that refactoring explicitly `prevents an explosion of complexity'\footcite[262]{moserCaseStudyImpact2008}
 and promotes simpler, easier-to-maintain designs.
 They found it drove developers toward simpler designs, reducing complexity, coupling and long-term maintenance issues thereby directly counteracting software decay.\footcite[262]{moserCaseStudyImpact2008}
-Beck argues that \ac{XP}'s incremental, continuous quality practices consistently maintain software quality and adaptability throughout development, directly addressing both debt and broader software decay.\\
+Beck argues that \ac{XP}'s incremental, continuous quality practices consistently maintain software quality and adaptability throughout development, directly addressing both debt and broader software decay\footcite[5-7]{beckExtremeProgrammingExplained1999}.\\
 On the whole, agile methodologies, particularly Scrum and \ac{XP}, systematically manage technical debt and proactively prevent software decay by fostering continuous improvement, structured quality management and adaptability.
 Complementing these Agile practices, the adoption of automated \ac{CI/CD} pipelines further enhances the proactive management of both technical debt
 and broader software decay through rigorous quality control and systematic automation.\\
@@ -280,7 +279,7 @@ Organizational measures such as technical debt tracking, dedicated maintenance c
 enabling teams to systematically prioritize and address decay risks before they escalate. Finally, the strategic use of modern quality-assurance tools, integrated
 into \ac{CI} pipelines and architectural monitoring systems, ensures continuous, automated and actionable feedback, thereby enabling developers to maintain
 software quality proactively. Ultimately, integrating these diverse practices into a combined quality culture is vital for sustainable software development,
-reduced maintenance costs and the long-term viability of software products.\\
+reduced maintenance costs and the long-term viability of software products. However, nonetheless not all the problems are able to be combated based on the essential difficulties defined by Brooks.\\
 
 
 \subsection{Unique Constraints in Military Software Development}
@@ -335,10 +334,10 @@ Adding to this complexity are strong security and compliance requirements, which
 \subsubsection{Security and Compliance Requirements}
 Military software is obliged to meet stringent security and compliance standards beyond the usual commercial requirements. Due to the sensitive nature of military operations and data,
 the software must adhere to both national and NATO standards. These strict requirements result in severe difficulties 
-regarding the lifecycle of the product, the software architecture and maintenance practices. The resulting constraints accelerate the accumulation of technical debt and software decay.\\
+regarding the lifecycle of the product, the software architecture and maintenance practices. The resulting constraints accelerate the accumulation of technical debt and software decay, which will be explained in the following paragraphs.\\
 
 Like all federal agencies in Germany, the Bundeswehr must adhere to the \ac{BSI} guidelines for IT security, called IT-Grundschutz\footcite{bundesamtfuersicherheitinderinformationstechnikBSIFAQ}. This defines a comprehensive security framework
-that includes technical, personnel and infrastructural security measures through the use of several standards. Eventhough these standards Compliance with these standards involves extensive documentation, risk management processes and regular audits. 
+that includes technical, personnel and infrastructural security measures through the use of several standards. Even though these standards Compliance with these standards involves extensive documentation, risk management processes and regular audits. 
 This leads to an increase in the complexity and effort required for ongoing software maintenance and updates.\footcite{bundesamtfuersicherheitinderinformationstechnikBSIStandards}\\
 
 In addition to the national regulations, Bundeswehr software systems are obligated to comply with the NATO security standards. These guidelines establish requirements for the handling of classified data, encryption standards and security clearance of personnel.
@@ -347,7 +346,7 @@ Compliance with NATO standards mandates extensive security accreditation procedu
 These processes slow down software development cycles and restrict flexibility due to the necessity of re-certifying software after significant changes.
 
 Furthermore the Bundeswehr adheres to national classification rules, such as \ac{VS-NFD}. Systems classified under \ac{VS-NFD} require access control, encrypted communications, dedicated network infrastructure and periodic security accreditation.\footcite[see Part 2, pp. 1–3; Part 3, pp. 1–6]{BMI2010VSNFD}
-Developers and system administrators need to adhere to strict usage guidelines, which dictate the permissible software, hardware and methods of data handling.\footcite[Part 3, No. 3.1–3.7, pp. 1–5]{BMI2010VSNFD} Compliance significantly restricts the usage of modern technologies such as cloud services or external software libraries, unless explicitly cleared\footcite[Part 3, No. 3.4.1–3.4.5, pp. 4–5]{BMI2010VSNFD}. 
+Developers and system administrators need to adhere to strict usage guidelines, which dictate the permissible software, hardware and methods of data handling.\footcite[Part 3, No. 3.1–3.7, pp. 1–5]{BMI2010VSNFD} Compliance significantly restricts the usage of modern technologies such as cloud services, unless explicitly cleared\footcite[Part 3, No. 3.4.1–3.4.5, pp. 4–5]{BMI2010VSNFD}. 
 This can be seen in the example of Genua’s secure remote working solution, which complies with both VS-NfD and NATO security requirements while offering functionality typically restricted in classified environments.\footcite{Genua2023VSNFD}
 
 Although essential for operational security, these security and compliance requirements markedly constrain software adaptability and agility. 
@@ -360,7 +359,7 @@ maintenance methodologies and lifecycle management. While crucial for safeguardi
 \subsubsection{Legacy Systems and Extended Lifecycles}
 Legacy systems and extended lifecycles impose particularly significant constraints for military software projects, especially within the Bundeswehr. 
 Unlike commercial software, which typically operates for a limited period, military systems frequently remain operational for decades due to high investment costs, complexity and risk aversion to adopting new technologies. Such prolonged operational 
-lifespans inevitably contribute to technical debt accumulation and progressive software decay, significantly complicating maintenance and increasing lifecycle costs.
+lifespans inevitably contribute to technical debt accumulation and progressive software decay, significantly complicating maintenance and increasing lifecycle costs which will be discussed in the following paragraphs.
 
 A prominent example of these challenges emerged within the Bundeswehr's logistics and support IT systems at the turn of the century. According to Sebastian Stein's 2011 blog entry,
 the Bundeswehr managed around 1,200 distinct outsourced IT systems, creating a highly fragmented and inefficient infrastructure.\footcite{steinBusinessProcessManagement2011} To address this issue, the Bundeswehr initiated the \ac{SASPF} program, consolidating procurement, accounting, 
@@ -370,6 +369,7 @@ complicated by stringent regulatory requirements, diverse stakeholder interests 
 Another illustrative case within the Bundeswehr is the Luftwaffe's Tornado fighter jet program. Development began in 1981 and the aircraft entered operational service in 1992. Today, approximately 80 Tornado jets remain operational, with plans for 
 replacement only by 2030 resulting in a lifecycle of nearly 50 years.\footcite{skibaTornado50Jahre2024} Continuous software updates have been crucial throughout this extensive period, including notable upgrades like the integration of the RecceLite reconnaissance system in 2009.\footnote{bundeswehrTornado} However, 
 each update has progressively become more complex and costly due to aging hardware, software architecture limitations and stringent compliance demands. This incremental layering of software modifications directly contributes to accelerated software decay, increasing the difficulty and expense of maintaining operational effectiveness.
+As Sebastian Sprenger reported in 2018 for Defense News, the `digitization of the head-up-display likely will require the costly replacement of the aircraft’s main computer, officials wrote.'\footcite{sprengerGermanyFearsSteeper2018} This upgrade was a NATO mandatory requirement, indicating how the outdated system architecture and hardware makes new mandatory requirements difficult to implement. 
 
 Comparable challenges are also prevalent among international NATO allies. A notable example was highlighted by Kynan Carver (2022), describing how the U.S. \ac{DOD} continued operating critical strategic systems reliant on severely outdated technologies, 
 including 8-inch floppy disks, until the late 2010s.\footcite{carverTechnicalDebtCybersecurity2022} Carver emphasizes that maintaining these aging software infrastructures consumes significant financial and operational resources, limiting investment in innovation and proactive modernization strategies.\footcite{carverTechnicalDebtCybersecurity2022}
