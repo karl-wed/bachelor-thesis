@@ -1,0 +1,28 @@
+\section{Conclusion}
+This thesis aimed to investigate the question of how software decay can be prevented or slowed down in military systems. To support this goal, the domain-specific challenges as well as the evaluation of mitigation strategies were examined.
+To aid this investigation, two sub-questions were explored: the main causes and symptoms of software decay in German military software projects and also the mitigation strategies and their effectiveness at T-Systems IFS, Chapter Defense Systems.\\
+
+The study found several causes of software decay that are specific in the military domain. These include the long lifecycles of the systems, which result in outdated technologies and code as well as rigid architectures. This rigidity is further
+increased by the high regulatory requirements and procurement frameworks which often prioritize short-term fixes over long-term solutions, thus increasing technical debt. Organizational challenges such as rigid approval processes
+and an acceptance of technical debt as inevitable further contribute to the decay. Key symptoms identified include unreliable test scripts, incomplete documentation, unpredictable system behaviour and a significant difficulty in onboarding new developers.\\
+
+The study also evaluated the mitigation strategies currently in use at T-Systems IFS, Chapter Defense Systems. These include practices like automation, including containerized environments and CI/CD pipelines,
+structured code reviews, improvements to the documentation process as well as occasional refactoring. Automation has proven to be particularly effective as it enforces regular testing thus improving reliability, however requires careful configuration as well as an extensive early investment.
+Structured code reviews not only help catch mistakes in the code but also spread the knowledge across the team, which combats the prior issue of the encapsulated knowledge of the developers. Nevertheless, studies have shown that the full potential of code reviews rely heavily on involving the appropriate reviewers.
+The documentation processes were improved by integrating them into the development process using tools like Jira or GitLab to create a comprehensive history of changes and decisions, significantly improving the maintainability of the systems.
+Refactoring, a very beneficial practice as shown by studies, can only be restrictively used, due to resource constraints and the regulatory and contractual requirements.\\
+
+These findings have several implications for practitioners in the military software domain. Firstly, there is a clear need for some form of agile practices within the military context, to allow for iterative feedback and better stakeholder communication.
+Secondly, prioritizing regular test maintenance and continuous documentation could substantially combat knowledge loss and technical debt accumulation, a core problem in long lifecycle systems.
+Additionally, early investments into the maintainability of the system through modularity and automation will most likely pay off due to their long term nature.
+Through the robust test infrastructure, refactoring could become less risky and potentially more frequent, thus improving the overall quality of the systems.
+Finally, by integrating quality gates into the automated pipelines, the quality of the code can be controlled more directly, thereby preventing further decay.\\
+
+This study is not without limitations. Due to the qualitative approach, small sample size and single organization, the findings may not be generalizable across the military software domain. Confidentiality restrictions also limited the depth of the analysis and the ability to provide specific examples.
+Nonetheless, these constraints reflect the real-world challenges underscoring the practical relevance and applicability of the findings.\\
+
+Further research could involve a broader quantitative study, aiming to validate the effectiveness and viability of the identified mitigation strategies, particularly in various military settings.
+Additionally, a comparison across national and organizational contexts could provide deeper insights into universal and context specific practices.\\
+
+Overall, despite the regulatory, procedural and organizational constraints of the military domain, this study shows that proactive measures can substantially mitigate software decay and technical debt.
+Recognizing software maintainability as an important investment rather than a cost is crucial for ensuring the long-term sustainability and reliability of military systems.
