@@ -316,8 +316,8 @@ and technical debt over time which will be discussed in teh following section.\\
 
 Bundeswehr software utilizes the `V-Modell XT Bw' as the project lifecycle model. It is a customized variant of the standard V-Modell XT, specifically tailored to Bundeswehr needs and closely integrated with the 
 Bundeswehr's overarching procurement framework, \ac{CPM}.
-The V-Modell XT Bw is a comprehensive framework that encompasses the planning and execution of software projects in the Bundeswehr.\footcite[6]{bundeswehrVModellXTBw}
-It includes detailed guidelines for all parts of the software development process, from roles and requirements engineering to \ac{QA} and product quality.\footcite[pp. 20-21]{bundeswehrVModellXTBw}
+The V-Modell XT Bw is a comprehensive framework that encompasses the planning and execution of software projects in the Bundeswehr.\footcite[6]{bundeswehrVModellXTBw2013}
+It includes detailed guidelines for all parts of the software development process, from roles and requirements engineering to \ac{QA} and product quality.\footcite[pp. 20-21]{bundeswehrVModellXTBw2013}
 However, due to its rigid and sequential nature, the waterfall-based V-Modell XT Bw is known to limit flexibility, making iterative adjustments and agile methodologies difficult.\\
 
 The procurement procedures of the Bundeswehr are outlined by the aforementioned \ac{CPM} which was revised in 2012 after a commission in 2010 found that: 
@@ -336,9 +336,9 @@ Military software is obliged to meet stringent security and compliance standards
 the software must adhere to both national and NATO standards. These strict requirements result in severe difficulties 
 regarding the lifecycle of the product, the software architecture and maintenance practices. The resulting constraints accelerate the accumulation of technical debt and software decay, which will be explained in the following paragraphs.\\
 
-Like all federal agencies in Germany, the Bundeswehr must adhere to the \ac{BSI} guidelines for IT security, called IT-Grundschutz\footcite{bundesamtfuersicherheitinderinformationstechnikBSIFAQ}. This defines a comprehensive security framework
+Like all federal agencies in Germany, the Bundeswehr must adhere to the \ac{BSI} guidelines for IT security, called IT-Grundschutz\footcite{BSIFAQ}. This defines a comprehensive security framework
 that includes technical, personnel and infrastructural security measures through the use of several standards. Compliance with these standards involves extensive documentation, risk management processes and regular audits. 
-This leads to an increase in the complexity and effort required for ongoing software maintenance and updates.\footcite{bundesamtfuersicherheitinderinformationstechnikBSIStandards}\\
+This leads to an increase in the complexity and effort required for ongoing software maintenance and updates.\footcite{BSIStandards}\\
 
 In addition to the national regulations, Bundeswehr software systems are obligated to comply with the NATO security standards. These guidelines establish requirements for the handling of classified data, encryption standards and security clearance of personnel.
 This is illustrated by the NATO Security Policy (C-M(2002)49) which dictates the handling of NATO-classified information, constraining software flexibility and maintenance practices\footcite[Enclosure B, pp. 1–3; Enclosure F, pp. 1–2]{NATO2002SecurityPolicy}. 
@@ -367,7 +367,7 @@ and logistics systems into a single, integrated SAP-based solution. However, sta
 complicated by stringent regulatory requirements, diverse stakeholder interests and interoperability challenges with outdated technologies. Consequently, significant technical debt and complexity accumulated, extending the modernization effort well over a decade and clearly demonstrating the severe maintenance implications of legacy systems.\footcite{steinBusinessProcessManagement2011}
 
 Another illustrative case within the Bundeswehr is the Luftwaffe's Tornado fighter jet program. Development began in 1981 and the aircraft entered operational service in 1992. Today, approximately 80 Tornado jets remain operational, with plans for 
-replacement only by 2030 resulting in a lifecycle of nearly 50 years.\footcite{skibaTornado50Jahre2024} Continuous software updates have been crucial throughout this extensive period, including notable upgrades like the integration of the RecceLite reconnaissance system in 2009.\footnote{bundeswehrTornado} However, 
+replacement only by 2030 resulting in a lifecycle of nearly 50 years.\footcite{skibaTornado50Jahre2024} Continuous software updates have been crucial throughout this extensive period, including notable upgrades like the integration of the RecceLite reconnaissance system in 2009.\footcite{bundeswehrTornado} However, 
 each update has progressively become more complex and costly due to aging hardware, software architecture limitations and stringent compliance demands. This incremental layering of software modifications directly contributes to accelerated software decay, increasing the difficulty and expense of maintaining operational effectiveness.
 As Sebastian Sprenger reported in 2018 for Defense News, the `digitization of the head-up-display likely will require the costly replacement of the aircraft’s main computer, officials wrote.'\footcite{sprengerGermanyFearsSteeper2018} This upgrade was a NATO mandatory requirement, indicating how the outdated system architecture and hardware makes new mandatory requirements difficult to implement. 
 
