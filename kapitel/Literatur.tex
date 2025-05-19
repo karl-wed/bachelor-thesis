@@ -2,14 +2,14 @@
 \subsection{Problems of Software Engineering}
 Software has become an integral part of our daily lives. Certain expectations exist regarding the quality of software in terms of reliability, security and efficiency. These expectations come with challenges for the software developers across all industries.
 For decades, software engineers have tried to develop methods and guides to overcome these issues. However, in 1986 Frederick Brooks published his paper `No Silver Bullet'
-in which he argues that: `\ldots building software will always be hard. There is inherently no silver bullet.' \footcite[3]{brooksNoSilverBullet1987}. He based this statement on the fact that there two types of difficulties in software development: the essential and the accidental.
+in which he argues that: `\ldots building software will always be hard. There is inherently no silver bullet.' \footcite[3]{brooksNoSilverBullet1987}. He based this statement on the fact that there are two types of difficulties in software development: the essential and the accidental.
 The essential difficulties he names are complexity, conformity, changeability and invisibility.\\
-With complexity, Brooks wants to describe the inherit intricacy of software systems: `Software entities are more complex for their size than perhaps any other human construct, because no two parts are alike'.\footcite[3]{brooksNoSilverBullet1987}
+With complexity, Brooks wants to describe the inherent intricacy of software systems: `Software entities are more complex for their size than perhaps any other human construct, because no two parts are alike'.\footcite[3]{brooksNoSilverBullet1987}
 This complexity makes `conceiving, describing and testing them hard'\footcite[3]{brooksNoSilverBullet1987}.\\
 The second essential difficulty Brooks names is conformity. To explain this, he compares software development to physics. Even though they are similarly complex, physics has the advantage of relying on a single set of laws or `creator'. The same cannot be said for software engineers. Brooks claims that
 the complexity is `arbitrary [\ldots], forced without rhyme or reason by the many human institutions and systems to which his interfaces must conform'\footcite[4]{brooksNoSilverBullet1987}. This is due to software being perceived as `the most comfortable'\footcite[4]{brooksNoSilverBullet1987} element to change in a system.\\
 Brooks explains the third issue, changeability, by comparing software to other products like cars or computers. With these types of products, changes are difficult to make once the product is released. Software however is just `pure thought-stuff, infinitely malleable.'\footcite[4]{brooksNoSilverBullet1987} Another major issue regarding changeability is
-the fact that software often `survives beyond the normal life of the machine vehicle for which it is first written'\footcite[4]{brooksNoSilverBullet1987}. This means that software has to be adapted to new machines causing an extended life time of the software.\\
+the fact that software often `survives beyond the normal life of the machine vehicle for which it is first written'\footcite[4]{brooksNoSilverBullet1987}. This means that software has to be adapted to new machines causing an extended lifetime of the software.\\
 Invisibility is the last essential difficulty Brooks names. With this he means the difficulty to visualize software compared to other products. This not only makes the creation difficult but also `severely hinders communication among minds'\footcite[4]{brooksNoSilverBullet1987}.
 According to Brooks, these issues are in `the very nature of software' \footcite[2]{brooksNoSilverBullet1987}. These difficulties are unlikely to be solved, in comparison with the accidental difficulties.\\
 
@@ -56,9 +56,9 @@ long-term debt can be carried by companies for years.\\
     \includegraphics[width=0.5\textwidth]{techDebtQuadrant}
 \end{figure}
 Martin Fowler, on the other hand, warned against taking on too much deliberate debt. He argues that `Even the best teams will have debt to deal with as a project goes on - even more reason not to overload it with crummy code.'\footcite{fowlerTechnicalDebtQuadrant2009}
-He created a quadrant between reckless and prudent and deliberate and inadvertent debt. For Fowler, the difference between reckless and prudent is the way the debt is taken on. Reckless debt happens without an appropriate evaluation of the consequences, risking difficulties in the future. Alternatively, prudent debt is taken on
+He created four quadrants covering reckless and prudent and deliberate and inadvertent debt. For Fowler, the difference between reckless and prudent is the way the debt is taken on. Reckless debt happens without an appropriate evaluation of the consequences, risking difficulties in the future. Alternatively, prudent debt is taken on
 with the trade-offs in mind and the knowledge of the future costs. Fowler differentiates between deliberate and inadvertent in a similar way to McConnell's differentiation between intentional and unintentional debt.
-The various combinations of these four elements in the quadrant results in four different approaches. Reckless and deliberate would mean quick solutions without considering the long-term impact. Reckless and inadvertent results in flawed design or implementation, either carelessly or unknowingly. 
+The various combinations of these four elements in the quadrants results in four different approaches. Reckless and deliberate would mean quick solutions without considering the long-term impact. Reckless and inadvertent results in flawed design or implementation, either carelessly or unknowingly. 
 Prudent and deliberate is purposefully taking on debt to gain a short-term advantage with plans of repayment and finally prudent and inadvertent means taking on debt due to lack of knowledge or experience.\footcite{fowlerTechnicalDebtQuadrant2009}\\
 
 In their article `Technical Debt: From Metaphor to Theory and Practice' (2012) Kruchten et al.\ criticize the concept of technical debt to be `somewhat diluted lately' \footcite[18]{kruchtenTechnicalDebtMetaphor2012}, stating that every issue in software development was called some form of debt. 
@@ -68,7 +68,7 @@ According to them, this includes architectural debt, `documentation and testing'
 All these debt types allow engineers to better discuss the trade-offs with stakeholders and to make better decisions.\\
 
 There have been many studies providing empirical evidence for the theoretical concepts of technical debt. Highly influential studies were undertaken by Potdar and Shihab (2014) as well as by Li et al.\ (2015).\\
-In their study Potdar and Shihab analyzed four large open source projects to find self-admitted technical debt as well as the likelihood of debt being removed. They found that `self-admitted technical debt exists in 2.4\% to 31\% of the files.'\footcite[1]{potdarExploratoryStudySelfAdmitted2014}
+In their study Potdar and Shihab analyzed four large open-source projects to find self-admitted technical debt as well as the likelihood of debt being removed. They found that `self-admitted technical debt exists in 2.4\% to 31\% of the files.'\footcite[1]{potdarExploratoryStudySelfAdmitted2014}
 Additionally, they found that `developers with higher experience tend to introduce most of the self-admitted technical debt and that time pressures and complexity of the code do not correlate with the amount of the self-admitted technical debt.'\footcite[1]{potdarExploratoryStudySelfAdmitted2014}
 They also discovered that `only between 26.3\% and 63.5\% of the self-admitted technical debt gets removed'\footcite[1]{potdarExploratoryStudySelfAdmitted2014}. This relatively low removal rate of self-admitted technical debt indicates a wider challenge:
 developers recognize the issues of their implementation, but defer remediation potentially leading to a major impact on long-term maintainability.\\
@@ -95,14 +95,14 @@ Drawing on Frederick Brooks' distinction between essential and accidental diffic
 These enduring challenges are the foundation of the concepts of software decay and technical debt.\\
 
 Software Decay refers to the gradual degradation of a software system's internal quality, leading to reduced maintainability, increased complexity and higher change effort. This is a natural outcome of continuous system evolution in a response to changing requirements and environments.
-As shown through empirical work of Eick et al. and the theoretical contributions of Lehman and Parnas, software that is not actively maintained becomes harder to main, less modular and more fragile, making decay a systematic and long-term threat to software sustainability.\\
+As shown through empirical work of Eick et al. and the theoretical contributions of Lehman and Parnas, software that is not actively maintained becomes harder to maintain, less modular and more fragile, making decay a systematic and long-term threat to software sustainability.\\
 
 On the other hand, technical debt captures the intentional or unintentional compromises made during software development that create short-term advantages but lead to long-term costs. Originating as a metaphor, it has since evolved into a structured framework for describing, architectural design, code or process-related liabilities.
-While software decay can be seen as a developing property of ongoing change, technical debt often originates from conscious decisions. Whether this is due to deadlines, insufficient knowledge or lack of resources, it manifests through debt like code quality deterioration, architectural erosion or insufficient testing.\\
+While software decay can be seen as a developing property of ongoing change, technical debt often originates from conscious decisions. Whether this is due to deadlines, insufficient knowledge or lack of resources, it manifests itself through debt like code quality deterioration, architectural erosion or insufficient testing.\\
 
-Importantly, technical debt and software decay are closely related: unmanaged technical debt accelerates software decay, while software decay can lead to the accumulation of technical debt. Empirical studies from Potdar, Li and Banker confirm the measurable impact of these phenomenon on maintenance costs, defect rates and overall system quality.\\
+Importantly, technical debt and software decay are closely related: unmanaged technical debt accelerates software decay, while software decay can lead to the accumulation of technical debt. Empirical studies from Potdar, Li and Banker confirm the measurable impact of these phenomena on maintenance costs, defect rates and overall system quality.\\
 
-To effectively manage these issues, the software industry has developed strategies that go beyond reactive maintenance. Structured, proactive practices such as continuous refactoring, rigorous quality assurance, technical debt management and large scale testing are essential to prevent the accumulation of debt and decay.
+To effectively manage these issues, the software industry has developed strategies that go beyond reactive maintenance. Structured, proactive practices such as continuous refactoring, rigorous quality assurance, technical debt management and large-scale testing are essential to prevent the accumulation of debt and decay.
 Based on these foundations, the next chapter will explore concrete mitigation strategies in commercial environments providing a comprehensive overview of the most common strategies, techniques and frameworks used in the industry to address technical debt and software decay.\\
 
 \subsection{Mitigation Strategies in Commercial Environments}
@@ -141,7 +141,7 @@ and broader software entropy\footcite[5-6]{beckExtremeProgrammingExplained1999}.
 Pair programming prevents decay by securing higher-quality code through collaborative review and knowledge sharing between developers.
 \ac{CI} provides regular, frequent code integration, significantly reducing integration complexity and associated decay risks.
 \ac{TDD} establishes robust test coverage, catching defects early and preventing quality erosion.
-The effectiveness of refactoring, a cornerstone XP practice, has been proven empirically. For example, in their case study (2008) Moser et al.
+The effectiveness of refactoring, a cornerstone XP practice, has been shown empirically. For example, in their case study (2008) Moser et al.
 demonstrated that refactoring explicitly `prevents an explosion of complexity'\footcite[262]{moserCaseStudyImpact2008}
 and promotes simpler, easier-to-maintain designs.
 They found it drove developers toward simpler designs, reducing complexity, coupling and long-term maintenance issues thereby directly counteracting software decay.\footcite[262]{moserCaseStudyImpact2008}
@@ -182,7 +182,7 @@ Tempero et al. claims the reasons were `lack of resources, of information identi
 To eliminate these barriers, Tempore et al. suggest refactoring should be goal-oriented instead of operations-oriented and a better quantification of the benefits refactoring should bring to better reach a decision.\footcite[61]{temperoBarriersRefactoring2017}\\
 Both studies show that the theoretical benefits of refactoring are not always directly translated into the industry. Developers often perceive refactoring as risky and costly, even though they are aware of the benefits.\\
 
-\ac{TDD} is another code-level practice previously introduced. It was first formally described by Kent Beck in his book
+Test Driven Development (TDD) is another code-level practice previously introduced. It was first formally described by Kent Beck in his book
 `Test Driven Development: By Example' (2002) in which he argues that writing tests before the implementation
 encourages cleaner code and gives developers the confidence to tackle complex problems.\footcite[pp. 8-9]{beckTestdrivenDevelopmentExample2002}
 This practice promotes modularity, testability and clean design, key characteristics in preventing software decay. By focusing solely on code
@@ -213,9 +213,9 @@ A key component in this proactive approach is managing the architectural technic
 carefully controlled. Besker et al. (2016) suggest a framework to systematically identify, analyze and address architectural debt to preserve structural integrity.\footcite[11]{beskerManagingArchitecturalTechnical2018}\\
 Nevertheless, when architectural decay becomes substantial, teams face critical decisions between incremental refactoring and radical redesigns.
 Nord et al. (2012) highlight that systematic impact analysis, guided by explicit architectural metrics, is crucial for making informed decisions on when substantial 
-redesign becomes necessary to substantially restore software quality.\footcite[99]{nordSearchMetricManaging2012}\\
+redesign becomes necessary to significantly restore software quality.\footcite[99]{nordSearchMetricManaging2012}\\
 Practical tooling, such as automated architectural monitoring and recovery solutions, plays a significant supportive role in these efforts. 
-The detailed application and empirical evidence of such tools issue discussed thoroughly in the subsequent section on Tool Support for Continuous Quality Assurance.\\
+The detailed application and empirical evidence of such tools is discussed thoroughly in the subsequent section on Tool Support for Continuous Quality Assurance.\\
 
 In summary, proactively maintaining software architecture is essential for mitigating long-term software decay. Architecture conformance checking 
 prevents the inadvertent erosion by ensuring adherence to established design principles. Managed architectural evolution further ensures that the architecture
@@ -230,7 +230,7 @@ This can be done through issue trackers or backlogs to allow for structured appr
 An industry-wide survey conducted by Ramač et al. (2021) found that 47\% `had some practical experience with TD identification and/or management'\footcite[40]{ramacPrevalenceCommonCauses2021}.
 By visualizing and tracking technical debt, teams can prioritize and address debt items systematically, preventing their accumulation and broader software decay.
 Ramač et al. also found that the most common cause for technical debt was time pressure caused by deadlines\footcite[40]{ramacPrevalenceCommonCauses2021} and the `single most cited effect of TD is delivery delay.'\footcite[40]{ramacPrevalenceCommonCauses2021}
-This indicates that time pressure is not only a cause of technical debt but also a consequence, leading to a vicious cycle of debt accumulation and delivery delays. To break this cycle, a balance of new development and maintenance is crucial to prevent a border software decay.\\
+This indicates that time pressure is not only a cause of technical debt but also a consequence, leading to a vicious cycle of debt accumulation and delivery delays. To break this cycle, a balance of new development and maintenance is crucial to prevent a broader software decay.\\
 
 Another important practice is conducting regular code reviews as part of the development workflow. This practice dates back to 1976 when Michael Fagan reviewed the benefits of peer code inspections.\footcite[183]{faganDesignCodeInspections1976}
 He found that `inspections increase productivity and improve final program quality.'\footcite[205]{faganDesignCodeInspections1976}
@@ -246,7 +246,7 @@ Process-integrated practices like code reviews, explicit technical debt control 
 \subsubsection{Tool Support for Continuous Quality Assurance}
 To further support the proactive management of software decay, technical debt and the overall code health over time, a variety of tools have established themselves in the industry.
 Automated quality assurance tools are often integrated into modern development processes. A common approach, as previously mentioned, is the use of \ac{CI} pipelines. These can be used in combination with quality gates which use static code analysis to block additions to the code base that do not meet the quality standards e.g. a 
-certain code coverage, complexity or maintainability threshold. This allows developers to catch issues early and rectify them before they are introduced into the code base . While the concept of quality gates is not new, the automation of these gates have recently been investigated by Uzunova et al. (2024).
+certain code coverage, complexity or maintainability threshold. This allows developers to catch issues early and rectify them before they are introduced into the code base . While the concept of quality gates is not new, the automation of these gates has recently been investigated by Uzunova et al. (2024).
 They found that these gates can serve as a check point to assess software metrics like code coverage, bug density or compliance with coding standards. \footcite[8]{uzunovaQualityGatesSoftware2024}
 To allow for this kind of automation, they suggest tools like SonarQube, Sigrid or Maverix.ai. These tools provide real-time feedback allowing for an enforcement of quality criteria.\footcite[8]{uzunovaQualityGatesSoftware2024}\\
 Utilizing this approach enables developers to catch issues early and prevent the introduction of technical debt and software decay into the codebase.\\
@@ -257,9 +257,7 @@ and compare it to the proposed architecture.\footcite[6]{thomasStaticDynamicArch
 `Evaluating an Architecture Conformance Monitoring Solution' (2016), Caracciolo et al. investigated three different tools to detect architecture violations:
 SonarQube, Sonargraph and TeamCity\footcite[43]{caraccioloEvaluatingArchitectureConformance2016}. They concluded that their approach 
 `can be applied in an industrial context.'\footcite[44]{caraccioloEvaluatingArchitectureConformance2016}
-They furthermore argue that the tools can be conveniently added to a dashboard, allowing for a short feedback loop as well as proactive management of architectural violations.\footcite[44]{caraccioloEvaluatingArchitectureConformance2016}
-These benefits can be seen in their case study, where they observed that the overall violations decreased from 606 to 600 in an 18 year old system with one million lines of code\footcite[43]{caraccioloEvaluatingArchitectureConformance2016}.
-Based on these project parameters Caracciolo et al. `consider that to be a positive outcome.'\footcite[43]{caraccioloEvaluatingArchitectureConformance2016}\\
+They furthermore argue that the tools can be conveniently added to a dashboard, allowing for a short feedback loop as well as proactive management of architectural violations.\footcite[44]{caraccioloEvaluatingArchitectureConformance2016}\\
 
 Numerous empirical studies show the effectiveness of these tools. In their paper `Empirical investigation of the influence of continuous integration bad practices on software quality' (2022),
 Silva and Bezerra found that `CI can improve software quality, especially about cohesion.'\footcite[4]{silvaEmpiricalInvestigationInfluence2022} However they also observed the impact
@@ -283,8 +281,8 @@ reduced maintenance costs and the long-term viability of software products. Howe
 
 
 \subsection{Unique Constraints in Military Software Development}
-\subsubsection{Introduction to Military Software Context}
-Software development for military significantly differs from commercial software due to unique demands for high reliability, rigorous security and extended system lifecycles.
+\subsubsection{Introduction to the Military Software Context}
+Software development for the military significantly differs from commercial software development due to unique demands for high reliability, rigorous security and extended system lifecycles.
 The \ac{NRC} book `Reliability Growth: Enhancing Defense System Reliability' (2015) highlights the differences between commercial and military software development.\\
 According to the NRC there are three main distinctions. The first regards the `sheer size and complexity of defense systems'\footcite[31]{nrc2015defense}.
 These systems often have a vast amount of individual elements which need to work together, and also evolve over time as the architecture  between the different stages of 
@@ -293,17 +291,17 @@ due to the different technologies and architectures used.\footcite[32]{nrc2015de
 The second distinction is the different perspectives of the actors involved. Unlike in the commercial environment, where it is usually only the project manager 
 who controls the vision and the goals of the project, in the military environment there are multiple stakeholders with different goals in mind.\footcite[32]{nrc2015defense}
 Although the book specially focuses on the American military, the same can be said for the German military.\\
-The third difference given by the NRC are the concerns risk. In the commercial environment, the manufacturer has a self-interest in the product being successful and reliable.
+The third difference given by the NRC concerns risk. In the commercial environment, the manufacturer has a self-interest in the product being successful and reliable.
 In the military environment, however, the government is the customer and often holds most of the risk, as they will be using the product in the end.
-The NRC claims that this means `the system developers do not have a strong incentive to address reliability goals early in the acquisition process'\footcite[33]{nrc2015defense}.
+The NRC claims that this means `the system developers do not have a strong incentive to address reliability goals early in the acquisition process'\footcite[33]{nrc2015defense},
 especially because the downstream benefits are not quantifiable for the developers.\footcite[33]{nrc2015defense}\\
-In her presentation on `A perspective on military software needs', Heidi Shyu highlights additional challenges in military software development.
+In her presentation on `A perspective on military software needs', Heidi Shyu (2017) highlights additional challenges in military software development.
 She argues that, in addition to the complex setting, there are often a multitude of contractors working together, who must interoperate with each other in real time.\footcite[11]{shyu2017military}
 These projects often have a lifecycle of decades compared to the commercial software lifecycle of a few years.\footcite[14]{shyu2017military}
 Due to these long lifecycles, the software needs to be developed so it can be easily maintained and updated, while still working with legacy systems
 which often have very specific requirements.\footcite[14]{shyu2017military}
-Whereas the the architecture has to last for decades, soft- and hardware changes much faster, often resulting in a patchwork of quick fixes.\footcite[15]{shyu2017military}
-Heidi Shyu provides examples of necessary software solutions such as a flexible architecture which allows for easy updates and additions, self-testing modular code and intuitive, easy-to-use interfaces.\footcite[17]{shyu2017military}\\
+Whereas the architecture has to last for decades, soft- and hardware changes much faster, often resulting in a patchwork of quick fixes.\footcite[15]{shyu2017military}
+Heidi Shyu provides examples of necessary software solutions such as a flexible architecture which allows for easy updates and additions, self-testing modular code and intuitive, easy-to-use user interfaces.\footcite[17]{shyu2017military}\\
 
 In summary, these challenges in military software development are unique to the industry. The vast size and complexity of defense systems,
 their long lifecycles and the multitude of stakeholders involved all serve to create a complex environment that requires specialized strategies to manage software decay and technical debt effectively.
@@ -312,13 +310,13 @@ their long lifecycles and the multitude of stakeholders involved all serve to cr
 The procurement and regulatory environment significantly shapes military software development in the German Armed Forces (Bundeswehr). Unlike in commercial settings,
 Bundeswehr software projects are tightly governed by formalized frameworks, rigorous approval processes and comprehensive regulations designed primarily to ensure 
 accountability, security and reliability. However, these structures can inadvertently limit agility, prolong software updates and contribute significantly to software decay
-and technical debt over time.\\
+and technical debt over time which will be discussed in teh following section.\\
 
 Bundeswehr software utilizes the `V-Modell XT Bw' as the project lifecycle model. It is a customized variant of the standard V-Modell XT, specifically tailored to Bundeswehr needs and closely integrated with the 
 Bundeswehr's overarching procurement framework, \ac{CPM}.
 The V-Modell XT Bw is a comprehensive framework that encompasses the planning and execution of software projects in the Bundeswehr.\footcite[6]{bundeswehrVModellXTBw}
 It includes detailed guidelines for all parts of the software development process, from roles and requirements engineering to \ac{QA} and product quality.\footcite[pp. 20-21]{bundeswehrVModellXTBw}
-However, due to its rigid and sequential nature, the waterfall-based V-Modell XT Bw is known to limit flexibility, making iterative adjustments and agile methodologies not possible.\\
+However, due to its rigid and sequential nature, the waterfall-based V-Modell XT Bw is known to limit flexibility, making iterative adjustments and agile methodologies difficult.\\
 
 The procurement procedures of the Bundeswehr are outlined by the aforementioned \ac{CPM} which was revised in 2012 after a commission in 2010 found that: 
 `Die Streitkräfte erhalten ihre geforderte Ausrüstung zumeist weder im erforderlichen Zeit- noch im geplanten Kostenrahmen.'\footcite[36]{strukturkommissionderbundeswehrBerichtStrukturkommissionBundeswehr2010}.
@@ -328,7 +326,7 @@ In addition, the \ac{EVB-IT}, the standardized contract for government IT soluti
 Holger Schröder claims that multiple different contract blueprints would have to be combined to allow for an agile development project.\footcite{schroederUngeeignetFuerAgile2022}
 
 Collectively, all these requirements and procurement constraints strongly influence software development practices. Control and predictability are prioritized, making
-an iterative and agile framework difficult to use. While these procedures promote accountability and reduce risk, they can severely limit a system's ability to evolve over time, thereby fostering conditions under which software decay and technical debt accumulate. 
+an iterative and agile framework difficult to use. While these procedures promote accountability and reduce initial development risk, they can severely limit a system's ability to evolve over time, thereby fostering conditions under which software decay and technical debt accumulate. 
 Adding to this complexity are strong security and compliance requirements, which will be discussed in the following subsection.
 
 \subsubsection{Security and Compliance Requirements}
@@ -337,7 +335,7 @@ the software must adhere to both national and NATO standards. These strict requi
 regarding the lifecycle of the product, the software architecture and maintenance practices. The resulting constraints accelerate the accumulation of technical debt and software decay, which will be explained in the following paragraphs.\\
 
 Like all federal agencies in Germany, the Bundeswehr must adhere to the \ac{BSI} guidelines for IT security, called IT-Grundschutz\footcite{bundesamtfuersicherheitinderinformationstechnikBSIFAQ}. This defines a comprehensive security framework
-that includes technical, personnel and infrastructural security measures through the use of several standards. Even though these standards Compliance with these standards involves extensive documentation, risk management processes and regular audits. 
+that includes technical, personnel and infrastructural security measures through the use of several standards. Compliance with these standards involves extensive documentation, risk management processes and regular audits. 
 This leads to an increase in the complexity and effort required for ongoing software maintenance and updates.\footcite{bundesamtfuersicherheitinderinformationstechnikBSIStandards}\\
 
 In addition to the national regulations, Bundeswehr software systems are obligated to comply with the NATO security standards. These guidelines establish requirements for the handling of classified data, encryption standards and security clearance of personnel.
@@ -345,7 +343,7 @@ This is illustrated by the NATO Security Policy (C-M(2002)49) which dictates the
 Compliance with NATO standards mandates extensive security accreditation procedures, detailed documentation and comprehensive vetting of software and hardware systems.
 These processes slow down software development cycles and restrict flexibility due to the necessity of re-certifying software after significant changes.
 
-Furthermore the Bundeswehr adheres to national classification rules, such as \ac{VS-NFD}. Systems classified under \ac{VS-NFD} require access control, encrypted communications, dedicated network infrastructure and periodic security accreditation.\footcite[see Part 2, pp. 1–3; Part 3, pp. 1–6]{BMI2010VSNFD}
+Furthermore the Bundeswehr adheres to national classification rules, such as \ac{VS-NfD}. Systems classified under \ac{VS-NfD} require access control, encrypted communications, dedicated network infrastructure and periodic security accreditation.\footcite[see Part 2, pp. 1–3; Part 3, pp. 1–6]{BMI2010VSNFD}
 Developers and system administrators need to adhere to strict usage guidelines, which dictate the permissible software, hardware and methods of data handling.\footcite[Part 3, No. 3.1–3.7, pp. 1–5]{BMI2010VSNFD} Compliance significantly restricts the usage of modern technologies such as cloud services, unless explicitly cleared\footcite[Part 3, No. 3.4.1–3.4.5, pp. 4–5]{BMI2010VSNFD}. 
 This can be seen in the example of Genua’s secure remote working solution, which complies with both VS-NfD and NATO security requirements while offering functionality typically restricted in classified environments.\footcite{Genua2023VSNFD}
 
@@ -381,7 +379,7 @@ systems and extended lifecycles is thus crucial for sustaining operational capab
 Military software development is fundamentally shaped by demands that are far beyond those of the commercial environments. The need for extremely reliable, long lasting systems which still meet strict classification regimes and multi-layered stakeholder requirements creates a highly regulated and risk-shy context.
 These characteristics collectively contribute to a development landscape where software decay and technical debt are not merely byproducts of poor practices but structural risks embedded within the system's lifecycle.\\
 
-As shown throughout this section, four constraint areas amplify these challenges. Firstly, the inherit complexity of military systems, often designed to operate for decades, creates pressure to extend the viability of aging platforms.
+As shown throughout this section, four constraint areas amplify these challenges. Firstly, the inherent complexity of military systems, often designed to operate for decades, creates pressure to extend the viability of aging platforms.
 Secondly, the rigid procurement and development frameworks, such as the V-Modell XT Bw and the \ac{CPM} process, prioritize upfront control and traceability over agility, hindering adaptive or incremental development practices.
 Thirdly, extensive national and NATO security requirements impose detailed compliance burdens, restricting the use of modern tools and leading to prolonged certification cycles. Finally, the heavy reliance on legacy systems and technologies, as illustrated by the Tornado jet or SASPF, 
 reinforces technical inertia and raises the cost and difficulty of modernization efforts.\\
@@ -424,6 +422,6 @@ These conditions result in higher maintenance burdens and slower update cycles a
 \subsubsection{Conclusion}
 In conclusion, software decay and technical debt are persistent and measurable risks in all software systems. While commercial environments have developed effective mitigation strategies, their applicability in military projects is limited by structural, regulatory and operational constraints.\\
 
-Understanding these differences is essential for designing effective strategies to manage decay and technical debt in military software projects. The next chapter will explore how professionals in military related software projects deal with these constraints in practice, offering real-world
+Understanding these differences is essential for designing effective strategies to manage decay and technical debt in military software projects. The next chapter will explore how professionals in military-related software projects deal with these constraints in practice, offering real-world
 insights through expert interviews. They will provide a deeper understanding on how decay and debt are managed, despite the rigid frameworks and complex environments.
 

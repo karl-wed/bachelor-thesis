@@ -1,6 +1,6 @@
 \section{Discussion}
 \subsection{Introduction}
-This chapter interprets the results of the study and discusses their implications, based on the guiding research questions and the literature review. The goal is to deepen understanding of how software decay manifests in military software systems
+This chapter interprets the results of the study and discusses their implications, based on the guiding research questions and the literature review. The goal is to deepen understanding of how software decay manifests itself in military software systems
 and how it can be mitigated successfully, despite having to deal with highly regulated environments and long lifecycles.
 The central research question of this thesis is:
 \begin{quote}
@@ -42,7 +42,7 @@ Symptoms cited by participants included unreliable test scripts, incomplete docu
 the system architecture, legacy code and the rationale behind design decisions, it often reflects insufficient documentation, lack of modularization and a high need for implicit knowledge. These problems can be found in the  definition of technical debt from Kruchten et al. (2012), which encompasses not only the code itself but also the surrounding processes and practices.
 These symptoms reflect structural issues such as lack of modularization, outdated documentation practices and insufficient test infrastructure, confirming theoretical assertions by Cunningham (1992) regarding the long-term maintenance consequences of technical shortcuts.\\
 
-In summary, long lifecycles, legacy constraints, regulatory rigidity and organizational challenges not only align with theoretical concepts but also provide a practical understanding of how software decay manifests in military systems.
+In summary, long lifecycles, legacy constraints, regulatory rigidity and organizational challenges not only align with theoretical concepts but also provide a practical understanding of how software decay manifests itself in military systems.
 
 \subsection{Mitigation Strategies and Their Effectiveness}
 Regarding the second sub-question about current mitigation strategies and their effectiveness, the analysis of the interviews reflects practices that align with other commercial practices, albeit with some unique military constraints.
@@ -53,18 +53,18 @@ Such automation forces discipline that might otherwise be neglected under time p
 However, as Fowler stated, a functioning test suite and build process is crucial for CI to work correctly. Therefore both factors need special attention to make sure the pipeline is used as intended.
 Additionally, a correct configuration of the pipeline must be ensured for, as Silva and Bezerra (2022) found, the wrong quality levels and configuration can lead to a decrease in software quality.\\
 
-Another practice used against software decay was the formal code review. This has evolved from inconsistent and informal peer checks into structured, documented processes involving multiple reviewers. Participants emphasized that code reviews not only help to discover mistakes and prevent technical debt but also
+Another practice used against software decay is the formal code review. This has evolved from inconsistent and informal peer checks into structured, documented processes involving multiple reviewers. Participants emphasized that code reviews not only help to discover mistakes and prevent technical debt but also
 serve as a way to share knowledge and create a team wide quality assurance. Code reviews are often combined with GitLab-based workflows, allowing a transparent history of changes and discussions. This is backed by McIntosh et al. (2016) their study found that the right participants play a major role in the effect of the the review,
 which was seen not as important by the interviewees.\\
 
 Refactoring, while not always practiced over the entire codebase, is used in projects that have a more agile approach. Interviewees stated that in these projects, problematic components are occasionally rewritten or restructured. However, resource constraints and rigid approval processes limit a more systematic approach to refactoring.
-As one developer explained: `Wir haben jetzt keine festen Refactoring-Tickets, aber prinzipiell ist es jedem freigestellt, eigene Tickets zu erstellen.' This indicates that, while there is a local initiative to address technical debt, a border process is still lacking.
+As one developer explained: `Wir haben jetzt keine festen Refactoring-Tickets, aber prinzipiell ist es jedem freigestellt, eigene Tickets zu erstellen.' This indicates that, while there is a local initiative to address technical debt, a broader process is still lacking.
 These reasons against refactoring align with the studies of Kim et al. (2014) and Tempero et al. (2017), which named costs, risks and lack of support from management as the main reasons why developers did not refactor, even though they saw it as beneficial.\\
 
 Interviewees also stressed the importance of documentation improvements, especially the use of lightweight tools like Markdown or systems like Jira to track changes and decisions. Documentation is often a weak spot in legacy projects, but newer practices 
 emphasize the importance of keeping documentation up to date by lowering the barrier for contributions by embedding it into the development process.\\
 
-Despite these promising strategies, their effectiveness are often limited by domain constraints. These are either procurement, budgeting or legacy constraints. Automation, for example, can be highly effective once implemented, but requires significant initial investment which is not always feasible in the military domain.
+Despite these promising strategies, their effectiveness is often limited by domain constraints. These are either procurement, budgetary or legacy constraints. Automation, for example, can be highly effective once implemented, but requires significant initial investment which is not always feasible in the military domain.
 Similarly, while reviews and refactoring add value, they require time and the freedom to act, which is often limited by rigid processes and approval hierarchies.\\
 
 In summary, mitigation strategies such as automation, code reviews, refactoring and better documentation are being adopted to prevent software decay. Although they are deemed as effective by practitioners, their impact on each project and its restrictions can vary considerably. Team maturity and organizational
@@ -80,7 +80,7 @@ This aligns with the findings of Leite et al. (2024), who found that agile pract
 However, successful and effective agile practices require the contractual framework to allow more flexibility and adaptability, which is not the case in many projects.\\
 
 Another important theme was the prioritization of test maintenance. Several participants stressed the fact that test script should be updated with the code changes, rather than being an afterthought.
-Interviewees emphasized that even with your own code, the difficulty of understanding the code increases with time. By maintaining the tests parallel to the code, consistency of the tests is ensured as well as knowledge loss prevented.
+Interviewees emphasized that even with their own code, the difficulty of understanding the code increases with time. By maintaining the tests parallel to the code, consistency of the tests is ensured as well as knowledge loss prevented.
 Through this, a common issue is also avoided where old tests decay while new features are introduced.\\
 
 Closely related to this is the recommendation to work on continuous documentation, especially in a domain where software is bound to have a long lifespan. Documentation should be integrated into the development process, rather than being a separate task.
@@ -102,7 +102,7 @@ Overall, these recommendations show a clear awareness among practitioners of the
 cultural changes can make a substantial difference in the long-term maintainability of military software systems.\\
 
 \subsection{Limitations of the Study}
-Due to the nature of the qualitative research design, this study is not without limitations. Firstly, the empirical results are based on a semi-structured interview with a relatively small group at a single organization.
+Due to the nature of the qualitative research design, this study is not without limitations. Firstly, the empirical results are based on semi-structured interviews with a relatively small group at a single organization.
 While this allows for a detailed, in-depth exploration of specific organizational practices it also introduces context-specific bias, potentially limiting the applicability of the findings to other military organizations or domains.\\
 
 Secondly, the selection of interviewees could create an additional bias, as the participants were directly involved with military projects within a single organization. Other, potentially external stakeholders such as procurement agencies
