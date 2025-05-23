@@ -248,11 +248,30 @@
 % Absätze durch eine neue Zeile
 %-----------------------------------
 \setlength{\parindent}{0mm}
-\setlength{\parskip}{0.8em plus 0.5em minus 0.3em}
+\setlength{\parskip}{6pt plus 0pt minus 0pt}
 
 \sloppy					%Abstände variieren
 \pagestyle{headings}
 
+%-----------------------------------
+% Spacing around titles
+%-----------------------------------
+\RedeclareSectionCommand[
+  beforeskip=12pt,
+  afterskip=6pt
+]{section}
+\RedeclareSectionCommand[
+  beforeskip=12pt,
+  afterskip=6pt
+]{subsection}
+\RedeclareSectionCommand[
+  beforeskip=12pt,
+  afterskip=6pt
+]{subsubsection}
+\RedeclareSectionCommand[
+  beforeskip=12pt,
+  afterskip=6pt
+]{paragraph}
 %----------------------------------
 % Präfix in das Abbildungs- und Tabellenverzeichnis aufnehmen, statt nur der Nummerierung (siehe Issue #206).
 %----------------------------------

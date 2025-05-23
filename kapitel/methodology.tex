@@ -1,11 +1,12 @@
 \section{Methodology}
 \subsection{Research Design}
-This thesis employs a qualitative, exploratory research design to investigate how software decay and technical debt are addressed in the context of military software development. Given the previously established challenges of complexity, extended lifecycles and high security requirements, these factors
-cannot be fully captured by quantitative methods.\\
-Alternatively a qualitative approach was chosen to allow for a deep insight directly from the practitioners. The study is based on a semi-structured expert interview, conducted with software developers and project managers at T-Systems IFS, Chapter Defense Systems. 
-The goal of the interviews is to identify core challenges, strategies and constraints related to managing long-lived software systems in the military domain.\\
+This thesis employs a qualitative, exploratory research design to investigate how software decay and technical debt are addressed in the context of military software development. Given the previously established challenges of complexity, extended life cycles and high security requirements, these factors
+cannot be fully captured by quantitative methods.
+Alternatively, a qualitative approach was chosen to allow for deep insight directly from the practitioners. The study is based on a semi-structured expert interviews, conducted with software developers and project managers at T-Systems IFS, Chapter Defense Systems. 
+The goal of the interviews is to identify core challenges, strategies and constraints related to managing long-lived software systems in the military domain.
 The objective is not to derive generalizable results for the entire industry, but rather to uncover key themes and practices specific to this organization and operational context. The interviews were designed based on the findings of the literature review and structured around topics like
-the management of legacy systems, use of \ac{CI/CD}, architectural conformity, code quality and organizational or regulatory constraints.\\
+the management of legacy systems, use of \ac{CI/CD}, architectural conformity, code quality and organizational or regulatory constraints.
+
 \subsection{Data Collection}
 The interview guidelines were developed based on the key topics identified in the literature review, with a focus on the following areas:
 \begin{itemize}
@@ -16,30 +17,32 @@ The interview guidelines were developed based on the key topics identified in th
     \item Organizational and regulatory constraints in military projects
 \end{itemize}
 The participants were selected through purposeful sampling, all being practitioners currently working on military software systems within T-Systems IFS, Chapter Defense Systems. In total, three interviews were conducted. All participants hold several years of experience in software engineering, testing or project management
-in military software projects. They currently work as Project Manager, DevOps Engineer and Test Engineer with all of them having a background in Software Engineering. Due to this, the three interviewees cover a wide spectrum of the different fields in software development.\\
+in military software projects. They currently work as Project Manager, DevOps Engineer or Test Engineer with all of them having a background in Software Engineering. As a result, the three interviewees cover a wide spectrum of the different fields in software development.
 The interviews were conducted in person, recorded with consent and transcribed for analysis. The duration of each interview was between 20 and 40 minutes.
+
 \subsection{Data Analysis}
 The transcribed interview data was analyzed using Thematic Analysis, following the six-phase approach outlined by Braun and Clarke (2006). This method was chosen for its flexibility and suitability in identifying and interpreting patterns across qualitative datasets.
 According to Braun and Clarke, the first step is the familiarization with the data to become aware of potential patterns and themes.\footcite[16]{braunUsingThematicAnalysis2006} The second step is the generation of the initial coding. Codes are defined by Braun and Clarke as
-`a feature of the data  (semantic content or latent) that appears interesting to the analyst'\footcite[18]{braunUsingThematicAnalysis2006} and capture important features for the research question. The third step uses those codes to create broader themes. This is done 
-by collecting all relevant codes and forming theme piles.\footcite[19-20]{braunUsingThematicAnalysis2006} These themes are then reviewed and refined in the fourth step, as: `it will become evident that some candidate themes are not really  themes, while  others might collapse into each other'\footcite[20]{braunUsingThematicAnalysis2006}.
+`a feature of the data  (semantic content or latent) that appears interesting to the analyst'\footcite[18]{braunUsingThematicAnalysis2006} and capture important features for the research question. The third step uses these codes to create broader themes. This is done 
+by collecting all relevant codes and forming theme piles.\footcite[19-20]{braunUsingThematicAnalysis2006} These themes are then reviewed and refined in the fourth step, as `it will become evident that some candidate themes are not really  themes, while  others might collapse into each other'\footcite[20]{braunUsingThematicAnalysis2006}.
 In the fifth step, clear definitions and names for each theme are developed. This includes writing a detailed analysis of each theme and how it relates to the research questions.\footcite[22]{braunUsingThematicAnalysis2006} 
 Finally, the sixth step is the production of the report. This is created through the combination of the identified themes, supported by selected interview quotes to illustrate the findings.\footcite[23]{braunUsingThematicAnalysis2006}
-The coding process followed a hybrid approach, combining both deductive elements based on the literature review as well as inductive elements to account for unexpected themes specific to the military software context. The analysis was conducted manually, using MAXQDA, a program to support the coding process and facilitate the organization of themes and codes.\\
+The coding process followed a hybrid approach, combining both deductive elements based on the literature review, as well as inductive elements to account for unexpected themes specific to the military software context. The analysis was conducted manually, using MAXQDA, a program to support the coding process and facilitate the organization of themes and codes.
+
 \subsection{Limitations of the Methodology}
-While the qualitative approach chosen for this thesis provides valuable insights to uncover practical challenges and strategies, it is not without limitations.\\
+While the qualitative approach chosen for this thesis provides valuable insights to uncover practical challenges and strategies, it is not without limitations.
 
 Firstly, the study is based on a small number of expert interviews, conducted exclusively with practitioners from T-Systems IFS, Chapter Defense Systems. While the participants provided rich and relevant insights, the limited sample size means the findings cannot be generalized to the entire military software industry. 
-Instead, the goal is to capture in-depth perspectives on key challenges and mitigation strategies in a specific organizational context.\\
+Instead, the goal is to capture in-depth perspectives on key challenges and mitigation strategies in a specific organizational context.
 
-Secondly, the semi-structured interview format, while allowing flexibility, may introduce inconsistent coverage of topics between the interviews. Some participants may have focused on certain aspects, while others may have limited knowledge in specific areas. This may lead to uneven data quality across the thematic areas.\\
+Secondly, the semi-structured interview format, while allowing flexibility, could result in inconsistent coverage of topics between the interviews. Some participants may have focused on certain aspects, while others might have limited knowledge in specific areas. This may result in uneven data quality across the thematic areas.
 
-Thirdly, the subjective nature of qualitative analysis means that the findings are influenced by the researcher's interpretation of the data. While efforts were made to ensure rigor and transparency in the coding process, there is always a risk of bias or misinterpretation.\\
+Thirdly, the subjective nature of qualitative analysis means that the findings are influenced by the researcher's interpretation of the data. While efforts were made to ensure rigor and transparency in the coding process, there is always a risk of bias or misinterpretation.
 
-Finally, given the sensitive nature of military software projects, participants were limited in what they could disclose. This was either due to confidentiality agreements or the nature of the projects. This may lead to a partial representation of practices and challenges, especially in areas of security, architecture and procurement.\\
+Finally, given the sensitive nature of military software projects, participants are limited in what they could disclose. This was either due to confidentiality agreements or the nature of the projects. This may lead to a partial representation of practices and challenges, especially in areas of security, architecture and procurement.
 
-However, these limitations do not undermine the value of the findings. The small, focused sample allowed for a deep exploration of software decay with military constraints, capturing insights quantitative methods might overlook. Additionally, the semi-structured format
-while flexible, enabled participants to share their practical issues and strategies in their experience. The confidentiality constraints further show the real-life conditions which are encountered in military software projects which enhances the authenticity of the findings.\\
+However, these limitations do not undermine the value of the findings. The small, focused sample allowed for a deep exploration of software decay with military constraints, capturing insights possibly overlooked when using quantitative methods. Additionally, the semi-structured format
+while flexible, enables participants to share their practical strategies and issues in their experience. The confidentiality constraints further show the real-life conditions encountered in military software projects which enhances the authenticity of the findings.
 
-Therefore, in spite of these limitations, the methodology chosen for this thesis contributes valuable insights into managing software decay and technical debt. Furthermore, the limitations show potential areas for future research, like broader studies to generalize the findings.
+Therefore, in spite of these limitations, the methodology chosen for this thesis provides valuable insights into managing software decay and technical debt. Furthermore, the limitations show potential areas for future research, such as broader studies to generalize the findings.
 
