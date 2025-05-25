@@ -2,7 +2,7 @@
 \subsection{Problems of Software Engineering}
 Software has become an integral part of our daily lives. Certain expectations exist regarding the quality of software in terms of reliability, security and efficiency. These expectations come with challenges for the software developers across all industries.
 For decades, software engineers have tried to develop methods and guides to overcome these issues. However, in 1986 Frederick Brooks published his paper `No Silver Bullet'
-in which he argues that: `building software will always be hard. There is inherently no silver bullet.' \footcite[3]{brooksNoSilverBullet1987}. He based this statement on the fact that there are two types of difficulties in software development: the essential and the accidental.
+in which he argues that: `building software will always be hard. There is inherently no silver bullet.' \footcite[3]{brooksNoSilverBullet1987}. He bases this statement on the fact that there are two types of difficulties in software development: the essential and the accidental.
 The essential difficulties he names are complexity, conformity, changeability and invisibility.
 
 With complexity, Brooks wants to describe the inherent intricacy of software systems: `Software entities are more complex for their size than perhaps any other human construct, because no two parts are alike'.\footcite[3]{brooksNoSilverBullet1987}
@@ -35,14 +35,14 @@ Building on this, their second law declares: `The entropy of a system (its unstr
 The analysis of Eick et al.\ provides empirical validation for these theoretical laws, offering `very strong evidence that code does decay'\footcite[7]{eickDoesCodeDecay2001}.
 This conclusion is based on their findings that `the span of changes increases over time'\footcite[7]{eickDoesCodeDecay2001}, meaning that modifications to the software tend to affect increasingly larger parts of the system as the software evolves. This growth in the span of changes indicates and potentially leads to
 a breakdown in the software's modularity. Consequently the software becomes `more difficult to change than it should be,'\footcite[3]{eickDoesCodeDecay2001} measured specifically by three criteria: cost of change, time to implement change and the resulting quality of the software.\footcite[3]{eickDoesCodeDecay2001}
-Therefore, t1he combination of theoretical insights from Lehman and Belday and empirical data from Eick et al. paints a clear picture: software decay is an inevitable consequence of ongoing evolution unless consciously and proactively managed through structured efforts such as continuous refactoring and architectural vigilance.
+Therefore, the combination of theoretical insights from Lehman and Belday and empirical data from Eick et al. paints a clear picture: software decay is an inevitable consequence of ongoing evolution unless consciously and proactively managed through structured efforts such as continuous refactoring and architectural vigilance.
 
 The concept of software decay aligns closely with earlier theoretical discussions by David Parnas (1994). In his influential paper `Software Aging', Parnas describes software aging as a progressive deterioration of a program's internal quality primarily due to frequent, 
-inadequately documented modifications which he termed `Ignorant surgery'\footcite[280]{296790}, as well as the failure to continuously adapt the architecture to evolving needs which he called `Lack of movement'\footcite[280]{296790}.
+inadequately documented modifications which he terms `Ignorant surgery'\footcite[280]{296790}, as well as the failure to continuously adapt the architecture to evolving needs which he calls `Lack of movement'\footcite[280]{296790}.
 Without this proactive maintenance and refactoring effort, Parnas argues that software inevitably reaches a state where changes become more risky, costly and error-prone\footcite[280-281]{296790}.
 
 \subsubsection{Technical Debt}
-The term `Technical Debt' was first coined by Ward Cunningham in his paper `The WyCash Portfolio Management System' (1992). This metaphor was used to describe the trade-off between a quickly implemented solution and a thought-out process. 
+The term `Technical Debt' was first coined by Ward Cunningham in his paper `The WyCash Portfolio Management System' (1992). This metaphor is used to describe the trade-off between a quickly implemented solution and a thought-out process. 
 Using the quick solution `is like going into debt'\footcite[2]{cunninghamWyCashPortfolioManagement1992}. Cunningham argues that this debt accumulates interest if not repaid or rewritten. 
 If this does not happen, Cunningham warns that `[e]ntire engineering organizations can be brought to a stand-still under the debt load of an unconsolidated implementation'\footcite[2]{cunninghamWyCashPortfolioManagement1992}.
 
@@ -62,7 +62,7 @@ long-term debt can be carried by companies for years.
     \\
     \cite{fowlerTechnicalDebtQuadrant2009}
 \end{figure}
-Martin Fowler, on the other hand, warned against taking on too much deliberate debt. He argues that `[e]ven the best teams will have debt to deal with as a project goes on - even more reason not to overload it with crummy code'\footcite[no page number]{fowlerTechnicalDebtQuadrant2009}.
+Martin Fowler, on the other hand, warns against taking on too much deliberate debt. He argues that `[e]ven the best teams will have debt to deal with as a project goes on - even more reason not to overload it with crummy code'\footcite[no page number]{fowlerTechnicalDebtQuadrant2009}.
 He created four quadrants covering reckless and prudent and deliberate and inadvertent debt. For Fowler, the difference between reckless and prudent is the way the debt is taken on. Reckless debt happens without an appropriate evaluation of the consequences, risking difficulties in the future. Alternatively, prudent debt is taken on
 with the trade-offs in mind and the knowledge of the future costs. Fowler differentiates between deliberate and inadvertent in a similar way to McConnell's differentiation between intentional and unintentional debt.
 The various combinations of these four elements in the quadrants result in four different approaches. Reckless and deliberate would mean quick solutions without considering the long-term impact. Reckless and inadvertent results in flawed design or implementation, either carelessly or unknowingly. 
@@ -90,8 +90,8 @@ This indicates an inflationary use of the term, which is important to keep in mi
 The implications these studies have for the software industry are significant. They show that software decay and technical debt are tangible and measurable in real world software projects.
 In their paper `Software complexity and maintenance costs' (1993), Banker et al. empirically demonstrated that `software maintenance costs are significantly affected by the levels of existing software complexity.' \footcite[12]{bankerSoftwareComplexityMaintenance1993}
 This finding emphasizes the importance of proactively managing the software quality and addressing debt early in the project life cycle, to keep the complexity and therefore the cost to a minimum.
-To address these effects, practitioners strongly recommend refactoring. Fowler defined refactoring in his book `Refactoring: Improving the Design of Existing Code' (2019) as: `a change made to the internal structure of software to make it  easier to understand and cheaper to modify without changing its observable behavior'\footcite[56]{fowlerRefactoringImprovingDesign2019}.
-He furthermore argued that `[w]ithout refactoring, the internal design - the architecture - of software tend[s] to decay'\footcite[58]{fowlerRefactoringImprovingDesign2019}.
+To address these effects, practitioners strongly recommend refactoring. Fowler defines refactoring in his book `Refactoring: Improving the Design of Existing Code' (2019) as: `a change made to the internal structure of software to make it  easier to understand and cheaper to modify without changing its observable behavior'\footcite[56]{fowlerRefactoringImprovingDesign2019}.
+He furthermore argues that `[w]ithout refactoring, the internal design - the architecture - of software tend[s] to decay'\footcite[58]{fowlerRefactoringImprovingDesign2019}.
 To prevent this, he suggests `[r]egular refactoring [to] help keep the code in shape'\footcite[58]{fowlerRefactoringImprovingDesign2019}.
 
 To prevent long-term issues, practitioners recommend actively managing technical debt through refactoring, tracking and other strategies that integrate debt management into the software development process.
@@ -168,7 +168,7 @@ integrate without issues.
 
 In order to further prevent technical debt and broader software decay by maintaining a specific code quality, quality analysis tools such as static code analyzers like SonarQube or DeepSource are frequently integrated into
 \ac{CI} pipelines. These tools often provide a metric to evaluate technical debt which is calculated based on the effort in minutes to fix the found maintainability issues.\footcite[no page number]{sonarqubeUnderstandingMeasuresMetrics2025}
-In their paper `Technical Debt Measurement during Software Development using SonarQube: Literature Review and a Case Study' (2021)
+In their paper `Technical Debt Measurement during Software Development using Sonarqube: Literature Review and a Case Study' (2021)
 Murillo et al. found that SonarQube is a useful tool for early debt detection. The estimated remediation effort metric allows for a good debt management prioritization.\footcite[5]{murilloTechnicalDebtMeasurement2021}
 However, during their research they noticed if they changed SonarQube's default rules by just 26 rules, the technical debt effort would increase from
 one hour and 50 minutes to 11 hours.\footcite[4]{murilloTechnicalDebtMeasurement2021} This issue, together with the fact that SonarQube can only detect code related debt if correctly configured and no other debt such as
@@ -184,10 +184,10 @@ Specially, \ac{CD} effectively reduces errors, particularly those introduced by 
 \subsubsection{Code-Level Practices for Preventing Decay}
 On the code level, a variety of practices can be used to prevent software decay and technical debt. The two major practices have been previously introduced: continuous refactoring and maintenance of software quality through various practices like CI/CD or a high test coverage.
 The benefits of refactoring have been demonstrated in the previous section. However, deeper empirical research illustrates the impacts and challenges in a commercial environment.
-Kim et al. (2014) observe in their paper `An empirical study of refactoring challenges and benefits at Microsoft' that `[d]evelopers perceive that refactoring involves substantial cost and risks'\footcite[17]{kimEmpiricalStudyRefactoring2014}.
+Kim et al. (2014) observed in their paper `An empirical study of refactoring challenges and benefits at Microsoft' that `[d]evelopers perceive that refactoring involves substantial cost and risks'\footcite[17]{kimEmpiricalStudyRefactoring2014}.
 Additionally, they describe the benefits refactoring brings as `multidimensional'\footcite[17]{kimEmpiricalStudyRefactoring2014}. Furthermore, the benefits are not consistent across different metrics, leading to their recommendation of a tool to monitor the impact of refactoring across these metrics\footcite[17]{kimEmpiricalStudyRefactoring2014}.
 Similarly, Tempero et al. (2017) established certain barriers to refactoring in their study `Barriers to refactoring'. They found that at least 40\% of the developers in their study would not refactor classes, even though they thought it would be beneficial. \footcite[60]{temperoBarriersRefactoring2017}
-Tempero et al. claims the reasons were `lack of resources, of information identifying consequences, of certainty regarding risk and of support from management'\footcite[60]{temperoBarriersRefactoring2017} although developers did not state a lack of refactoring tools as a reason.
+Tempero et al. claim the reasons were `lack of resources, of information identifying consequences, of certainty regarding risk and of support from management'\footcite[60]{temperoBarriersRefactoring2017} although developers did not state a lack of refactoring tools as a reason.
 To eliminate these barriers, Tempore et al. suggest that refactoring be goal-oriented rather than operations-oriented, with its benefits quantified more effectively to support better decision-making.\footcite[61]{temperoBarriersRefactoring2017}
 Both studies show that the theoretical benefits of refactoring are not always directly translated into the industry. Developers often perceive refactoring as risky and costly, even though they are aware of the benefits.
 
@@ -298,7 +298,7 @@ According to the NRC there are three main distinctions. The first regards the `s
 These systems often have a vast amount of individual elements which need to work together and also evolve over time as the architecture  between the different stages of 
 the life cycle changes.\footcite[32]{nrc2015defense} In addition, the \ac{NRC} highlights the fact that new systems have to interact with legacy systems, which can be a challenge
 due to the different technologies and architectures used.\footcite[32]{nrc2015defense}
-The second distinction is the different perspectives of the actors involved. Unlike in \ac{COTS}, where usually only the project manager 
+The second distinction is the different perspectives of the actors involved. Unlike in \ac{COTS} products, where usually only the project manager 
 controls the vision and the goals of the project, in the military environment there are multiple stakeholders with different goals in mind.\footcite[32]{nrc2015defense}
 These include governmental agencies, military personnel and other contractors.
 Although the book specially focuses on the American military, the same can be said for the German military.
@@ -306,7 +306,7 @@ The third difference given by the NRC concerns risk. In the commercial environme
 In the military environment, however, the government is the customer and often holds most of the risk, as they will be using the product ultimately.
 The NRC claims that this means `the system developers do not have a strong incentive to address reliability goals early in the acquisition process'\footcite[33]{nrc2015defense},
 especially because the downstream benefits are not quantifiable for the developers.\footcite[33]{nrc2015defense}
-In her presentation on `A perspective on military software needs', Heidi Shyu (2017) highlights additional challenges in military software development.
+In her presentation on `A perspective on military software needs', Heidi Shyu (2017) highlighted additional challenges in military software development.
 She argues that, in addition to the complex setting, there are often a multitude of contractors working together, who must interoperate with each other in real time.\footcite[11]{shyu2017military}
 These projects commonly have a life cycle of decades compared to the commercial software life cycle of a few years.\footcite[14]{shyu2017military}
 Due to these long life cycles, the software needs to be developed so it can be maintained and updated easily, while still working with legacy systems
